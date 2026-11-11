@@ -143,7 +143,15 @@ button { color: inherit; }
 .record { padding-top: 1.2rem; }
 .record + .record { margin-top: 1.2rem; border-top: 1px dashed var(--line); }
 .record-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .7rem; color: var(--muted); font-size: .72rem; }
-.note-text { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; color: var(--text); }
+.note-text { overflow-wrap: anywhere; color: var(--text); }
+.note-text p { margin: .7rem 0; }
+.note-text p:first-child, .note-text > :first-child { margin-top: 0; }
+.note-text p:last-child, .note-text > :last-child { margin-bottom: 0; }
+.note-text ul, .note-text ol { margin: .65rem 0; padding-left: 1.45rem; }
+.note-text li + li { margin-top: .35rem; }
+.note-text strong { color: var(--ink); font-weight: 750; }
+.note-text hr { margin: 1.1rem 0; border: 0; border-top: 1px solid var(--line); }
+.inline-code { padding: .1em .35em; border-radius: .3rem; background: var(--bg); font: .88em/1.5 Consolas, monospace; }
 .code-block { margin: 1rem 0 0; padding: 1rem; overflow-x: auto; border-radius: .65rem; background: #10241e; color: #e8f7ef; font: .82rem/1.6 Consolas, monospace; }
 .editor-note { margin: 1rem 0 0; padding: .8rem 1rem; border-left: 3px solid #e2a93b; background: rgba(226,169,59,.12); }
 .practice-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.2rem; }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T09:08:45.111771+00:00",
+  "generated_at": "2026-11-11T06:33:53.308997+00:00",
   "stats": {
     "total": 129,
     "modules": {
@@ -2274,11 +2274,6 @@
       "note": "",
       "records": [
         {
-          "content": "语法格式：为真结果 if 判断条件 else 为假结果",
-          "source": "practice.py",
-          "date": "10月22日"
-        },
-        {
           "content": "语法格式：为真结果 if 判断条件 else 为假结果\na = 5\nb = 8\nif a <= b:\nprint('a小于等于b') #为真结果\nelse:\nprint('a大于b') #为假结果\nprint('a小于等于b' if a <= b else 'a大于b') #三目运算符",
           "source": "practice.py",
           "date": "10月22日"
@@ -2289,7 +2284,7 @@
       ],
       "links": [],
       "id": "python-5e8804bcc7",
-      "summary": "语法格式：为真结果 if 判断条件 else 为假结果",
+      "summary": "语法格式：为真结果 if 判断条件 else 为假结果\na = 5\nb = 8\nif a <= b:\nprint('a小于等于b') 为真结果\nelse:\nprint('a大于b') 为假结果\nprint('a小于等于b' if a <= b else 'a大于b') 三目运算符",
       "practice": {
         "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88%E4%B8%89%E5%85%83%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%89",
         "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88%E4%B8%89%E5%85%83%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%89"

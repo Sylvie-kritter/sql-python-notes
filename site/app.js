@@ -62,6 +62,142 @@ function appendHighlightedText(target, text, query) {
   target.append(document.createTextNode(text.slice(cursor)));
 }
 
+function appendInlineFormatting(target, text) {
+  text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).filter(Boolean).forEach((part) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      target.append(createElement("strong", "", part.slice(2, -2)));
+    } else if (part.startsWith("`") && part.endsWith("`")) {
+      target.append(createElement("code", "inline-code", part.slice(1, -1)));
+    } else {
+      target.append(document.createTextNode(part));
+    }
+  });
+}
+
+function appendReadableLine(target, text) {
+  const label = text.match(/^(语法格式|格式|含义|作用|注意|示例|输出|结果)([：:])\s*(.*)$/);
+  if (!label) {
+    appendInlineFormatting(target, text);
+    return;
+  }
+  target.append(createElement("strong", "note-label", `${label[1]}${label[2]}`));
+  if (label[3]) {
+    target.append(document.createTextNode(" "));
+    appendInlineFormatting(target, label[3]);
+  }
+}
+
+function isCodeLine(line, module) {
+  const trimmed = line.trim();
+  if (module === "SQL") {
+    return /^(?:SELECT|FROM|WHERE|JOIN|LEFT|RIGHT|INNER|OUTER|GROUP\s+BY|HAVING|ORDER\s+BY|INSERT|UPDATE|DELETE|ALTER|CREATE|DROP|WITH|UNION)\b/i.test(trimmed);
+  }
+  return /^(?:@|def\s|class\s|if\b.*:|elif\b.*:|else\s*:|for\b.*:|while\b.*:|try\s*:|except\b.*:|finally\s*:|with\b.*:|return\b|yield\b|import\s|from\s|print\s*\(|input\s*\(|[A-Za-z_]\w*(?:\[[^\]]+\])?\s*(?:=|\+=|-=|\*=|\/=)|[A-Za-z_]\w*\s*\(.*\)\s*(?:#.*)?$)/.test(trimmed);
+}
+
+function renderNoteContent(content, module) {
+  const root = createElement("div", "note-text");
+  let paragraphLines = [];
+  let list = null;
+  let codeLines = null;
+  let fencedCode = false;
+
+  function flushParagraph() {
+    if (!paragraphLines.length) return;
+    const paragraph = createElement("p");
+    paragraphLines.forEach((line, index) => {
+      if (index) paragraph.append(document.createElement("br"));
+      appendReadableLine(paragraph, line);
+    });
+    root.append(paragraph);
+    paragraphLines = [];
+  }
+
+  function flushList() {
+    if (!list) return;
+    root.append(list);
+    list = null;
+  }
+
+  function flushCode() {
+    if (!codeLines?.length) {
+      codeLines = null;
+      return;
+    }
+    root.append(createElement("pre", "code-block", codeLines.join("\n")));
+    codeLines = null;
+  }
+
+  content.split(/\r?\n/).forEach((line) => {
+    const fence = line.trim().match(/^```/);
+    if (fence) {
+      flushParagraph();
+      flushList();
+      if (!fencedCode) {
+        flushCode();
+        codeLines = [];
+        fencedCode = true;
+      } else {
+        flushCode();
+        fencedCode = false;
+      }
+      return;
+    }
+
+    if (fencedCode) {
+      codeLines.push(line);
+      return;
+    }
+
+    if (isCodeLine(line, module)) {
+      flushParagraph();
+      flushList();
+      codeLines ||= [];
+      codeLines.push(line.trim());
+      return;
+    }
+
+    flushCode();
+
+    if (!line.trim()) {
+      flushParagraph();
+      flushList();
+      return;
+    }
+
+    if (/^\s*---+\s*$/.test(line)) {
+      flushParagraph();
+      flushList();
+      root.append(document.createElement("hr"));
+      return;
+    }
+
+    const unordered = line.match(/^\s*[-+*]\s+(.+)$/);
+    const ordered = line.match(/^\s*\d+[.、]\s*(.+)$/);
+    const item = unordered || ordered;
+    if (item) {
+      flushParagraph();
+      const tag = ordered ? "ol" : "ul";
+      if (!list || list.tagName.toLowerCase() !== tag) {
+        flushList();
+        list = document.createElement(tag);
+      }
+      const listItem = document.createElement("li");
+      appendInlineFormatting(listItem, item[1]);
+      list.append(listItem);
+      return;
+    }
+
+    flushList();
+    paragraphLines.push(line.trim());
+  });
+
+  flushParagraph();
+  flushList();
+  flushCode();
+  return root;
+}
+
 function makeFilterButton(label, count, active, onClick) {
   const button = createElement("button", `filter-button${active ? " active" : ""}`);
   button.type = "button";
@@ -110,11 +246,10 @@ function renderNote(note) {
     const section = createElement("section", "record");
     const meta = createElement("div", "record-meta");
     meta.append(createElement("span", "", record.date || "未标日期"), createElement("span", "", `来源：${record.source}`));
-    section.append(meta, createElement("pre", "note-text", record.content));
+    section.append(meta, renderNoteContent(record.content, note.module));
     detail.append(section);
   });
 
-  (note.code || []).forEach((code) => detail.append(createElement("pre", "code-block", code)));
   if (note.note) detail.append(createElement("p", "editor-note", `整理提示：${note.note}`));
 
   const links = createElement("div", "practice-links");

@@ -226,6 +226,31 @@ def practice_links(module: str, title: str, aliases: list[str]) -> dict:
     }
 
 
+def append_distinct_record(records: list[dict], candidate: dict) -> None:
+    def comparable(record: dict) -> str:
+        return re.sub(r"\s+", " ", record["content"]).strip()
+
+    candidate_text = comparable(candidate)
+    same_origin = [
+        record
+        for record in records
+        if record["source"] == candidate["source"] and record["date"] == candidate["date"]
+    ]
+    if any(candidate_text in comparable(record) for record in same_origin):
+        return
+
+    records[:] = [
+        record
+        for record in records
+        if not (
+            record["source"] == candidate["source"]
+            and record["date"] == candidate["date"]
+            and comparable(record) in candidate_text
+        )
+    ]
+    records.append(candidate)
+
+
 def assemble_notes(records: list[dict], overrides: dict) -> list[dict]:
     grouped: dict[tuple[str, str], dict] = {}
     for record in records:
@@ -247,8 +272,9 @@ def assemble_notes(records: list[dict], overrides: dict) -> list[dict]:
                 "code": [],
                 "links": prepared.get("links", []),
             }
-        grouped[key]["records"].append(
-            {"content": record["content"], "source": record["source"], "date": record["date"]}
+        append_distinct_record(
+            grouped[key]["records"],
+            {"content": record["content"], "source": record["source"], "date": record["date"]},
         )
         grouped[key]["code"].extend(extract_code(record["content"], prepared["module"]))
 

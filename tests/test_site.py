@@ -26,6 +26,13 @@ class SiteSmokeTests(unittest.TestCase):
         script = (ROOT / "site/app.js").read_text(encoding="utf-8")
         self.assertIn('anchor.rel = "noopener noreferrer"', script)
 
+    def test_note_content_uses_formatted_renderer(self):
+        script = (ROOT / "site/app.js").read_text(encoding="utf-8")
+        self.assertIn("function renderNoteContent", script)
+        self.assertIn("function isCodeLine", script)
+        self.assertIn("renderNoteContent(record.content, note.module)", script)
+        self.assertNotIn('createElement("pre", "note-text", record.content)', script)
+
 
 if __name__ == "__main__":
     unittest.main()

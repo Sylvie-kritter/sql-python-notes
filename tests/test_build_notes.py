@@ -5,6 +5,7 @@ from pathlib import Path
 
 from scripts.build_notes import (
     apply_overrides,
+    assemble_notes,
     build_notes,
     classify,
     parse_daily_note,
@@ -135,6 +136,29 @@ LEFT JOIN 保留左表。
         }
         with self.assertRaises(ValueError):
             validate_notes([note, dict(note)])
+
+    def test_shorter_duplicate_record_is_replaced_by_complete_record(self):
+        records = [
+            {
+                "title": "三目运算符",
+                "module": "Python",
+                "date": "10月22日",
+                "source": "practice.py",
+                "content": "语法格式：真值 if 条件 else 假值",
+            },
+            {
+                "title": "三目运算符",
+                "module": "Python",
+                "date": "10月22日",
+                "source": "practice.py",
+                "content": "语法格式：真值 if 条件 else 假值\na = 5\nprint(a)",
+            },
+        ]
+
+        notes = assemble_notes(records, {})
+
+        self.assertEqual(len(notes[0]["records"]), 1)
+        self.assertIn("print(a)", notes[0]["records"][0]["content"])
 
 
 if __name__ == "__main__":
