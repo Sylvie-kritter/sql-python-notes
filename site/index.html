@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="从个人学习笔记自动整理的 SQL 与 Python 知识库">
+  <title>SQL × Python 学习笔记</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar" aria-label="顶部导航">
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="brand-mark">N</span>
+        <span>Notebook</span>
+      </a>
+      <button id="theme-toggle" class="icon-button" type="button" aria-label="切换深色模式">◐</button>
+    </nav>
+
+    <div class="hero-content" id="top">
+      <p class="eyebrow">MY LEARNING ARCHIVE</p>
+      <h1>SQL × Python<br><span>学习笔记</span></h1>
+      <p class="hero-copy">从我的日常记录自动整理。保留原始思路，也让零碎知识更容易被重新找到。</p>
+
+      <label class="search-box" for="search-input">
+        <span aria-hidden="true">⌕</span>
+        <input id="search-input" type="search" placeholder="搜索知识点、代码或别名…" autocomplete="off">
+        <kbd>Ctrl K</kbd>
+      </label>
+
+      <div class="hero-meta" aria-live="polite">
+        <span id="total-count">正在读取笔记…</span>
+        <span id="updated-time"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="module-grid" aria-label="学习模块">
+      <button class="module-card sql-card" type="button" data-module="SQL">
+        <span class="module-index">01</span>
+        <span class="module-name">SQL</span>
+        <span class="module-description">查询、连接、聚合与窗口函数</span>
+        <span class="module-count" id="sql-count">0 个知识点</span>
+      </button>
+      <button class="module-card python-card" type="button" data-module="Python">
+        <span class="module-index">02</span>
+        <span class="module-name">Python</span>
+        <span class="module-description">语法、容器、循环与函数</span>
+        <span class="module-count" id="python-count">0 个知识点</span>
+      </button>
+    </section>
+
+    <section class="library" aria-labelledby="library-title">
+      <div class="library-heading">
+        <div>
+          <p class="eyebrow">KNOWLEDGE LIBRARY</p>
+          <h2 id="library-title">全部知识点</h2>
+        </div>
+        <button id="clear-filters" class="text-button" type="button">清除筛选</button>
+      </div>
+
+      <div class="content-layout">
+        <aside class="filters" aria-label="知识点筛选">
+          <div class="filter-group">
+            <h3>模块</h3>
+            <div id="module-filters" class="filter-list"></div>
+          </div>
+          <div class="filter-group">
+            <h3>分类</h3>
+            <div id="category-filters" class="filter-list"></div>
+          </div>
+        </aside>
+
+        <div class="results">
+          <div class="results-meta">
+            <span id="result-count">0 个结果</span>
+            <span id="active-query"></span>
+          </div>
+          <div id="notes-list" class="notes-list" aria-live="polite"></div>
+          <div id="empty-state" class="empty-state" hidden>
+            <span>⌕</span>
+            <h3>没有找到相关笔记</h3>
+            <p>试试更短的关键词，或清除当前筛选。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>内容来自 <code>daily_note.md</code> 与 <code>practice.py</code></p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+{
+  "title_overrides": {
+    "固定格式：函数 ( ) OVER (PARTITION BY 分组列 ORDER BY 排序列)": {
+      "title": "窗口函数基本格式",
+      "category": "窗口函数",
+      "aliases": ["排名", "OVER", "PARTITION BY"]
+    },
+    "sql33:找出每个学校GPA最低的同学————分组取极值": {
+      "title": "分组取极值",
+      "category": "分组与聚合",
+      "aliases": ["每组最大值", "每组最小值", "GPA最低"]
+    },
+    "DATE_FORMATE(date,formate)：日期格式化函数": {
+      "title": "DATE_FORMAT 日期格式化",
+      "category": "日期与数值函数",
+      "note": "原笔记中的 DATE_FORMATE 应为 MySQL 的 DATE_FORMAT，参数名 format 也少一个 e。"
+    },
+    "CONV( )函数：COVN(N, from_base, to_base)": {
+      "title": "CONV 进制转换",
+      "category": "日期与数值函数",
+      "note": "原笔记示例中的 COVN 应为 CONV。"
+    },
+    "MODIFY(修改) 常和ALERT TABLE一起用": {
+      "title": "ALTER TABLE MODIFY 修改字段",
+      "category": "表结构与数据修改",
+      "note": "原笔记中的 ALERT TABLE 应为 ALTER TABLE。"
+    },
+    "SQL基础函数": {
+      "category": "查询基础",
+      "aliases": ["SQL函数", "基础函数"]
+    },
+    "Python笔记（10月16日）": {
+      "title": "Python 变量与格式化练习",
+      "category": "基础语法与数据类型",
+      "aliases": ["变量练习", "f-string练习"]
+    },
+    "SQL笔记（10月15日）": {
+      "title": "SQL 字符串函数练习",
+      "category": "字符串处理",
+      "aliases": ["substring练习", "replace练习"]
+    },
+    "int():转换成一个整数，只能转换由纯数字组成的字符串": {
+      "title": "int() 整数类型转换",
+      "category": "基础语法与数据类型",
+      "aliases": ["整数转换", "类型转换"]
+    },
+    "endswitch():判断字符串是否以指定的子字符串结尾,返回布尔值True或False": {
+      "title": "endswith() 判断字符串结尾",
+      "category": "字符串",
+      "note": "原笔记中的 endswitch() 应为 endswith()。"
+    },
+    "item():返回字典里包含的所有键值对,键值对以元组形式": {
+      "title": "items() 获取字典键值对",
+      "category": "列表、元组、字典与集合",
+      "note": "原笔记中的 item() 应为 items()。"
+    }
+  }
+}
+

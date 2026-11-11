@@ -1,0 +1,3128 @@
+{
+  "generated_at": "2026-11-10T09:08:45.111771+00:00",
+  "stats": {
+    "total": 129,
+    "modules": {
+      "Python": 101,
+      "SQL": 28
+    },
+    "categories": {
+      "Python · 函数": 13,
+      "Python · 列表、元组、字典与集合": 22,
+      "Python · 基础语法与数据类型": 8,
+      "Python · 字符串": 21,
+      "Python · 循环": 9,
+      "Python · 拷贝与可变性": 4,
+      "Python · 输入、输出与格式化": 10,
+      "Python · 运算符与条件判断": 14,
+      "SQL · 事务、锁与存储过程": 3,
+      "SQL · 分组与聚合": 2,
+      "SQL · 多表连接": 4,
+      "SQL · 字符串处理": 5,
+      "SQL · 日期与数值函数": 3,
+      "SQL · 查询基础": 5,
+      "SQL · 窗口函数": 2,
+      "SQL · 表结构与数据修改": 4
+    }
+  },
+  "notes": [
+    {
+      "title": "return会给函数的执行者返回值",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "def buy():\nreturn'杨枝甘露'\nbuy()\nprint(buy())          #函数里有return必须要打印才有结果",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def buy():\nreturn'杨枝甘露'\nprint(buy())          #函数里有return必须要打印才有结果"
+      ],
+      "links": [],
+      "id": "python-90e9526582",
+      "summary": "def buy():\nreturn'杨枝甘露'\nbuy()\nprint(buy())          函数里有return必须要打印才有结果",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20return%E4%BC%9A%E7%BB%99%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%80%85%E8%BF%94%E5%9B%9E%E5%80%BC",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20return%E4%BC%9A%E7%BB%99%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E8%80%85%E8%BF%94%E5%9B%9E%E5%80%BC"
+      }
+    },
+    {
+      "title": "return是返回计算值，print是打印结果",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "def add():\na = 1\nb = 2\n# return a+b\nprint(a+b)\nprint(add())        #3\nadd()               #3",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def add():\na = 1\nb = 2\nprint(a+b)\nprint(add())        #3"
+      ],
+      "links": [],
+      "id": "python-71a5cb82ac",
+      "summary": "def add():\na = 1\nb = 2\n return a+b\nprint(a+b)\nprint(add())        3\nadd()               3",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20return%E6%98%AF%E8%BF%94%E5%9B%9E%E8%AE%A1%E7%AE%97%E5%80%BC%EF%BC%8Cprint%E6%98%AF%E6%89%93%E5%8D%B0%E7%BB%93%E6%9E%9C",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20return%E6%98%AF%E8%BF%94%E5%9B%9E%E8%AE%A1%E7%AE%97%E5%80%BC%EF%BC%8Cprint%E6%98%AF%E6%89%93%E5%8D%B0%E7%BB%93%E6%9E%9C"
+      }
+    },
+    {
+      "title": "return表示此函数结束，print会一直执行",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "def funa():\nreturn 123\nprint(456)\nprint(funa())               #没有结果",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def funa():\nreturn 123\nprint(456)\nprint(funa())               #没有结果"
+      ],
+      "links": [],
+      "id": "python-230db07053",
+      "summary": "def funa():\nreturn 123\nprint(456)\nprint(funa())               没有结果",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20return%E8%A1%A8%E7%A4%BA%E6%AD%A4%E5%87%BD%E6%95%B0%E7%BB%93%E6%9D%9F%EF%BC%8Cprint%E4%BC%9A%E4%B8%80%E7%9B%B4%E6%89%A7%E8%A1%8C",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20return%E8%A1%A8%E7%A4%BA%E6%AD%A4%E5%87%BD%E6%95%B0%E7%BB%93%E6%9D%9F%EF%BC%8Cprint%E4%BC%9A%E4%B8%80%E7%9B%B4%E6%89%A7%E8%A1%8C"
+      }
+    },
+    {
+      "title": "关键字参数",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "格式：def func(**kwargs)\ndef func(**kwargs):\nprint(kwargs)\n# func()                          #{} 返回字典\nfunc(name = 'kk',age = 22)        #{'name': 'kk', 'age': 22}     传值的时候，需要采用键=值的形式\n作用：可以扩展函数的功能",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def func(**kwargs):\nprint(kwargs)"
+      ],
+      "links": [],
+      "id": "python-4b34bce40f",
+      "summary": "格式：def func(kwargs)\ndef func(kwargs):\nprint(kwargs)\n func()                          {} 返回字典\nfunc(name = 'kk',age = 22)        {'name': 'kk'",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%85%B3%E9%94%AE%E5%AD%97%E5%8F%82%E6%95%B0"
+      }
+    },
+    {
+      "title": "函数中遇到return，表示此函数结束，不继续执行",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "def buy():\nreturn'杨枝甘露',20     #return返回多个值，以元组的形式返回给调用者\nreturn'20'             #不会输出，因为第一个return下面的代码不会被执行\nprint(buy())\n返回值的三种情况：None（没有返回值），单个，多个（以元组的形式）\nreturn和print的区别",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def buy():\nreturn'杨枝甘露',20     #return返回多个值，以元组的形式返回给调用者\nreturn'20'             #不会输出，因为第一个return下面的代码不会被执行\nprint(buy())"
+      ],
+      "links": [],
+      "id": "python-3ebf433ab5",
+      "summary": "def buy():\nreturn'杨枝甘露',20     return返回多个值，以元组的形式返回给调用者\nreturn'20'             不会输出，因为第一个return下面的代码不会被执行\nprint(buy())\n返回值的三种情况：None（没有返回值），",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%87%BD%E6%95%B0%E4%B8%AD%E9%81%87%E5%88%B0return%EF%BC%8C%E8%A1%A8%E7%A4%BA%E6%AD%A4%E5%87%BD%E6%95%B0%E7%BB%93%E6%9D%9F%EF%BC%8C%E4%B8%8D%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%87%BD%E6%95%B0%E4%B8%AD%E9%81%87%E5%88%B0return%EF%BC%8C%E8%A1%A8%E7%A4%BA%E6%AD%A4%E5%87%BD%E6%95%B0%E7%BB%93%E6%9D%9F%EF%BC%8C%E4%B8%8D%E7%BB%A7%E7%BB%AD%E6%89%A7%E8%A1%8C"
+      }
+    },
+    {
+      "title": "可变参数",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "含义：传入的值的数量是可以改变的，可以传入多个，也可以不传\n格式：def func(*args)      #args可以改成其他名字 但是args符合代码的规范性\ndef func(*args):\nprint(args)\n# func(1)                 #(1,)  以元组形式接受\nfunc('金宝宝','函数团')    #('金宝宝', '函数团')",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def func(*args):\nprint(args)"
+      ],
+      "links": [],
+      "id": "python-0552a1ee03",
+      "summary": "含义：传入的值的数量是可以改变的，可以传入多个，也可以不传\n格式：def func(args)      args可以改成其他名字 但是args符合代码的规范性\ndef func(args):\nprint(args)\n func(1)                 (1,)  ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"
+      }
+    },
+    {
+      "title": "嵌套定义",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "含义：在一个函数中定义另一个函数\ndef study():              #外函数\nprint('晚上在学习')\ndef course():         #内函数\nprint('Python基础')\ncourse()              #内函数需要先调用    定义和调用是同级的\nstudy()                   #晚上在学习/Python基础",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def study():              #外函数\nprint('晚上在学习')\ndef course():         #内函数\nprint('Python基础')"
+      ],
+      "links": [],
+      "id": "python-5b48460912",
+      "summary": "含义：在一个函数中定义另一个函数\ndef study():              外函数\nprint('晚上在学习')\ndef course():         内函数\nprint('Python基础')\ncourse()              内函数需要先调用    ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%B5%8C%E5%A5%97%E5%AE%9A%E4%B9%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%B5%8C%E5%A5%97%E5%AE%9A%E4%B9%89"
+      }
+    },
+    {
+      "title": "嵌套调用",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "含义：在一个函数里面调用另一个函数\ndef study():\nprint('晚上在学习')\ndef course():\nstudy()\nprint('Python基础')\ncourse()            #晚上在学习/Python基础        /是换行的意思",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def study():\nprint('晚上在学习')\ndef course():\nprint('Python基础')"
+      ],
+      "links": [],
+      "id": "python-9e58145c59",
+      "summary": "含义：在一个函数里面调用另一个函数\ndef study():\nprint('晚上在学习')\ndef course():\nstudy()\nprint('Python基础')\ncourse()            晚上在学习/Python基础        /是换行的意思",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%B5%8C%E5%A5%97%E8%B0%83%E7%94%A8"
+      }
+    },
+    {
+      "title": "形参和实参",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "定义格式：\ndef 函数名(形参a，形参b):       #形参：定义函数时，小括号里面的变量\n函数体\n...(如a=1，b=2)\n调用格式；\n函数名(实参1，实参2)            #实参：调用函数时，小括号里面具体的值\ndef add(a,b):\nreturn a+b\nprint(add(1,3))         #4",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def 函数名(形参a，形参b):       #形参：定义函数时，小括号里面的变量\ndef add(a,b):\nreturn a+b\nprint(add(1,3))         #4"
+      ],
+      "links": [],
+      "id": "python-8cf0bbc9eb",
+      "summary": "定义格式：\ndef 函数名(形参a，形参b):       形参：定义函数时，小括号里面的变量\n函数体\n...(如a=1，b=2)\n调用格式；\n函数名(实参1，实参2)            实参：调用函数时，小括号里面具体的值\ndef add(a,b):\nreturn a+b\n",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82"
+      }
+    },
+    {
+      "title": "必备参数(位置参数)",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "含义：传递和定义参数的顺序及个数必须一致\n格式：def func(a,b)\ndef func(name1,name2):\nprint(name1)\nprint(name2)\n# func()      #报错\nfunc('kk','bb')         #写了几个就传几个，多传少传都不行",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def func(name1,name2):\nprint(name1)\nprint(name2)"
+      ],
+      "links": [],
+      "id": "python-d5311109b8",
+      "summary": "含义：传递和定义参数的顺序及个数必须一致\n格式：def func(a,b)\ndef func(name1,name2):\nprint(name1)\nprint(name2)\n func()      报错\nfunc('kk','bb')         写了几个就传几个，多传少传",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%BF%85%E5%A4%87%E5%8F%82%E6%95%B0%28%E4%BD%8D%E7%BD%AE%E5%8F%82%E6%95%B0%29",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%BF%85%E5%A4%87%E5%8F%82%E6%95%B0%28%E4%BD%8D%E7%BD%AE%E5%8F%82%E6%95%B0%29"
+      }
+    },
+    {
+      "title": "调用函数",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "函数名()\ndef login():\nprint('这是登录函数')\nlogin()\n调用几次，函数里面的代码就会运行几次，每次调用的时候，函数都会从头开始执行\n编写一个打招呼的函数并调用它\ndef hello():\nname = input('你叫什么名字：')\nprint(f'你好呀{name}')\nhello()\n调用函数前，必须保证函数已经存在",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def login():\nprint('这是登录函数')\ndef hello():\nname = input('你叫什么名字：')\nprint(f'你好呀{name}')"
+      ],
+      "links": [],
+      "id": "python-63c2e65bb6",
+      "summary": "函数名()\ndef login():\nprint('这是登录函数')\nlogin()\n调用几次，函数里面的代码就会运行几次，每次调用的时候，函数都会从头开始执行\n编写一个打招呼的函数并调用它\ndef hello():\nname = input('你叫什么名字：')\nprint(f",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"
+      }
+    },
+    {
+      "title": "返回值  return",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "函数执行结束后，最后给调用者的一个结果\n作用：",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-737cb0945f",
+      "summary": "函数执行结束后，最后给调用者的一个结果\n作用：",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E8%BF%94%E5%9B%9E%E5%80%BC%20%20return",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E8%BF%94%E5%9B%9E%E5%80%BC%20%20return"
+      }
+    },
+    {
+      "title": "默认参数",
+      "module": "Python",
+      "category": "函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "含义：为参数提供默认值，调用参数时可不传该默认参数的值\n注意：所有的位置参数必须出现在默认参数前，包括函数定义和调用\n格式：def func(a=12):\ndef funb(a=8):\nprint(a)\nfunb()           #8\nfunb(22)         #22\n设置默认值，没有传值会根据默认值来执行代码，传了值根据传入的值来执行代码\ndef funb(b,a=8):\nprint(a,b)\nfunb(33)",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "def funb(a=8):\nprint(a)\ndef funb(b,a=8):\nprint(a,b)"
+      ],
+      "links": [],
+      "id": "python-2fd5686a28",
+      "summary": "含义：为参数提供默认值，调用参数时可不传该默认参数的值\n注意：所有的位置参数必须出现在默认参数前，包括函数定义和调用\n格式：def func(a=12):\ndef funb(a=8):\nprint(a)\nfunb()           8\nfunb(22)         22",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"
+      }
+    },
+    {
+      "title": "add() 添加是是一个整体",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "s1 = {1,2,3,4}\nprint('原集合:',s1)\n集合的唯一性决定了,如果需要添加的元素在原集合中已经存在,就不进行任何操作\ns1.add(5)\ns1.add(5,6)      #报错,一次只能添加一个元素\nprint('现集合:',s1)\n原集合: {1, 2, 3, 4}\n现集合: {1, 2, 3, 4, 5}",
+          "source": "practice.py",
+          "date": "11月6日"
+        }
+      ],
+      "code": [
+        "s1 = {1,2,3,4}\nprint('原集合:',s1)\nprint('现集合:',s1)"
+      ],
+      "links": [],
+      "id": "python-498fdf1db2",
+      "summary": "s1 = {1,2,3,4}\nprint('原集合:',s1)\n集合的唯一性决定了,如果需要添加的元素在原集合中已经存在,就不进行任何操作\ns1.add(5)\ns1.add(5,6)      报错,一次只能添加一个元素\nprint('现集合:',s1)\n原集合: {1, 2, ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20add%28%29%20%E6%B7%BB%E5%8A%A0%E6%98%AF%E6%98%AF%E4%B8%80%E4%B8%AA%E6%95%B4%E4%BD%93",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20add%28%29%20%E6%B7%BB%E5%8A%A0%E6%98%AF%E6%98%AF%E4%B8%80%E4%B8%AA%E6%95%B4%E4%BD%93"
+      }
+    },
+    {
+      "title": "discard:选择要删除的元素,有就会删除,没有也不会发生改变",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "s2 = {1,2,3,4}\nprint('原集合:',s2)\ns2.discard(3)          #{1,2,4}\ns2.discard(7)          #没有任何改变\nprint('删除后:',s2)",
+          "source": "practice.py",
+          "date": "11月6日"
+        }
+      ],
+      "code": [
+        "s2 = {1,2,3,4}\nprint('原集合:',s2)\nprint('删除后:',s2)"
+      ],
+      "links": [],
+      "id": "python-0a9d79a6ea",
+      "summary": "s2 = {1,2,3,4}\nprint('原集合:',s2)\ns2.discard(3)          {1,2,4}\ns2.discard(7)          没有任何改变\nprint('删除后:',s2)",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20discard%3A%E9%80%89%E6%8B%A9%E8%A6%81%E5%88%A0%E9%99%A4%E7%9A%84%E5%85%83%E7%B4%A0%2C%E6%9C%89%E5%B0%B1%E4%BC%9A%E5%88%A0%E9%99%A4%2C%E6%B2%A1%E6%9C%89%E4%B9%9F%E4%B8%8D%E4%BC%9A%E5%8F%91%E7%94%9F%E6%94%B9%E5%8F%98",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20discard%3A%E9%80%89%E6%8B%A9%E8%A6%81%E5%88%A0%E9%99%A4%E7%9A%84%E5%85%83%E7%B4%A0%2C%E6%9C%89%E5%B0%B1%E4%BC%9A%E5%88%A0%E9%99%A4%2C%E6%B2%A1%E6%9C%89%E4%B9%9F%E4%B8%8D%E4%BC%9A%E5%8F%91%E7%94%9F%E6%94%B9%E5%8F%98"
+      }
+    },
+    {
+      "title": "items() 获取字典键值对",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "原笔记中的 item() 应为 items()。",
+      "records": [
+        {
+          "content": "dic = {'name':'kk','age':22}\n# print(dic.items())             #dict_items([('name', 'kk'), ('age', 22)])\nfor i in dic.items():\nprint(i)                     #('name', 'kk')  ('age', 22)  i是元组类型",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "dic = {'name':'kk','age':22}\nfor i in dic.items():\nprint(i)                     #('name', 'kk')  ('age', 22)  i是元组类型"
+      ],
+      "links": [],
+      "id": "python-0f32660dd2",
+      "summary": "dic = {'name':'kk','age':22}\n print(dic.items())             dictitems([('name', 'kk'), ('age', 22)])\nfor i in dic.items():\nprint(i)        ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20items%28%29%20%E8%8E%B7%E5%8F%96%E5%AD%97%E5%85%B8%E9%94%AE%E5%80%BC%E5%AF%B9",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20items%28%29%20%E8%8E%B7%E5%8F%96%E5%AD%97%E5%85%B8%E9%94%AE%E5%80%BC%E5%AF%B9"
+      }
+    },
+    {
+      "title": "keys() :返回字典里包含的所有键名",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "dic = {'name':'kk','age':22}\nprint(dic.keys())   #dict_keys(['name', 'age'])  注意返回的不是列表类型\nfor循环取出键名\nfor i in dic.keys():      #只取出键名\nprint(i)              #name age",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "dic = {'name':'kk','age':22}\nprint(dic.keys())   #dict_keys(['name', 'age'])  注意返回的不是列表类型\nfor i in dic.keys():      #只取出键名\nprint(i)              #name age"
+      ],
+      "links": [],
+      "id": "python-1df16ca2c4",
+      "summary": "dic = {'name':'kk','age':22}\nprint(dic.keys())   dictkeys(['name', 'age'])  注意返回的不是列表类型\nfor循环取出键名\nfor i in dic.keys():      只取出键名\nprint(i)  ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20keys%28%29%20%3A%E8%BF%94%E5%9B%9E%E5%AD%97%E5%85%B8%E9%87%8C%E5%8C%85%E5%90%AB%E7%9A%84%E6%89%80%E6%9C%89%E9%94%AE%E5%90%8D",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20keys%28%29%20%3A%E8%BF%94%E5%9B%9E%E5%AD%97%E5%85%B8%E9%87%8C%E5%8C%85%E5%90%AB%E7%9A%84%E6%89%80%E6%9C%89%E9%94%AE%E5%90%8D"
+      }
+    },
+    {
+      "title": "list():将可迭代对象转换成列表",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "支持转换为list的类型：str、tuple、dict、set\nstr->list\nprint(list('abcd'))                        #['a', 'b', 'c', 'd']\n\ntuple->list\nprint(list((1,2,3,4)))                     #[1, 2, 3, 4]\n\ndict->list\nprint(list({'namme':'kk','age':22}))      #['namme', 'age']\n字典转换成列表，会取键名作为列表的值\n\nset->list\nprint(list({1,2,3,4,5}))                  #[1, 2, 3, 4, 5]\n集合转换成列表会先去重再转换",
+          "source": "practice.py",
+          "date": "11月7日"
+        }
+      ],
+      "code": [
+        "print(list('abcd'))                        #['a', 'b', 'c', 'd']\nprint(list((1,2,3,4)))                     #[1, 2, 3, 4]\nprint(list({'namme':'kk','age':22}))      #['namme', 'age']\nprint(list({1,2,3,4,5}))                  #[1, 2, 3, 4, 5]"
+      ],
+      "links": [],
+      "id": "python-e61f1fee61",
+      "summary": "支持转换为list的类型：str、tuple、dict、set\nstr-list\nprint(list('abcd'))                        ['a', 'b', 'c', 'd']\n\ntuple-list\nprint(list((1,2,3,4))) ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20list%28%29%3A%E5%B0%86%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E6%88%90%E5%88%97%E8%A1%A8",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20list%28%29%3A%E5%B0%86%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E6%88%90%E5%88%97%E8%A1%A8"
+      }
+    },
+    {
+      "title": "pop 对集合进行无序排列,然后将左边的第一个元素删除",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "s2 = {1,2,3,4}\ns2.pop()  #删除的是第一个元素 当集合内是字符串时,默认删除根据hash表排序后的第一个元素\nprint(s2)",
+          "source": "practice.py",
+          "date": "11月6日"
+        }
+      ],
+      "code": [
+        "s2 = {1,2,3,4}\nprint(s2)"
+      ],
+      "links": [],
+      "id": "python-e8b4b5dda4",
+      "summary": "s2 = {1,2,3,4}\ns2.pop()  删除的是第一个元素 当集合内是字符串时,默认删除根据hash表排序后的第一个元素\nprint(s2)",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20pop%20%E5%AF%B9%E9%9B%86%E5%90%88%E8%BF%9B%E8%A1%8C%E6%97%A0%E5%BA%8F%E6%8E%92%E5%88%97%2C%E7%84%B6%E5%90%8E%E5%B0%86%E5%B7%A6%E8%BE%B9%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E5%88%A0%E9%99%A4",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20pop%20%E5%AF%B9%E9%9B%86%E5%90%88%E8%BF%9B%E8%A1%8C%E6%97%A0%E5%BA%8F%E6%8E%92%E5%88%97%2C%E7%84%B6%E5%90%8E%E5%B0%86%E5%B7%A6%E8%BE%B9%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E5%88%A0%E9%99%A4"
+      }
+    },
+    {
+      "title": "remove :选择删除的元素,如果集合中有就删除,没有就会报错",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "s2 = {1,2,3,4}\ns2.remove(3)  #{1,2,4}\ns2.remove(5)  #报错",
+          "source": "practice.py",
+          "date": "11月6日"
+        }
+      ],
+      "code": [
+        "s2 = {1,2,3,4}"
+      ],
+      "links": [],
+      "id": "python-81d8f418cc",
+      "summary": "s2 = {1,2,3,4}\ns2.remove(3)  {1,2,4}\ns2.remove(5)  报错",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20remove%20%3A%E9%80%89%E6%8B%A9%E5%88%A0%E9%99%A4%E7%9A%84%E5%85%83%E7%B4%A0%2C%E5%A6%82%E6%9E%9C%E9%9B%86%E5%90%88%E4%B8%AD%E6%9C%89%E5%B0%B1%E5%88%A0%E9%99%A4%2C%E6%B2%A1%E6%9C%89%E5%B0%B1%E4%BC%9A%E6%8A%A5%E9%94%99",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20remove%20%3A%E9%80%89%E6%8B%A9%E5%88%A0%E9%99%A4%E7%9A%84%E5%85%83%E7%B4%A0%2C%E5%A6%82%E6%9E%9C%E9%9B%86%E5%90%88%E4%B8%AD%E6%9C%89%E5%B0%B1%E5%88%A0%E9%99%A4%2C%E6%B2%A1%E6%9C%89%E5%B0%B1%E4%BC%9A%E6%8A%A5%E9%94%99"
+      }
+    },
+    {
+      "title": "update 把传入的元素拆分,一个个放入集合中",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "s2 = {1,2,3,4}\nprint('原集合:',s2)\ns2.update(567)         #报错,因为update里要加入可迭代对象\ns2.update('567')\n原集合: {1, 2, 3, 4}\n添加后: {'5', 1, 2, 3, 4, '7', '6'}\ns2.update([5,6,7])     #{1, 2, 3, 4, 5, 6, 7}\ns2.update((5,6,7))     #{1, 2, 3, 4, 5, 6, 7}\ns2.update({5,6,7})     #{1, 2, 3, 4, 5, 6, 7}\ns2.update({'name':'kk','age':'22'})        #{1, 2, 3, 4, 'name', 'age'}\nprint('添加后:',s2)",
+          "source": "practice.py",
+          "date": "11月6日"
+        }
+      ],
+      "code": [
+        "s2 = {1,2,3,4}\nprint('原集合:',s2)\nprint('添加后:',s2)"
+      ],
+      "links": [],
+      "id": "python-1a688eb419",
+      "summary": "s2 = {1,2,3,4}\nprint('原集合:',s2)\ns2.update(567)         报错,因为update里要加入可迭代对象\ns2.update('567')\n原集合: {1, 2, 3, 4}\n添加后: {'5', 1, 2, 3, 4, '7', '",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20update%20%E6%8A%8A%E4%BC%A0%E5%85%A5%E7%9A%84%E5%85%83%E7%B4%A0%E6%8B%86%E5%88%86%2C%E4%B8%80%E4%B8%AA%E4%B8%AA%E6%94%BE%E5%85%A5%E9%9B%86%E5%90%88%E4%B8%AD",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20update%20%E6%8A%8A%E4%BC%A0%E5%85%A5%E7%9A%84%E5%85%83%E7%B4%A0%E6%8B%86%E5%88%86%2C%E4%B8%80%E4%B8%AA%E4%B8%AA%E6%94%BE%E5%85%A5%E9%9B%86%E5%90%88%E4%B8%AD"
+      }
+    },
+    {
+      "title": "values():返回字典里面包含的所有值",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "dic = {'name':'kk','age':22}\n# print(dic.values())       #dict_values(['kk', 22])\nfor i in dic.values():\nprint(i)                #kk 22",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "dic = {'name':'kk','age':22}\nfor i in dic.values():\nprint(i)                #kk 22"
+      ],
+      "links": [],
+      "id": "python-454d852155",
+      "summary": "dic = {'name':'kk','age':22}\n print(dic.values())       dictvalues(['kk', 22])\nfor i in dic.values():\nprint(i)                kk 22",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20values%28%29%3A%E8%BF%94%E5%9B%9E%E5%AD%97%E5%85%B8%E9%87%8C%E9%9D%A2%E5%8C%85%E5%90%AB%E7%9A%84%E6%89%80%E6%9C%89%E5%80%BC",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20values%28%29%3A%E8%BF%94%E5%9B%9E%E5%AD%97%E5%85%B8%E9%87%8C%E9%9D%A2%E5%8C%85%E5%90%AB%E7%9A%84%E6%89%80%E6%9C%89%E5%80%BC"
+      }
+    },
+    {
+      "title": "交集 &",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "含义:共有的部分\na = {1,2,3,4}\nb = {3,4,5,6}\nprint(a & b)      #{3,4}\n没有共有的部分 返回空集合set()",
+          "source": "practice.py",
+          "date": "11月6日"
+        }
+      ],
+      "code": [
+        "a = {1,2,3,4}\nb = {3,4,5,6}\nprint(a & b)      #{3,4}"
+      ],
+      "links": [],
+      "id": "python-806591267c",
+      "summary": "含义:共有的部分\na = {1,2,3,4}\nb = {3,4,5,6}\nprint(a & b)      {3,4}\n没有共有的部分 返回空集合set()",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E4%BA%A4%E9%9B%86%20%26",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E4%BA%A4%E9%9B%86%20%26"
+      }
+    },
+    {
+      "title": "元组只支持查询操作,不支持增删改操作",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "li = [1,2,3]\nli[1] = 'a'  #[1, 'a', 3]\nprint(li)\n\ntua = (1,2,3)\nprint(tua[2])  #3  #元组也有下标 也是从零开始\ntua[2] = 'a'   #报错,不支持修改\ncount() index() len() 跟列表的用法相同\nprint(tua.index(2)) #3 #tua中下标为2的元素\nprint(tua.count(1)) #1 #tua中1出现的次数\nprint(len(tua))     #3 #tua元组的长度\nprint(tua[1:])        #(2,3) #切片,包前不包后原则 所以从2开始切,包含2本身到最后",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "li = [1,2,3]\nprint(li)\ntua = (1,2,3)\nprint(tua[2])  #3  #元组也有下标 也是从零开始\nprint(tua.index(2)) #3 #tua中下标为2的元素\nprint(tua.count(1)) #1 #tua中1出现的次数\nprint(len(tua))     #3 #tua元组的长度\nprint(tua[1:])        #(2,3) #切片,包前不包后原则 所以从2开始切,包含2本身到最后"
+      ],
+      "links": [],
+      "id": "python-d284c64ebd",
+      "summary": "li = [1,2,3]\nli[1] = 'a'  [1, 'a', 3]\nprint(li)\n\ntua = (1,2,3)\nprint(tua[2])  3  元组也有下标 也是从零开始\ntua[2] = 'a'   报错,不支持修改\ncount() index() len()",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%85%83%E7%BB%84%E5%8F%AA%E6%94%AF%E6%8C%81%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%2C%E4%B8%8D%E6%94%AF%E6%8C%81%E5%A2%9E%E5%88%A0%E6%94%B9%E6%93%8D%E4%BD%9C",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%85%83%E7%BB%84%E5%8F%AA%E6%94%AF%E6%8C%81%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C%2C%E4%B8%8D%E6%94%AF%E6%8C%81%E5%A2%9E%E5%88%A0%E6%94%B9%E6%93%8D%E4%BD%9C"
+      }
+    },
+    {
+      "title": "列表",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "基本格式：\n列表名=[元素1，元素2,元素3..]\n所有元素放在[]内，元素与元素之间用，隔开\n元素之间的数据类型可以各不相同\nli=[1,2,'a',4]\nprint(li,type(li)) #list\nprint(li[2]) # a\n列表也可以进行切片操作\n列表是可迭代对象，可以for循环遍历取值\nfor i in li:\nprint(i) #1 2 a 4",
+          "source": "practice.py",
+          "date": "11月4日"
+        }
+      ],
+      "code": [
+        "列表名=[元素1，元素2,元素3..]\nli=[1,2,'a',4]\nprint(li,type(li)) #list\nprint(li[2]) # a\nfor i in li:\nprint(i) #1 2 a 4"
+      ],
+      "links": [],
+      "id": "python-9f0a4b4985",
+      "summary": "基本格式：\n列表名=[元素1，元素2,元素3..]\n所有元素放在[]内，元素与元素之间用，隔开\n元素之间的数据类型可以各不相同\nli=[1,2,'a',4]\nprint(li,type(li)) list\nprint(li[2])  a\n列表也可以进行切片操作\n列表是可迭代对象，",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%88%97%E8%A1%A8",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%88%97%E8%A1%A8"
+      }
+    },
+    {
+      "title": "列表推导式",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "格式一:[表达式 for 变量 in 列表]\n注意:in后面不仅可以放列表,还可以放range() 可迭代对象\nli = [1,2,3,4,5,6]\n[print(i) for i in li] #1 2 3 4 5 6 #前面的i是表达式 也可以换成i*5之类的\nli = []\nfor i in range(1,6):\n# print(i)\nli.append(i)\nprint(li) #[1,2,3,4,5]\n[li.append(i) for i in range(1,6)] #[1,2,3,4,5]\nprint(li)\n\n格式二:[表达式 for 变量 in 列表 if 条件]\n把奇数放进列表里\nli = []\nfor i in range(1,11):\nif i % 2 == 1:\nprint(i)\nli.append(i)\nprint(li) #[1,3,5,7,9]\n[li.append(i) for i in range(1,11) if i % 2 == 1]\nprint(li) #[1,3,5,7,9]\n\n# 2.7列表嵌套\n# 含义:一个列表里面又有一个列表\nli = [1,2,3,[4,5,6]]\n# print(li[3]) #[4,5,6] 取出里面的列表\nprint(li[3][0]) #4 取出内列表的下标为0的元素",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "li = [1,2,3,4,5,6]\nli = []\nfor i in range(1,6):\nprint(li) #[1,2,3,4,5]\nprint(li)\nli = []\nfor i in range(1,11):\nif i % 2 == 1:\nprint(i)\nprint(li) #[1,3,5,7,9]\nprint(li) #[1,3,5,7,9]\nli = [1,2,3,[4,5,6]]\nprint(li[3][0]) #4 取出内列表的下标为0的元素"
+      ],
+      "links": [],
+      "id": "python-74c2c1b8f2",
+      "summary": "格式一:[表达式 for 变量 in 列表]\n注意:in后面不仅可以放列表,还可以放range() 可迭代对象\nli = [1,2,3,4,5,6]\n[print(i) for i in li] 1 2 3 4 5 6 前面的i是表达式 也可以换成i5之类的\nli = []\nfo",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F"
+      }
+    },
+    {
+      "title": "基本格式:元组名 = (元素1,元素2,元素3...)",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "所有元素包含在小括号内,元素与元素之间用逗号隔开,不同元素也可以是不同的数据类型\ntua = (1,2,3,4,5) #也可以写成tuq = (1,2,3,'a','b',[1,2,3])\nprint(type(tua)) #tuple\ntub = (1,) #只有一个元素的时候末尾必须加上逗号,否则返回这个唯一的值的数据类型\ntua = ()   #定义空元组",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "tua = (1,2,3,4,5) #也可以写成tuq = (1,2,3,'a','b',[1,2,3])\nprint(type(tua)) #tuple\ntub = (1,) #只有一个元素的时候末尾必须加上逗号,否则返回这个唯一的值的数据类型\ntua = ()   #定义空元组"
+      ],
+      "links": [],
+      "id": "python-b5dc600b40",
+      "summary": "所有元素包含在小括号内,元素与元素之间用逗号隔开,不同元素也可以是不同的数据类型\ntua = (1,2,3,4,5) 也可以写成tuq = (1,2,3,'a','b',[1,2,3])\nprint(type(tua)) tuple\ntub = (1,) 只有一个元素的时候末尾必",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F%3A%E5%85%83%E7%BB%84%E5%90%8D%20%3D%20%28%E5%85%83%E7%B4%A01%2C%E5%85%83%E7%B4%A02%2C%E5%85%83%E7%B4%A03...%29",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F%3A%E5%85%83%E7%BB%84%E5%90%8D%20%3D%20%28%E5%85%83%E7%B4%A01%2C%E5%85%83%E7%B4%A02%2C%E5%85%83%E7%B4%A03...%29"
+      }
+    },
+    {
+      "title": "基本格式:字典名 = {键1:值1,键2:值2...}",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "键值对形式保存,键和值之间用:隔开,每个键值对之间用,隔开\ndic = {'name':'kk','age':22}\nprint(type(dic)) #dict\n# 字典中的键具有唯一性,但是值可以重复\ndic2 = {'name':'kk','name':'bb'}\nprint(dic2) #{'name': 'bb'} #不会报错,键名重复的值会被后面的值覆盖",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "dic = {'name':'kk','age':22}\nprint(type(dic)) #dict\ndic2 = {'name':'kk','name':'bb'}\nprint(dic2) #{'name': 'bb'} #不会报错,键名重复的值会被后面的值覆盖"
+      ],
+      "links": [],
+      "id": "python-7d6601c38c",
+      "summary": "键值对形式保存,键和值之间用:隔开,每个键值对之间用,隔开\ndic = {'name':'kk','age':22}\nprint(type(dic)) dict\n 字典中的键具有唯一性,但是值可以重复\ndic2 = {'name':'kk','name':'bb'}\nprint(",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F%3A%E5%AD%97%E5%85%B8%E5%90%8D%20%3D%20%7B%E9%94%AE1%3A%E5%80%BC1%2C%E9%94%AE2%3A%E5%80%BC2...%7D",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F%3A%E5%AD%97%E5%85%B8%E5%90%8D%20%3D%20%7B%E9%94%AE1%3A%E5%80%BC1%2C%E9%94%AE2%3A%E5%80%BC2...%7D"
+      }
+    },
+    {
+      "title": "基本格式:集合名 = {元素1,元素2,元素3...}",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "s1 = {1,2,3}\ns1 = {}          #定义空字典\ns1 = set()       #定义空集合",
+          "source": "practice.py",
+          "date": "11月6日"
+        }
+      ],
+      "code": [
+        "s1 = {1,2,3}\ns1 = {}          #定义空字典\ns1 = set()       #定义空集合"
+      ],
+      "links": [],
+      "id": "python-059a26dd0b",
+      "summary": "s1 = {1,2,3}\ns1 = {}          定义空字典\ns1 = set()       定义空集合",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F%3A%E9%9B%86%E5%90%88%E5%90%8D%20%3D%20%7B%E5%85%83%E7%B4%A01%2C%E5%85%83%E7%B4%A02%2C%E5%85%83%E7%B4%A03...%7D",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F%3A%E9%9B%86%E5%90%88%E5%90%8D%20%3D%20%7B%E5%85%83%E7%B4%A01%2C%E5%85%83%E7%B4%A02%2C%E5%85%83%E7%B4%A03...%7D"
+      }
+    },
+    {
+      "title": "字典的应用场景",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "使用键值对,存储描述一个物体的相关信息",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-93ca4404de",
+      "summary": "使用键值对,存储描述一个物体的相关信息",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%AD%97%E5%85%B8%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%AD%97%E5%85%B8%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"
+      }
+    },
+    {
+      "title": "并集 |",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "a = {1,2,3,4}\nb = {3,4,5,6}\nprint(a | b)     #{1, 2, 3, 4, 5, 6}",
+          "source": "practice.py",
+          "date": "11月6日"
+        }
+      ],
+      "code": [
+        "a = {1,2,3,4}\nb = {3,4,5,6}\nprint(a | b)     #{1, 2, 3, 4, 5, 6}"
+      ],
+      "links": [],
+      "id": "python-3da9d53728",
+      "summary": "a = {1,2,3,4}\nb = {3,4,5,6}\nprint(a  b)     {1, 2, 3, 4, 5, 6}",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%B9%B6%E9%9B%86%20%7C",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%B9%B6%E9%9B%86%20%7C"
+      }
+    },
+    {
+      "title": "排序",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "sort:将列表按特定顺序重新排列,默认从小到大\nreverse:倒序,将列表倒置,不按大小排列\nli = [1,4,67,45,8,9]\n# li.sort()  #[1, 4, 8, 9, 45, 67] 按照从小到大的顺序排列\nli.reverse() #[9, 8, 45, 67, 4, 1]\n当上面两个命令同时运行时 就可以得到从大到小的排列\nprint(li)",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "li = [1,4,67,45,8,9]\nprint(li)"
+      ],
+      "links": [],
+      "id": "python-49d089b9f9",
+      "summary": "sort:将列表按特定顺序重新排列,默认从小到大\nreverse:倒序,将列表倒置,不按大小排列\nli = [1,4,67,45,8,9]\n li.sort()  [1, 4, 8, 9, 45, 67] 按照从小到大的顺序排列\nli.reverse() [9, 8, 45, 6",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%8E%92%E5%BA%8F",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%8E%92%E5%BA%8F"
+      }
+    },
+    {
+      "title": "赋值：会随着原对象一起变化",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "li = [1,2,3,4]\nli2 = li     #将li直接赋值给li2\nprint(li,li2)         #[1, 2, 3, 4] [1, 2, 3, 4]\n给li列表新增元素\nli.append(5)\nprint(li,li2)         #[1, 2, 3, 4, 5] [1, 2, 3, 4, 5]\n赋值：等于完全共享资源，一个值的改变会完全被另一个值共享",
+          "source": "practice.py",
+          "date": "11月9日"
+        }
+      ],
+      "code": [
+        "li = [1,2,3,4]\nli2 = li     #将li直接赋值给li2\nprint(li,li2)         #[1, 2, 3, 4] [1, 2, 3, 4]\nprint(li,li2)         #[1, 2, 3, 4, 5] [1, 2, 3, 4, 5]"
+      ],
+      "links": [],
+      "id": "python-9484fd6999",
+      "summary": "li = [1,2,3,4]\nli2 = li     将li直接赋值给li2\nprint(li,li2)         [1, 2, 3, 4] [1, 2, 3, 4]\n给li列表新增元素\nli.append(5)\nprint(li,li2)         [1, 2, ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E8%B5%8B%E5%80%BC%EF%BC%9A%E4%BC%9A%E9%9A%8F%E7%9D%80%E5%8E%9F%E5%AF%B9%E8%B1%A1%E4%B8%80%E8%B5%B7%E5%8F%98%E5%8C%96",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E8%B5%8B%E5%80%BC%EF%BC%9A%E4%BC%9A%E9%9A%8F%E7%9D%80%E5%8E%9F%E5%AF%B9%E8%B1%A1%E4%B8%80%E8%B5%B7%E5%8F%98%E5%8C%96"
+      }
+    },
+    {
+      "title": "集合具有唯一性,可以自动去重",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "s1 = {1,2,4,6,3,4,2}  #{1, 2, 3, 4, 6} 没有重复的元素\nprint(s1)",
+          "source": "practice.py",
+          "date": "11月6日"
+        }
+      ],
+      "code": [
+        "s1 = {1,2,4,6,3,4,2}  #{1, 2, 3, 4, 6} 没有重复的元素\nprint(s1)"
+      ],
+      "links": [],
+      "id": "python-ad7f604fbc",
+      "summary": "s1 = {1,2,4,6,3,4,2}  {1, 2, 3, 4, 6} 没有重复的元素\nprint(s1)",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E9%9B%86%E5%90%88%E5%85%B7%E6%9C%89%E5%94%AF%E4%B8%80%E6%80%A7%2C%E5%8F%AF%E4%BB%A5%E8%87%AA%E5%8A%A8%E5%8E%BB%E9%87%8D",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E9%9B%86%E5%90%88%E5%85%B7%E6%9C%89%E5%94%AF%E4%B8%80%E6%80%A7%2C%E5%8F%AF%E4%BB%A5%E8%87%AA%E5%8A%A8%E5%8E%BB%E9%87%8D"
+      }
+    },
+    {
+      "title": "集合具有无序性",
+      "module": "Python",
+      "category": "列表、元组、字典与集合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "s1 = {'a','b','c','d','e','f'}\nprint(s1)  #{'e', 'a', 'f', 'd', 'b', 'c'} 其中一次的结果,每次运行结果都不一样\ns2 = {1,2,3,4,5,6}\nprint(s2)     #{1, 2, 3, 4, 5, 6}    数字运行结果一样\n\n集合无序的实现方式涉及哈希表\nprint(hash('a'))\nprint(hash('b'))\nprint(hash('c'))\n每次运行结果都不同,hash(哈希)值不同,那么在hash表中的位置也不同,这就实现了集合的无序性\nprint(hash(1))\nprint(hash(2))\nprint(hash(3))\npython中int整型的hash值就是他本身,在hash表中的位置不会发生改变,所以顺序就不会改变\n无序性:不能修改集合中的值",
+          "source": "practice.py",
+          "date": "11月6日"
+        }
+      ],
+      "code": [
+        "s1 = {'a','b','c','d','e','f'}\nprint(s1)  #{'e', 'a', 'f', 'd', 'b', 'c'} 其中一次的结果,每次运行结果都不一样\ns2 = {1,2,3,4,5,6}\nprint(s2)     #{1, 2, 3, 4, 5, 6}    数字运行结果一样\nprint(hash('a'))\nprint(hash('b'))\nprint(hash('c'))\nprint(hash(1))\nprint(hash(2))\nprint(hash(3))"
+      ],
+      "links": [],
+      "id": "python-e0d8303f62",
+      "summary": "s1 = {'a','b','c','d','e','f'}\nprint(s1)  {'e', 'a', 'f', 'd', 'b', 'c'} 其中一次的结果,每次运行结果都不一样\ns2 = {1,2,3,4,5,6}\nprint(s2)     {1, 2, 3, 4, 5,",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E9%9B%86%E5%90%88%E5%85%B7%E6%9C%89%E6%97%A0%E5%BA%8F%E6%80%A7",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E9%9B%86%E5%90%88%E5%85%B7%E6%9C%89%E6%97%A0%E5%BA%8F%E6%80%A7"
+      }
+    },
+    {
+      "title": "Python 变量与格式化练习",
+      "module": "Python",
+      "category": "基础语法与数据类型",
+      "aliases": [
+        "变量练习",
+        "f-string练习"
+      ],
+      "note": "",
+      "records": [
+        {
+          "content": "- bug类型：英文符号、缩进错误、语法错误（SyntaxError）、命名错误(nameerror)",
+          "source": "daily_note.md",
+          "date": "10月16日"
+        },
+        {
+          "content": "Python\nname = '函数团'\nage = 22\nuniversity = 'HEU'\nGPA = 3.9\nprint(f'我的名字是{name}，今年{age}岁，就读于{university},GPA为{GPA:.2f}')\nprint(GPA >= 3.5)#直接print输出的就是布尔值\nname = '金宝宝'\nage = 23\nuniversity = 'HEU'\nGPA = 4.0\nprint(f'我的好朋友是{name},今年{age}岁,也在{university}上学,她的GPA为{GPA}')",
+          "source": "practice.py",
+          "date": "10月16日"
+        }
+      ],
+      "code": [
+        "name = '函数团'\nage = 22\nuniversity = 'HEU'\nGPA = 3.9\nprint(f'我的名字是{name}，今年{age}岁，就读于{university},GPA为{GPA:.2f}')\nprint(GPA >= 3.5)#直接print输出的就是布尔值\nname = '金宝宝'\nage = 23\nuniversity = 'HEU'\nGPA = 4.0\nprint(f'我的好朋友是{name},今年{age}岁,也在{university}上学,她的GPA为{GPA}')"
+      ],
+      "links": [],
+      "id": "python-0d7defe046",
+      "summary": "- bug类型：英文符号、缩进错误、语法错误（SyntaxError）、命名错误(nameerror)",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20Python%20%E5%8F%98%E9%87%8F%E4%B8%8E%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%BB%83%E4%B9%A0%20%E5%8F%98%E9%87%8F%E7%BB%83%E4%B9%A0%20f-string%E7%BB%83%E4%B9%A0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20Python%20%E5%8F%98%E9%87%8F%E4%B8%8E%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%BB%83%E4%B9%A0%20%E5%8F%98%E9%87%8F%E7%BB%83%E4%B9%A0%20f-string%E7%BB%83%E4%B9%A0"
+      }
+    },
+    {
+      "title": "float():转换为一个小数",
+      "module": "Python",
+      "category": "基础语法与数据类型",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "print(float(11))     #11.0 整型转换成浮点型，会自动添加一位小数",
+          "source": "practice.py",
+          "date": "11月7日"
+        }
+      ],
+      "code": [
+        "print(float(11))     #11.0 整型转换成浮点型，会自动添加一位小数"
+      ],
+      "links": [],
+      "id": "python-ef883b83b0",
+      "summary": "print(float(11))     11.0 整型转换成浮点型，会自动添加一位小数",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20float%28%29%3A%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%95%B0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20float%28%29%3A%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%95%B0"
+      }
+    },
+    {
+      "title": "int() 整数类型转换",
+      "module": "Python",
+      "category": "基础语法与数据类型",
+      "aliases": [
+        "整数转换",
+        "类型转换"
+      ],
+      "note": "",
+      "records": [
+        {
+          "content": "a = 1.2 #浮点数 float\nb = int(a)\nprint(b,type(b))  # 1 int  强制转换成整型了\n# 浮点型强制转整型只保留整数部分 不遵循四舍五入原则\n# str -> int\na = int('123')\nprint(a,type(a))    #123  int\nprint(int('kk'))    #报错\n如果字符串中有数字和正负号以外的字符就会报错\n\n用户从控制台输入，判断年龄\nage = input('请输入您的年龄：')    #会报错 因为input输出是字符串 要转整型\nage = int(input('请输入您的年龄：'))\nif age >= 18:\nprint('成年了')",
+          "source": "practice.py",
+          "date": "11月7日"
+        }
+      ],
+      "code": [
+        "a = 1.2 #浮点数 float\nb = int(a)\nprint(b,type(b))  # 1 int  强制转换成整型了\na = int('123')\nprint(a,type(a))    #123  int\nprint(int('kk'))    #报错\nage = input('请输入您的年龄：')    #会报错 因为input输出是字符串 要转整型\nage = int(input('请输入您的年龄：'))\nif age >= 18:\nprint('成年了')"
+      ],
+      "links": [],
+      "id": "python-d7b3543d8a",
+      "summary": "a = 1.2 浮点数 float\nb = int(a)\nprint(b,type(b))   1 int  强制转换成整型了\n 浮点型强制转整型只保留整数部分 不遵循四舍五入原则\n str - int\na = int('123')\nprint(a,type(a))    123",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20int%28%29%20%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%20%E6%95%B4%E6%95%B0%E8%BD%AC%E6%8D%A2%20%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20int%28%29%20%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%20%E6%95%B4%E6%95%B0%E8%BD%AC%E6%8D%A2%20%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"
+      }
+    },
+    {
+      "title": "变量：计算机的储存空间，用于保存数据",
+      "module": "Python",
+      "category": "基础语法与数据类型",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、定义变量格式：变量名 = 值**\n\n**示例：** eg.\n\n```python\nnum1 = 3 #变量1\nnum2 = 10 #变量2\ntotal = num1 + num2\nprint(num1)----3\nprint('num1')----num1 #加上引号会打印引号里面的内容，没有引号就会打印变量的值，如果该变量没有被赋值，就会报命名错误\n```",
+          "source": "daily_note.md",
+          "date": "10月16日"
+        }
+      ],
+      "code": [
+        "num1 = 3 #变量1\nnum2 = 10 #变量2\ntotal = num1 + num2\nprint(num1)----3\nprint('num1')----num1 #加上引号会打印引号里面的内容，没有引号就会打印变量的值，如果该变量没有被赋值，就会报命名错误"
+      ],
+      "links": [],
+      "id": "python-8fd109e5e4",
+      "summary": "1、定义变量格式：变量名 = 值\n\n示例： eg.\n\npython\nnum1 = 3 变量1\nnum2 = 10 变量2\ntotal = num1 + num2\nprint(num1)----3\nprint('num1')----num1 加上引号会打印引号里面的内容，没有引号就",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%8F%98%E9%87%8F%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%82%A8%E5%AD%98%E7%A9%BA%E9%97%B4%EF%BC%8C%E7%94%A8%E4%BA%8E%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%8F%98%E9%87%8F%EF%BC%9A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%82%A8%E5%AD%98%E7%A9%BA%E9%97%B4%EF%BC%8C%E7%94%A8%E4%BA%8E%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE"
+      }
+    },
+    {
+      "title": "多行注释：三引号中间的内容就是多行注释，可以是三对单引号，也可以是三对双引号；",
+      "module": "Python",
+      "category": "基础语法与数据类型",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "crtl+/既可以添加注释也可以取消注释，使用的是单行注释",
+          "source": "daily_note.md",
+          "date": "10月16日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-03d00c037c",
+      "summary": "crtl+/既可以添加注释也可以取消注释，使用的是单行注释",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A%EF%BC%9A%E4%B8%89%E5%BC%95%E5%8F%B7%E4%B8%AD%E9%97%B4%E7%9A%84%E5%86%85%E5%AE%B9%E5%B0%B1%E6%98%AF%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%98%AF%E4%B8%89%E5%AF%B9%E5%8D%95%E5%BC%95%E5%8F%B7%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E6%98%AF%E4%B8%89%E5%AF%B9%E5%8F%8C%E5%BC%95%E5%8F%B7%EF%BC%9B",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A%EF%BC%9A%E4%B8%89%E5%BC%95%E5%8F%B7%E4%B8%AD%E9%97%B4%E7%9A%84%E5%86%85%E5%AE%B9%E5%B0%B1%E6%98%AF%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%98%AF%E4%B8%89%E5%AF%B9%E5%8D%95%E5%BC%95%E5%8F%B7%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E6%98%AF%E4%B8%89%E5%AF%B9%E5%8F%8C%E5%BC%95%E5%8F%B7%EF%BC%9B"
+      }
+    },
+    {
+      "title": "数值类型：",
+      "module": "Python",
+      "category": "基础语法与数据类型",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、int整型：任意大小的整数**\n\n```python\nnum = 1\n```\n\n> **注意：** 检验数据类型的方法 type()\n\n```python\nprint(type(num))----<class'int'>\n```\n\n**2、float浮点数:小数**\n\n**3、bool布尔型（重点）：有固定写法，一个为True(真)，一个为Flase(假)#通常用于判断**\n\n```python\nprint(type(True))----<class'bool'>\n```\n\n> **注意：** 布尔值可以当作正值来对待，True相当于整数1，Flase相当于整数0\n\n**4、complex复数型（了解）**\n\n固定写法：z = a + bj",
+          "source": "daily_note.md",
+          "date": "10月16日"
+        }
+      ],
+      "code": [
+        "num = 1",
+        "print(type(num))----<class'int'>",
+        "print(type(True))----<class'bool'>"
+      ],
+      "links": [],
+      "id": "python-701f0879f3",
+      "summary": "1、int整型：任意大小的整数\n\npython\nnum = 1\n\n\n 注意： 检验数据类型的方法 type()\n\npython\nprint(type(num))----<class'int'\n\n\n2、float浮点数:小数\n\n3、bool布尔型（重点）：有固定写法，一个为True",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%EF%BC%9A",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%EF%BC%9A"
+      }
+    },
+    {
+      "title": "查看元素",
+      "module": "Python",
+      "category": "基础语法与数据类型",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "格式1:变量名[键名]\ndic = {'name':'kk','age':22}\nprint(dic[2]) #报错,字典中没有下标,查找元素需要根据键名,键名相当于下标\nprint(dic['age']) #22\n注意:查看元素不存在时会报错\n\n格式2:变量名.get(键名)\ndic = {'name':'kk','age':22}\nprint(dic.get('name'))  #kk\nprint(dic.get('tel'))     #None  #当键名不存在时不会报错,会返回None\nprint(dic.get('tel','不存在'))   #不存在 可以在后面设置返回的值是什么",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "dic = {'name':'kk','age':22}\nprint(dic[2]) #报错,字典中没有下标,查找元素需要根据键名,键名相当于下标\nprint(dic['age']) #22\ndic = {'name':'kk','age':22}\nprint(dic.get('name'))  #kk\nprint(dic.get('tel'))     #None  #当键名不存在时不会报错,会返回None\nprint(dic.get('tel','不存在'))   #不存在 可以在后面设置返回的值是什么"
+      ],
+      "links": [],
+      "id": "python-67b5166b80",
+      "summary": "格式1:变量名[键名]\ndic = {'name':'kk','age':22}\nprint(dic[2]) 报错,字典中没有下标,查找元素需要根据键名,键名相当于下标\nprint(dic['age']) 22\n注意:查看元素不存在时会报错\n\n格式2:变量名.get(键名)\ndi",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%9F%A5%E7%9C%8B%E5%85%83%E7%B4%A0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%9F%A5%E7%9C%8B%E5%85%83%E7%B4%A0"
+      }
+    },
+    {
+      "title": "标识符：程序员定义的变量名和函数名",
+      "module": "Python",
+      "category": "基础语法与数据类型",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "标识符规定：只能由数字、字母、_（下划线）组成；#python3可以用中文命名，但不推荐，标识符被包含在（）内对标识符本身没有影响，（（print））\n不能以数字开头；\n不能是关键字；#关键字是python中已经使用了的标识符，具有特殊的功能和含义\n**示例：** eg.False = 1 print(False)会报错\n严格区分大小写",
+          "source": "daily_note.md",
+          "date": "10月16日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-b102bcac54",
+      "summary": "标识符规定：只能由数字、字母、（下划线）组成；python3可以用中文命名，但不推荐，标识符被包含在（）内对标识符本身没有影响，（（print））\n不能以数字开头；\n不能是关键字；关键字是python中已经使用了的标识符，具有特殊的功能和含义\n示例： eg.False = 1 p",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A%E7%A8%8B%E5%BA%8F%E5%91%98%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F%E5%90%8D%E5%92%8C%E5%87%BD%E6%95%B0%E5%90%8D",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%9A%E7%A8%8B%E5%BA%8F%E5%91%98%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%98%E9%87%8F%E5%90%8D%E5%92%8C%E5%87%BD%E6%95%B0%E5%90%8D"
+      }
+    },
+    {
+      "title": "* 字符串重复",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "print('函数团'*3) # 函数团函数团函数团，字符串相乘，*是字符串重复\nprint('函数团\\n'*3) # 会换行",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "print('函数团'*3) # 函数团函数团函数团，字符串相乘，*是字符串重复\nprint('函数团\\n'*3) # 会换行"
+      ],
+      "links": [],
+      "id": "python-847146bbda",
+      "summary": "print('函数团'3)  函数团函数团函数团，字符串相乘，是字符串重复\nprint('函数团\\n'3)  会换行",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%2A%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8D%E5%A4%8D",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%2A%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8D%E5%A4%8D"
+      }
+    },
+    {
+      "title": "+ 字符串拼接",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "print('函数团'+'在此') # 函数团在此，字符串相加，+是字符串拼接",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "print('函数团'+'在此') # 函数团在此，字符串相加，+是字符串拼接"
+      ],
+      "links": [],
+      "id": "python-12e2d18b68",
+      "summary": "print('函数团'+'在此')  函数团在此，字符串相加，+是字符串拼接",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%2B%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%2B%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"
+      }
+    },
+    {
+      "title": "Python笔记（11月5日）",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "index:返回指定数据所在位置的下标，如果查找的数据不存在就会报错\ncount：统计指定数据在当前列表出现的次数\n跟字符串的用法相同",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-c5d9dd5729",
+      "summary": "index:返回指定数据所在位置的下标，如果查找的数据不存在就会报错\ncount：统计指定数据在当前列表出现的次数\n跟字符串的用法相同",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20Python%E7%AC%94%E8%AE%B0%EF%BC%8811%E6%9C%885%E6%97%A5%EF%BC%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20Python%E7%AC%94%E8%AE%B0%EF%BC%8811%E6%9C%885%E6%97%A5%EF%BC%89"
+      }
+    },
+    {
+      "title": "capitalize() :将字符串的首字母大写,其他字母小写",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "name = 'sylvive'\nprint(name.capitalize()) # Sylvive\nname = 'SYLVIVE'\nprint(name.capitalize()) # Sylvive",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "name = 'sylvive'\nprint(name.capitalize()) # Sylvive\nname = 'SYLVIVE'\nprint(name.capitalize()) # Sylvive"
+      ],
+      "links": [],
+      "id": "python-8daaa643e4",
+      "summary": "name = 'sylvive'\nprint(name.capitalize())  Sylvive\nname = 'SYLVIVE'\nprint(name.capitalize())  Sylvive",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20capitalize%28%29%20%3A%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%2C%E5%85%B6%E4%BB%96%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20capitalize%28%29%20%3A%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99%2C%E5%85%B6%E4%BB%96%E5%AD%97%E6%AF%8D%E5%B0%8F%E5%86%99"
+      }
+    },
+    {
+      "title": "endswith() 判断字符串结尾",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "原笔记中的 endswitch() 应为 endswith()。",
+      "records": [
+        {
+          "content": "endswith(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "name = 'sylvive'"
+      ],
+      "links": [],
+      "id": "python-f1154dbae5",
+      "summary": "endswith(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20endswith%28%29%20%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BB%93%E5%B0%BE",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20endswith%28%29%20%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BB%93%E5%B0%BE"
+      }
+    },
+    {
+      "title": "eval() ：用来执行一个字符串表达式，并返回表达式的值",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "print(10+10)                #20\nprint('10'+'10')            #1010\nprint('10+10')              #10+10\nprint(eval('10+10'))        #20   执行运算并返回运算值\na = eval('10+10')\nprint(type(a))              #int\n\neval() 可以实现list、dict、tuple和str之间的转换\nstr ——> list\nst1 = '[[1,2],[3,4],[5,6]]'\nli = eval(st1)\nprint(li,type(li))                #[[1, 2], [3, 4], [5, 6]] <class 'list'>\n同理可得字典、元组之间的转换\neval()强大但不够安全",
+          "source": "practice.py",
+          "date": "11月7日"
+        }
+      ],
+      "code": [
+        "print(10+10)                #20\nprint('10'+'10')            #1010\nprint('10+10')              #10+10\nprint(eval('10+10'))        #20   执行运算并返回运算值\na = eval('10+10')\nprint(type(a))              #int\nst1 = '[[1,2],[3,4],[5,6]]'\nli = eval(st1)\nprint(li,type(li))                #[[1, 2], [3, 4], [5, 6]] <class 'list'>"
+      ],
+      "links": [],
+      "id": "python-d4e775a872",
+      "summary": "print(10+10)                20\nprint('10'+'10')            1010\nprint('10+10')              10+10\nprint(eval('10+10'))        20   执行运算并返回运算",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20eval%28%29%20%EF%BC%9A%E7%94%A8%E6%9D%A5%E6%89%A7%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%8C%E5%B9%B6%E8%BF%94%E5%9B%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%80%BC",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20eval%28%29%20%EF%BC%9A%E7%94%A8%E6%9D%A5%E6%89%A7%E8%A1%8C%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%8C%E5%B9%B6%E8%BF%94%E5%9B%9E%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%80%BC"
+      }
+    },
+    {
+      "title": "lower() :将字符串中的所有字母转换为小写",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "name = 'SylVIve'\nprint(name.lower()) # sylvive",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "name = 'SylVIve'\nprint(name.lower()) # sylvive"
+      ],
+      "links": [],
+      "id": "python-72ee32863a",
+      "summary": "name = 'SylVIve'\nprint(name.lower())  sylvive",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20lower%28%29%20%3A%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%B0%8F%E5%86%99",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20lower%28%29%20%3A%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%B0%8F%E5%86%99"
+      }
+    },
+    {
+      "title": "replace :替换字符串中的某个子字符串",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "replace(旧子字符串,新子字符串,替换次数)\n注意:替换次数可以省略,表示替换所有的旧子字符串\nname = 'sylvive'\nprint(name.replace('v', 'n')) # sylnine\nprint(name.replace('i', 'I', 1)) # sylvIve",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "name = 'sylvive'\nprint(name.replace('v', 'n')) # sylnine\nprint(name.replace('i', 'I', 1)) # sylvIve"
+      ],
+      "links": [],
+      "id": "python-27c1109c6d",
+      "summary": "replace(旧子字符串,新子字符串,替换次数)\n注意:替换次数可以省略,表示替换所有的旧子字符串\nname = 'sylvive'\nprint(name.replace('v', 'n'))  sylnine\nprint(name.replace('i', 'I', 1)) ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20replace%20%3A%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%9F%90%E4%B8%AA%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20replace%20%3A%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%9F%90%E4%B8%AA%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2"
+      }
+    },
+    {
+      "title": "split() :按照指定的分隔符将字符串分割成列表",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "split(分隔符,分割次数)\n注意:分割次数可以省略,表示分割所有的分隔符\nname = 'sylvive'\nprint(name.split('v')) # ['syl', 'i', 'e']\nprint(name.split('v', 1)) # ['syl', 'ive']",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "name = 'sylvive'\nprint(name.split('v')) # ['syl', 'i', 'e']\nprint(name.split('v', 1)) # ['syl', 'ive']"
+      ],
+      "links": [],
+      "id": "python-ecacb6e1c4",
+      "summary": "split(分隔符,分割次数)\n注意:分割次数可以省略,表示分割所有的分隔符\nname = 'sylvive'\nprint(name.split('v'))  ['syl', 'i', 'e']\nprint(name.split('v', 1))  ['syl', 'ive']",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20split%28%29%20%3A%E6%8C%89%E7%85%A7%E6%8C%87%E5%AE%9A%E7%9A%84%E5%88%86%E9%9A%94%E7%AC%A6%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E5%89%B2%E6%88%90%E5%88%97%E8%A1%A8",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20split%28%29%20%3A%E6%8C%89%E7%85%A7%E6%8C%87%E5%AE%9A%E7%9A%84%E5%88%86%E9%9A%94%E7%AC%A6%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E5%89%B2%E6%88%90%E5%88%97%E8%A1%A8"
+      }
+    },
+    {
+      "title": "startswith() :判断字符串是否以指定的子字符串开头,返回布尔值True或False",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "startswith(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'\nprint(name.startswith('s')) # True\nprint(name.startswith('sylv')) # True\nprint(name.startswith('v',3,5)) #True",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "name = 'sylvive'\nprint(name.startswith('s')) # True\nprint(name.startswith('sylv')) # True\nprint(name.startswith('v',3,5)) #True"
+      ],
+      "links": [],
+      "id": "python-08624cba71",
+      "summary": "startswith(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'\nprint(name.startswith('s'))  True\nprint(name.startswith('sylv'))  True\nprint(name.startswith",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20startswith%28%29%20%3A%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E4%BB%A5%E6%8C%87%E5%AE%9A%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%BC%80%E5%A4%B4%2C%E8%BF%94%E5%9B%9E%E5%B8%83%E5%B0%94%E5%80%BCTrue%E6%88%96False",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20startswith%28%29%20%3A%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E4%BB%A5%E6%8C%87%E5%AE%9A%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%BC%80%E5%A4%B4%2C%E8%BF%94%E5%9B%9E%E5%B8%83%E5%B0%94%E5%80%BCTrue%E6%88%96False"
+      }
+    },
+    {
+      "title": "str():转换成字符串类型，任何类型都可以转换成字符串类型",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "n = 100\nprint(str(n))   #100   str\nst = str(1.80)\nprint(st,type(st))     #1.8 str      float转换成str会去除末尾为0的小数部分\n列表类型也可以转 反正就是万物几乎都可以转字符串",
+          "source": "practice.py",
+          "date": "11月7日"
+        }
+      ],
+      "code": [
+        "n = 100\nprint(str(n))   #100   str\nst = str(1.80)\nprint(st,type(st))     #1.8 str      float转换成str会去除末尾为0的小数部分"
+      ],
+      "links": [],
+      "id": "python-bfe1bbef3d",
+      "summary": "n = 100\nprint(str(n))   100   str\nst = str(1.80)\nprint(st,type(st))     1.8 str      float转换成str会去除末尾为0的小数部分\n列表类型也可以转 反正就是万物几乎都可以转字符串",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20str%28%29%3A%E8%BD%AC%E6%8D%A2%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%EF%BC%8C%E4%BB%BB%E4%BD%95%E7%B1%BB%E5%9E%8B%E9%83%BD%E5%8F%AF%E4%BB%A5%E8%BD%AC%E6%8D%A2%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20str%28%29%3A%E8%BD%AC%E6%8D%A2%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%EF%BC%8C%E4%BB%BB%E4%BD%95%E7%B1%BB%E5%9E%8B%E9%83%BD%E5%8F%AF%E4%BB%A5%E8%BD%AC%E6%8D%A2%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"
+      }
+    },
+    {
+      "title": "upper() :将字符串中的所有字母转换为大写",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "name = 'SylVIve'\nprint(name.upper()) # SYLVIVE",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "name = 'SylVIve'\nprint(name.upper()) # SYLVIVE"
+      ],
+      "links": [],
+      "id": "python-88dccfd61d",
+      "summary": "name = 'SylVIve'\nprint(name.upper())  SYLVIVE",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20upper%28%29%20%3A%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%A4%A7%E5%86%99",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20upper%28%29%20%3A%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E5%AD%97%E6%AF%8D%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%A4%A7%E5%86%99"
+      }
+    },
+    {
+      "title": "下标",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "python中下标从0开始\n作用：通过下标能够快速找到对应的数据\n格式：字符串名[下标]\nname = 'sylvive'\nprint(name[0]) # s\nprint(name[1]) # y\n# 从右往左数，下标从-1开始\nprint(name[-1]) # e\n注意：下标不能超过字符串的长度，否则会报错",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "name = 'sylvive'\nprint(name[0]) # s\nprint(name[1]) # y\nprint(name[-1]) # e"
+      ],
+      "links": [],
+      "id": "python-f3e8cb1f3e",
+      "summary": "python中下标从0开始\n作用：通过下标能够快速找到对应的数据\n格式：字符串名[下标]\nname = 'sylvive'\nprint(name[0])  s\nprint(name[1])  y\n 从右往左数，下标从-1开始\nprint(name[-1])  e\n注意：下标不能超",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E4%B8%8B%E6%A0%87",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E4%B8%8B%E6%A0%87"
+      }
+    },
+    {
+      "title": "修改元素",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "直接通过下标就可以进行修改\nli=[1,2,3]\nli[2]='a' #超过索引值会报错\nprint(li) #[1, 2, 'a']",
+          "source": "practice.py",
+          "date": "11月4日"
+        },
+        {
+          "content": "格式:变量名[键名] = 值\ndic = {'name':'kk','age':22}\ndic['age'] = 20     # {'name': 'kk', 'age': 20} #列表通过下标修改,字典通过键名修改\nprint(dic)",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "li=[1,2,3]\nprint(li) #[1, 2, 'a']",
+        "dic = {'name':'kk','age':22}\nprint(dic)"
+      ],
+      "links": [],
+      "id": "python-a3add307c8",
+      "summary": "直接通过下标就可以进行修改\nli=[1,2,3]\nli[2]='a' 超过索引值会报错\nprint(li) [1, 2, 'a']",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E4%BF%AE%E6%94%B9%E5%85%83%E7%B4%A0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E4%BF%AE%E6%94%B9%E5%85%83%E7%B4%A0"
+      }
+    },
+    {
+      "title": "切片",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "含义：指对操作的对象截取其中一部分的操作\n语法：[开始位置:结束位置:步长]\n注意：包前不包后原则，即从起始位置开始，到结束位置的前一个位置结束（不包含结束位置本身）\nst = 'abcdefghijklmn'\n从左往右\nprint(st[0:5]) # abcde\nprint(st[4:7]) # efg\nprint(st[3:])  # defghijklmn,下标从3开始，一直到最后\nprint(st[:5])  # abcde,从开头到下标为5的前一个位置\n# 从右往左\nprint(st[-1:])  # n,下标为-1的最后一个位置\nprint(st[:-1])  # abcdefghijklm,从开头到下标为-1的前一个位置\nprint(st[-1:-5]) # 空,从右往左切片时，起始位置要大于结束位置，否则会报错\n步长 :表示选取间隔,不写步长,则默认是1\n步长的绝对值大小决定切取的间隔,正负号决定切取的方向,正数代表从左往右取值,负数表示从右往左取值\nprint(st[-1::1]) # n,从下标为-1的最后一个位置开始，步长为1，向右取值\nprint(st[-1::-1]) # nmlkjihgfedcba,从下标为-1的最后一个位置开始，步长为-1，向左取值\nprint(st[-1:-5:-1]) # nmlk,从下标为-1的最后一个位置开始，步长为-1，向左取值，到下标为-5的前一个位置结束\nprint(st[0:8:2]) # aceg,从下标为0的第一个位置开始，步长为2，向右取值，到下标为8的前一个位置结束",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "st = 'abcdefghijklmn'\nprint(st[0:5]) # abcde\nprint(st[4:7]) # efg\nprint(st[3:])  # defghijklmn,下标从3开始，一直到最后\nprint(st[:5])  # abcde,从开头到下标为5的前一个位置\nprint(st[-1:])  # n,下标为-1的最后一个位置\nprint(st[:-1])  # abcdefghijklm,从开头到下标为-1的前一个位置\nprint(st[-1:-5]) # 空,从右往左切片时，起始位置要大于结束位置，否则会报错\nprint(st[-1::1]) # n,从下标为-1的最后一个位置开始，步长为1，向右取值\nprint(st[-1::-1]) # nmlkjihgfedcba,从下标为-1的最后一个位置开始，步长为-1，向左取值\nprint(st[-1:-5:-1]) # nmlk,从下标为-1的最后一个位置开始，步长为-1，向左取值，到下标为-5的前一个位置结束\nprint(st[0:8:2]) # aceg,从下标为0的第一个位置开始，步长为2，向右取值，到下标为8的前一个位置结束"
+      ],
+      "links": [],
+      "id": "python-17e311f527",
+      "summary": "含义：指对操作的对象截取其中一部分的操作\n语法：[开始位置:结束位置:步长]\n注意：包前不包后原则，即从起始位置开始，到结束位置的前一个位置结束（不包含结束位置本身）\nst = 'abcdefghijklmn'\n从左往右\nprint(st[0:5])  abcde\nprint(s",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%88%87%E7%89%87",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%88%87%E7%89%87"
+      }
+    },
+    {
+      "title": "删除元素",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "del\nli = ['a','b','c','d']\ndel li #删除列表，报错\ndel li[2] #根据下标删除 #['a', 'b', 'd']\nprint(li)\n\npop：删除指定下标的数据，python3版本默认删除最后一个元素\nli = ['a','b','c','d']\nli.pop() #默认删除最后一个元素 #['a','b','c']\nli.pop(2) #不能指定元素删除，只能根据下标删除，下标不能超出范围 #['a', 'b', 'd']\nprint(li)\n\nremove:根据元素的值进行删除\nli = ['a','b','c','d']\nli.remove('a') #['b', 'c', 'd']\n列表中不存在这个元素的时候就会报错\nli = ['a','b','c','d','b']\nli.remove('b') #['a','c','d','b'] #默认删除最开始出现的指定元素\nprint(li)",
+          "source": "practice.py",
+          "date": "11月5日"
+        },
+        {
+          "content": "del : 删除整个字典\n基本格式: del 字典名\ndic = {'name':'kk','age':22}\ndel dic\nprint(dic)   #报错 因为已经被删除了\n删除指定键值对,键名不存在就会报错   格式: del 字典名[键名]\ndic = {'name':'kk','age':22}\n# del dic['age']    #{'name': 'kk'}\ndel dic['tel']      #报错\nprint(dic)\n\nclear(): 清空整个字典里面的东西,保留了这个字典\ndic = {'name':'kk','age':22}\ndic.clear()\nprint(dic)     #{} 返回为空\n\npop :删除指定键值对,键不存在就会报错\ndic = {'name':'kk','age':22}\ndic.pop('age')           #{'name': 'kk'}\ndic.pop('tel')           #报错\ndic.pop()                #报错,和列表不一样,列表是默认删除最后一个\ndic.popitem()            #默认删除最后一个,3.7版本之前任意删除一个,3.7之后默认删除最后一个\nprint(dic)",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "li = ['a','b','c','d']\nprint(li)\nli = ['a','b','c','d']\nprint(li)\nli = ['a','b','c','d']\nli = ['a','b','c','d','b']\nprint(li)",
+        "dic = {'name':'kk','age':22}\nprint(dic)   #报错 因为已经被删除了\ndic = {'name':'kk','age':22}\nprint(dic)\ndic = {'name':'kk','age':22}\nprint(dic)     #{} 返回为空\ndic = {'name':'kk','age':22}\nprint(dic)"
+      ],
+      "links": [],
+      "id": "python-f37ddae531",
+      "summary": "del\nli = ['a','b','c','d']\ndel li 删除列表，报错\ndel li[2] 根据下标删除 ['a', 'b', 'd']\nprint(li)\n\npop：删除指定下标的数据，python3版本默认删除最后一个元素\nli = ['a','b','c','d",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"
+      }
+    },
+    {
+      "title": "字符串str",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、特点：需要加上引号，单双引号都可以，包含了多行内容时用三引号**\n\n**示例：** eg. name = sixstar----会报错 # sixstar没有被赋值\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = 'sixstar'----加了引号后就正确了",
+          "source": "daily_note.md",
+          "date": "10月16日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-298f8691a8",
+      "summary": "1、特点：需要加上引号，单双引号都可以，包含了多行内容时用三引号\n\n示例： eg. name = sixstar----会报错  sixstar没有被赋值\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = 'sixstar'----加了引号后就",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%AD%97%E7%AC%A6%E4%B8%B2str",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%AD%97%E7%AC%A6%E4%B8%B2str"
+      }
+    },
+    {
+      "title": "字符串编码",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "本质上就是二进制与语言文字的一一对应关系\nUnicode：所有字符都是两个字节 ，好处：字符与数字之间转换速度更快一点 ， 坏处：占用空间大\nUTF-8：精准，对不同的字符用不同的长度表示， 好处：节省空间 ， 坏处：字符与数字之间转换速度慢一点，每次都需要计算字符需要用多少个字节来表示",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-23541506b0",
+      "summary": "本质上就是二进制与语言文字的一一对应关系\nUnicode：所有字符都是两个字节 ，好处：字符与数字之间转换速度更快一点 ， 坏处：占用空间大\nUTF-8：精准，对不同的字符用不同的长度表示， 好处：节省空间 ， 坏处：字符与数字之间转换速度慢一点，每次都需要计算字符需要用多少个字",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81"
+      }
+    },
+    {
+      "title": "字符串编码转换",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "a  = 'hello'\n# print(a,type(a)) # str,字符串是以字符为单位进行处理\na1 = a.encode()      # 编码\nprint('编码后：',a1)  # b'hello'\nprint(type(a1))      # bytes,编码后是以字节为单位进行处理\na2 = a1.decode()     # 解码\nprint('解码后：',a2)  # hello\nprint(type(a2))      # str,解码后是以字符为单位进行处理\n注意：对于bytes，只需要知道它和字符串之间的相互转换\n\nst = '函数团在此'\nst1 = st.encode('utf-8') #编码\nprint(st1,type(st1))\nst2 = st1.decode('utf-8') #解码\nprint(st2,type(st2))",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "a  = 'hello'\na1 = a.encode()      # 编码\nprint('编码后：',a1)  # b'hello'\nprint(type(a1))      # bytes,编码后是以字节为单位进行处理\na2 = a1.decode()     # 解码\nprint('解码后：',a2)  # hello\nprint(type(a2))      # str,解码后是以字符为单位进行处理\nst = '函数团在此'\nst1 = st.encode('utf-8') #编码\nprint(st1,type(st1))\nst2 = st1.decode('utf-8') #解码\nprint(st2,type(st2))"
+      ],
+      "links": [],
+      "id": "python-1bef01eb8a",
+      "summary": "a  = 'hello'\n print(a,type(a))  str,字符串是以字符为单位进行处理\na1 = a.encode()       编码\nprint('编码后：',a1)   b'hello'\nprint(type(a1))       bytes,编码后是以字节为",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%96%E7%A0%81%E8%BD%AC%E6%8D%A2"
+      }
+    },
+    {
+      "title": "查找",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "3.1.1\nfind :检测某个子字符串是否包含在字符串中,如果在就返回这个子字符串的第一个下标,如果不在就返回-1\nfind(子字符串,开始位置下标,结束位置下标)\n注意:开始位置下标和结束位置下标可以省略,表示在整个字符串中查找\nname = 'sylvive'\nprint(name.find('v')) # 3\nprint(name.find('z')) # -1\nprint(name.find('sylv')) # 0--检测到第一个sylv,s的下标是0\nprint(name.find('v',0,5)) # 3--在下标为0到下标为5的范围内查找v,找到了v,返回下标3\nprint(name.find('v',0,3)) # -1--在下标为0到下标为3的范围内查找v,没有找到v,返回-1\n\n3.1.2\nindex :检测某个子字符串是否包含在字符串中,如果在就返回这个子字符串的第一个下标,如果不在就报错\nindex(子字符串,开始位置下标,结束位置下标)\nname = '今晚早点睡觉'\nprint(name.index('早')) # 2\nprint(name.index('晚',2)) #报错,因为从下标为2开始查找晚,晚的下标是1,所以没有找到,报错\nprint(name.index('晚',0,2)) # 1--在下标为0到下标为2的范围内查找晚,找到了晚,返回下标1\n遵循包前不包后\n\n3.1.3\ncount :统计某个子字符串在字符串中出现的次数\ncount(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'\nprint(name.count('v')) # 2\nprint(name.count('s')) # 1\nprint(name.count('z')) # 0\n遵循包前不包后",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "name = 'sylvive'\nprint(name.find('v')) # 3\nprint(name.find('z')) # -1\nprint(name.find('sylv')) # 0--检测到第一个sylv,s的下标是0\nprint(name.find('v',0,5)) # 3--在下标为0到下标为5的范围内查找v,找到了v,返回下标3\nprint(name.find('v',0,3)) # -1--在下标为0到下标为3的范围内查找v,没有找到v,返回-1\nname = '今晚早点睡觉'\nprint(name.index('早')) # 2\nprint(name.index('晚',2)) #报错,因为从下标为2开始查找晚,晚的下标是1,所以没有找到,报错\nprint(name.index('晚',0,2)) # 1--在下标为0到下标为2的范围内查找晚,找到了晚,返回下标1\nname = 'sylvive'\nprint(name.count('v')) # 2\nprint(name.count('s')) # 1\nprint(name.count('z')) # 0"
+      ],
+      "links": [],
+      "id": "python-96cd249ee9",
+      "summary": "3.1.1\nfind :检测某个子字符串是否包含在字符串中,如果在就返回这个子字符串的第一个下标,如果不在就返回-1\nfind(子字符串,开始位置下标,结束位置下标)\n注意:开始位置下标和结束位置下标可以省略,表示在整个字符串中查找\nname = 'sylvive'\nprint(",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%9F%A5%E6%89%BE",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%9F%A5%E6%89%BE"
+      }
+    },
+    {
+      "title": "添加元素",
+      "module": "Python",
+      "category": "字符串",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "append()  extend()  insert()\nli=['one','two','three']\nli.append(\"four\")   #attend 整体添加 #['one', 'two', 'three', 'four']\nli.extend('four')   #extend 分散添加，将另外一个类型中的元素逐一添加 #['one', 'two', 'three', 'f', 'o', 'u', 'r']\nli.insert(3,'four')  #insert 在指定位置插入元素 #['one', 'two', 'three', 'four']\nli.insert(0,'four')  #指定位置如果有元素，原有元素就会后移 #['four', 'one', 'two', 'three']\nli.insert(\"four\")   #报错，没有指定下标\nprint(li)\nli=[1,2,3]\nli.append(4)   #[1,2,3,4]\nli.extend(4)   #报错 #extend里要用可迭代对象 而整形不是可迭代对象\nli.insert(3,4)\nprint(li)",
+          "source": "practice.py",
+          "date": "11月4日"
+        },
+        {
+          "content": "格式:变量名[键名] = 值\n注意 键名存在就更改 不存在就新增\ndic = {'name':'kk','age':22}\ndic['tel'] = 123456789\nprint(dic)        #{'name': 'kk', 'age': 22, 'tel': 123456789} #没有tel就新增",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "li=['one','two','three']\nprint(li)\nli=[1,2,3]\nprint(li)",
+        "dic = {'name':'kk','age':22}\nprint(dic)        #{'name': 'kk', 'age': 22, 'tel': 123456789} #没有tel就新增"
+      ],
+      "links": [],
+      "id": "python-f96f3c9239",
+      "summary": "append()  extend()  insert()\nli=['one','two','three']\nli.append(\"four\")   attend 整体添加 ['one', 'two', 'three', 'four']\nli.extend('four')   ex",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"
+      }
+    },
+    {
+      "title": "break",
+      "module": "Python",
+      "category": "循环",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "作用:某一条件满足时退出循环\ni = 1\nwhile i <= 5:\nprint(f'小红在吃第{i}个苹果')\nif i == 3:\nprint('吃饱了不吃了')\nbreak # 结束break所在的循环\ni += 1",
+          "source": "practice.py",
+          "date": "10月29日"
+        }
+      ],
+      "code": [
+        "i = 1\nwhile i <= 5:\nprint(f'小红在吃第{i}个苹果')\nif i == 3:\nprint('吃饱了不吃了')"
+      ],
+      "links": [],
+      "id": "python-21fb66abb0",
+      "summary": "作用:某一条件满足时退出循环\ni = 1\nwhile i <= 5:\nprint(f'小红在吃第{i}个苹果')\nif i == 3:\nprint('吃饱了不吃了')\nbreak  结束break所在的循环\ni += 1",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20break",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20break"
+      }
+    },
+    {
+      "title": "break 和 continue关键字",
+      "module": "Python",
+      "category": "循环",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "都是专门在循环中使用的关键字\ni = 1\nif i <= 5:\nprint('我在吃苹果')\nbreak# 会报错,break 和continue只能放在循环内",
+          "source": "practice.py",
+          "date": "10月29日"
+        }
+      ],
+      "code": [
+        "i = 1\nif i <= 5:\nprint('我在吃苹果')"
+      ],
+      "links": [],
+      "id": "python-bbb150aa0f",
+      "summary": "都是专门在循环中使用的关键字\ni = 1\nif i <= 5:\nprint('我在吃苹果')\nbreak 会报错,break 和continue只能放在循环内",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20break%20%E5%92%8C%20continue%E5%85%B3%E9%94%AE%E5%AD%97",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20break%20%E5%92%8C%20continue%E5%85%B3%E9%94%AE%E5%AD%97"
+      }
+    },
+    {
+      "title": "continue",
+      "module": "Python",
+      "category": "循环",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "作用:退出本次循环,下一次循环继续执行\ni = 1\nwhile i <= 5:\nprint(f'小明在吃第{i}个苹果')\nif i == 3:\nprint(f'吃到了虫子,第{i}个苹果不吃了')\n# 在continue之前,一定要修改计数器,否则会陷入死循环\ni += 1# 加上这个之后是为了让他出了continue之后不在等于3 从而不会遍历if里的语句\ncontinue # 会忽略continue之后的所有代码 所以他直接跳到开头之后会一直陷入循环\ni += 1\n\nfor i in range(5):\nif i == 3:\n# break #i=3时结束循环\n#结果是0 1 2\ncontinue #跳过了3\n#结果是0 1 2 4\nprint(i)",
+          "source": "practice.py",
+          "date": "10月29日"
+        }
+      ],
+      "code": [
+        "i = 1\nwhile i <= 5:\nprint(f'小明在吃第{i}个苹果')\nif i == 3:\nprint(f'吃到了虫子,第{i}个苹果不吃了')\nfor i in range(5):\nif i == 3:\nprint(i)"
+      ],
+      "links": [],
+      "id": "python-1b2da181b0",
+      "summary": "作用:退出本次循环,下一次循环继续执行\ni = 1\nwhile i <= 5:\nprint(f'小明在吃第{i}个苹果')\nif i == 3:\nprint(f'吃到了虫子,第{i}个苹果不吃了')\n 在continue之前,一定要修改计数器,否则会陷入死循环\ni += 1 加上",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20continue",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20continue"
+      }
+    },
+    {
+      "title": "range()",
+      "module": "Python",
+      "category": "循环",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "用来记录循环次数,相当于计数器\nrange(start,stop,step)\nfor i in range(1,6): #从1开始,到6结束,遵循包前不包后规则,[)\n# 或者写for i in range(5) #从0开始:0 1 2 3 4\nprint(i)         # 1 2 3 4 5\n# range()里面只写一个数,这个数就是循环的次数,默认从0开始\n\nfor循环应用:计算1+2+3+...+100的值\ns = 0 #定义一个变量来保存计算结果\nfor i in range(1,101): # 包前不包后,不包含101这个数\n# print(i)\ns += i #每循环一次计算结果与i相加\n# print('计算结果是:',s) #在循环内,循环输出计算结果\nprint('计算结果:',s) # print放循环外 只会打印出最终的s结果",
+          "source": "practice.py",
+          "date": "10月29日"
+        }
+      ],
+      "code": [
+        "for i in range(1,6): #从1开始,到6结束,遵循包前不包后规则,[)\nprint(i)         # 1 2 3 4 5\ns = 0 #定义一个变量来保存计算结果\nfor i in range(1,101): # 包前不包后,不包含101这个数\nprint('计算结果:',s) # print放循环外 只会打印出最终的s结果"
+      ],
+      "links": [],
+      "id": "python-354c5431d1",
+      "summary": "用来记录循环次数,相当于计数器\nrange(start,stop,step)\nfor i in range(1,6): 从1开始,到6结束,遵循包前不包后规则,[)\n 或者写for i in range(5) 从0开始:0 1 2 3 4\nprint(i)          1 ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20range%28%29",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20range%28%29"
+      }
+    },
+    {
+      "title": "while循环应用:计算1+2+3+...+100的和",
+      "module": "Python",
+      "category": "循环",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "i = 1 #定义一个初始值,从1开始计算,记录循环次数\ns = 0 #定义一个变量保存计算结果,最开始计算结果为0,没有相加\nwhile i <= 100:\n# print(i) # 循环打印1-100\ns += i   # 每次循环的计算结果和i进行相加\ni += 1   # 每循环一次,i的值加1\n# print('计算结果是:',s) #在循环内,循环输出计算结果\nprint('计算结果:',s) # print放循环外 只会打印出最终的s结果",
+          "source": "practice.py",
+          "date": "10月29日"
+        }
+      ],
+      "code": [
+        "i = 1 #定义一个初始值,从1开始计算,记录循环次数\ns = 0 #定义一个变量保存计算结果,最开始计算结果为0,没有相加\nwhile i <= 100:\nprint('计算结果:',s) # print放循环外 只会打印出最终的s结果"
+      ],
+      "links": [],
+      "id": "python-23aecd0467",
+      "summary": "i = 1 定义一个初始值,从1开始计算,记录循环次数\ns = 0 定义一个变量保存计算结果,最开始计算结果为0,没有相加\nwhile i <= 100:\n print(i)  循环打印1-100\ns += i    每次循环的计算结果和i进行相加\ni += 1    每循环一次",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20while%E5%BE%AA%E7%8E%AF%E5%BA%94%E7%94%A8%3A%E8%AE%A1%E7%AE%971%2B2%2B3%2B...%2B100%E7%9A%84%E5%92%8C",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20while%E5%BE%AA%E7%8E%AF%E5%BA%94%E7%94%A8%3A%E8%AE%A1%E7%AE%971%2B2%2B3%2B...%2B100%E7%9A%84%E5%92%8C"
+      }
+    },
+    {
+      "title": "含义",
+      "module": "Python",
+      "category": "循环",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "一个while循环里面还有一个while循环",
+          "source": "practice.py",
+          "date": "10月29日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-6b0ceba7f1",
+      "summary": "一个while循环里面还有一个while循环",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%90%AB%E4%B9%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%90%AB%E4%B9%89"
+      }
+    },
+    {
+      "title": "基本格式",
+      "module": "Python",
+      "category": "循环",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "while 条件1:\n循环体1\nwhile 条件2:\n循环体2\n改变变量2\n改变变量1\n注意:缩进决定层级,严格控制缩进,最好自动缩进\ni = 1 # 定义一个变量记录外循环的次数\nwhile i <= 3: #外循环\nprint(f'这是第{i}次外循环')\nj = 1 # 定义一个初始值记录内循环的次数\nwhile j <= 5: # 内循环\nprint(f'内循环{j}次')\nj += 1\ni += 1",
+          "source": "practice.py",
+          "date": "10月29日"
+        },
+        {
+          "content": "for 临时变量 in 可迭代对象:\n循环体\n注意:冒号和缩进\nstr = 'hellopython' #定义一个字符串\n# 可迭代对象就是要去遍历取值的整体,现在只需要记住字符串就是可迭代对象\nfor i in str: # i是临时变量,可以随便写,i是常规写法\nprint(i)",
+          "source": "practice.py",
+          "date": "10月29日"
+        },
+        {
+          "content": "def 函数名():\n函数体",
+          "source": "practice.py",
+          "date": "11月10日"
+        }
+      ],
+      "code": [
+        "while 条件1:\nwhile 条件2:\ni = 1 # 定义一个变量记录外循环的次数\nwhile i <= 3: #外循环\nprint(f'这是第{i}次外循环')\nj = 1 # 定义一个初始值记录内循环的次数\nwhile j <= 5: # 内循环\nprint(f'内循环{j}次')",
+        "for 临时变量 in 可迭代对象:\nstr = 'hellopython' #定义一个字符串\nfor i in str: # i是临时变量,可以随便写,i是常规写法\nprint(i)",
+        "def 函数名():"
+      ],
+      "links": [],
+      "id": "python-7829b5bc9f",
+      "summary": "while 条件1:\n循环体1\nwhile 条件2:\n循环体2\n改变变量2\n改变变量1\n注意:缩进决定层级,严格控制缩进,最好自动缩进\ni = 1  定义一个变量记录外循环的次数\nwhile i <= 3: 外循环\nprint(f'这是第{i}次外循环')\nj = 1  定义一个",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F"
+      }
+    },
+    {
+      "title": "基本语法",
+      "module": "Python",
+      "category": "循环",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "定义初始变量\nwhile 条件:\n循环体\n改变变量\ni = 1 #定义一个初始值,记录循环的次数,i = 1表示从第一次开始\nwhile i <= 100:\nprint('好好学习,天天向上')\ni += 1 # 每执行一次i的值就加1\n注意:如果没有改变变量,条件一直满足,就会一直循环下去,一直执行",
+          "source": "practice.py",
+          "date": "10月29日"
+        }
+      ],
+      "code": [
+        "while 条件:\ni = 1 #定义一个初始值,记录循环的次数,i = 1表示从第一次开始\nwhile i <= 100:\nprint('好好学习,天天向上')"
+      ],
+      "links": [],
+      "id": "python-8bbd24d466",
+      "summary": "定义初始变量\nwhile 条件:\n循环体\n改变变量\ni = 1 定义一个初始值,记录循环的次数,i = 1表示从第一次开始\nwhile i <= 100:\nprint('好好学习,天天向上')\ni += 1  每执行一次i的值就加1\n注意:如果没有改变变量,条件一直满足,就会一直",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"
+      }
+    },
+    {
+      "title": "死循环",
+      "module": "Python",
+      "category": "循环",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "基本格式\nwhile True:\n循环体\nwhile True: # 条件只写True,说明一直为真,就会一直执行,从而形成一个死循环\nprint('不要长大')\nwhile False: # 条件只写False,说明一直为真,就会一直执行,从而形成一个死循环\nprint('不要长大')\n只要不是False或0,其他单独存在的值也会是死循环",
+          "source": "practice.py",
+          "date": "10月29日"
+        }
+      ],
+      "code": [
+        "while True:\nwhile True: # 条件只写True,说明一直为真,就会一直执行,从而形成一个死循环\nprint('不要长大')\nwhile False: # 条件只写False,说明一直为真,就会一直执行,从而形成一个死循环\nprint('不要长大')"
+      ],
+      "links": [],
+      "id": "python-5533f68a24",
+      "summary": "基本格式\nwhile True:\n循环体\nwhile True:  条件只写True,说明一直为真,就会一直执行,从而形成一个死循环\nprint('不要长大')\nwhile False:  条件只写False,说明一直为真,就会一直执行,从而形成一个死循环\nprint('不要长大",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%AD%BB%E5%BE%AA%E7%8E%AF",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%AD%BB%E5%BE%AA%E7%8E%AF"
+      }
+    },
+    {
+      "title": "不可变对象",
+      "module": "Python",
+      "category": "拷贝与可变性",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "含义：变量对应的值不能被修改，如果修改就会生成一个新的值从而分配新的内存空间\n常见不可变对象：数值类型（int，bool，float，complex）、字符串、元组\nn = 10  #整型\nprint(n,'原地址：',id(n))\nn = 15\nprint(n,'现地址：',id(n))\n内存地址不一样：修改n的值就会生成新的值\n注意：深浅拷贝只针对可变类型，不可变对象没有拷贝说法",
+          "source": "practice.py",
+          "date": "11月9日"
+        }
+      ],
+      "code": [
+        "n = 10  #整型\nprint(n,'原地址：',id(n))\nn = 15\nprint(n,'现地址：',id(n))"
+      ],
+      "links": [],
+      "id": "python-0a7841290c",
+      "summary": "含义：变量对应的值不能被修改，如果修改就会生成一个新的值从而分配新的内存空间\n常见不可变对象：数值类型（int，bool，float，complex）、字符串、元组\nn = 10  整型\nprint(n,'原地址：',id(n))\nn = 15\nprint(n,'现地址：',id",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%AF%B9%E8%B1%A1"
+      }
+    },
+    {
+      "title": "可变类型",
+      "module": "Python",
+      "category": "拷贝与可变性",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "含义：变量对应的值可以修改，但是内存地址不会改变\n常见可变类型：list 、dict 、set\nli = [1,2,3,4]\nprint(li,'原内存地址：',id(li))         #[1, 2, 3, 4] 原内存地址： 1284879735168\nli.append(5)\nprint(li,'现内存地址：',id(li))         #[1, 2, 3, 4, 5] 现内存地址： 1284879735168\n内存地址未改变",
+          "source": "practice.py",
+          "date": "11月9日"
+        }
+      ],
+      "code": [
+        "li = [1,2,3,4]\nprint(li,'原内存地址：',id(li))         #[1, 2, 3, 4] 原内存地址： 1284879735168\nprint(li,'现内存地址：',id(li))         #[1, 2, 3, 4, 5] 现内存地址： 1284879735168"
+      ],
+      "links": [],
+      "id": "python-40867b0124",
+      "summary": "含义：变量对应的值可以修改，但是内存地址不会改变\n常见可变类型：list 、dict 、set\nli = [1,2,3,4]\nprint(li,'原内存地址：',id(li))         [1, 2, 3, 4] 原内存地址： 1284879735168\nli.append",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%8F%AF%E5%8F%98%E7%B1%BB%E5%9E%8B",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%8F%AF%E5%8F%98%E7%B1%BB%E5%9E%8B"
+      }
+    },
+    {
+      "title": "浅拷贝（数据半共享）",
+      "module": "Python",
+      "category": "拷贝与可变性",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "会创建新的对象，拷贝第一层的数据，嵌套层会指向原来的内存地址\nimport copy         #导入copy模块\nli = [1,2,3,[4,5,6]]           #定义一个嵌套列表\nli2 = copy.copy(li)\nprint(li,li2)                  #[1, 2, 3, [4, 5, 6]] [1, 2, 3, [4, 5, 6]]\n# 查看内存地址 id()\nprint('li内存地址：',id(li))\nprint('li2内存地址：',id(li2))\n# 内存地址不一样,说明不是同一个对象\nli.append(8)\nprint(li,li2)          #[1, 2, 3, [4, 5, 6], 8] [1, 2, 3, [4, 5, 6]]\n# 往嵌套列表添加元素\nli[3].append(7)\nprint(li,li2)          #[1, 2, 3, [4, 5, 6, 7], 8] [1, 2, 3, [4, 5, 6, 7]]\nprint('li[3]内存地址：',id(li[3]))\nprint('li2[3]内存地址：',id(li2[3]))      #地址一样\n# 外层的内存地址不同，但是内层的是一样的\n\n优点：拷贝速度快，占用空间少，拷贝效率高",
+          "source": "practice.py",
+          "date": "11月9日"
+        }
+      ],
+      "code": [
+        "import copy         #导入copy模块\nli = [1,2,3,[4,5,6]]           #定义一个嵌套列表\nli2 = copy.copy(li)\nprint(li,li2)                  #[1, 2, 3, [4, 5, 6]] [1, 2, 3, [4, 5, 6]]\nprint('li内存地址：',id(li))\nprint('li2内存地址：',id(li2))\nprint(li,li2)          #[1, 2, 3, [4, 5, 6], 8] [1, 2, 3, [4, 5, 6]]\nprint(li,li2)          #[1, 2, 3, [4, 5, 6, 7], 8] [1, 2, 3, [4, 5, 6, 7]]\nprint('li[3]内存地址：',id(li[3]))\nprint('li2[3]内存地址：',id(li2[3]))      #地址一样"
+      ],
+      "links": [],
+      "id": "python-a723b1ee71",
+      "summary": "会创建新的对象，拷贝第一层的数据，嵌套层会指向原来的内存地址\nimport copy         导入copy模块\nli = [1,2,3,[4,5,6]]           定义一个嵌套列表\nli2 = copy.copy(li)\nprint(li,li2)       ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%B5%85%E6%8B%B7%E8%B4%9D%EF%BC%88%E6%95%B0%E6%8D%AE%E5%8D%8A%E5%85%B1%E4%BA%AB%EF%BC%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%B5%85%E6%8B%B7%E8%B4%9D%EF%BC%88%E6%95%B0%E6%8D%AE%E5%8D%8A%E5%85%B1%E4%BA%AB%EF%BC%89"
+      }
+    },
+    {
+      "title": "深拷贝（数据完全不共享）",
+      "module": "Python",
+      "category": "拷贝与可变性",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "外层的对象和内部的元素都拷贝了一遍\nimport copy\nli = [1,2,3,[4,5,6]]\nli2 = copy.deepcopy(li)      #深拷贝\nprint(li,li2)                #相同\nprint(li,id(li))\nprint(li2,id(li2))           #地址不同\n# 在嵌套列表添加\nli[3].append(7)\nprint(li,li2)                #[1, 2, 3, [4, 5, 6, 7]] [1, 2, 3, [4, 5, 6]]\n# 深拷贝数据变化只影响自己本身，和原来的对象没有关联",
+          "source": "practice.py",
+          "date": "11月9日"
+        }
+      ],
+      "code": [
+        "import copy\nli = [1,2,3,[4,5,6]]\nli2 = copy.deepcopy(li)      #深拷贝\nprint(li,li2)                #相同\nprint(li,id(li))\nprint(li2,id(li2))           #地址不同\nprint(li,li2)                #[1, 2, 3, [4, 5, 6, 7]] [1, 2, 3, [4, 5, 6]]"
+      ],
+      "links": [],
+      "id": "python-f662ec191b",
+      "summary": "外层的对象和内部的元素都拷贝了一遍\nimport copy\nli = [1,2,3,[4,5,6]]\nli2 = copy.deepcopy(li)      深拷贝\nprint(li,li2)                相同\nprint(li,id(li))\nprint(l",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%B7%B1%E6%8B%B7%E8%B4%9D%EF%BC%88%E6%95%B0%E6%8D%AE%E5%AE%8C%E5%85%A8%E4%B8%8D%E5%85%B1%E4%BA%AB%EF%BC%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%B7%B1%E6%8B%B7%E8%B4%9D%EF%BC%88%E6%95%B0%E6%8D%AE%E5%AE%8C%E5%85%A8%E4%B8%8D%E5%85%B1%E4%BA%AB%EF%BC%89"
+      }
+    },
+    {
+      "title": "Python笔记（未标日期）",
+      "module": "Python",
+      "category": "输入、输出与格式化",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "print (\"Hello, World!\")",
+          "source": "practice.py",
+          "date": ""
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-3711ad49a4",
+      "summary": "print (\"Hello, World!\")",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20Python%E7%AC%94%E8%AE%B0%EF%BC%88%E6%9C%AA%E6%A0%87%E6%97%A5%E6%9C%9F%EF%BC%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20Python%E7%AC%94%E8%AE%B0%EF%BC%88%E6%9C%AA%E6%A0%87%E6%97%A5%E6%9C%9F%EF%BC%89"
+      }
+    },
+    {
+      "title": "\\\\ 反斜杠",
+      "module": "Python",
+      "category": "输入、输出与格式化",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "print('sixstar\\\\123') #sixstar\\123\nprint(r'sixstar\\\\\\123') #sixstar\\\\\\123  r表示原始字符串，里面的转义字符不生效",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "print('sixstar\\\\123') #sixstar\\123\nprint(r'sixstar\\\\\\123') #sixstar\\\\\\123  r表示原始字符串，里面的转义字符不生效"
+      ],
+      "links": [],
+      "id": "python-0ffc31d9a4",
+      "summary": "print('sixstar\\\\123') sixstar\\123\nprint(r'sixstar\\\\\\123') sixstar\\\\\\123  r表示原始字符串，里面的转义字符不生效",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%5C%5C%20%E5%8F%8D%E6%96%9C%E6%9D%A0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%5C%5C%20%E5%8F%8D%E6%96%9C%E6%9D%A0"
+      }
+    },
+    {
+      "title": "\\n 换行符 表示将当前位置换到下一行的开头",
+      "module": "Python",
+      "category": "输入、输出与格式化",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "print('姓名\\n年龄\\n性别')\n姓名\n年龄\n性别",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "print('姓名\\n年龄\\n性别')"
+      ],
+      "links": [],
+      "id": "python-6cff865667",
+      "summary": "print('姓名\\n年龄\\n性别')\n姓名\n年龄\n性别",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%5Cn%20%E6%8D%A2%E8%A1%8C%E7%AC%A6%20%E8%A1%A8%E7%A4%BA%E5%B0%86%E5%BD%93%E5%89%8D%E4%BD%8D%E7%BD%AE%E6%8D%A2%E5%88%B0%E4%B8%8B%E4%B8%80%E8%A1%8C%E7%9A%84%E5%BC%80%E5%A4%B4",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%5Cn%20%E6%8D%A2%E8%A1%8C%E7%AC%A6%20%E8%A1%A8%E7%A4%BA%E5%B0%86%E5%BD%93%E5%89%8D%E4%BD%8D%E7%BD%AE%E6%8D%A2%E5%88%B0%E4%B8%8B%E4%B8%80%E8%A1%8C%E7%9A%84%E5%BC%80%E5%A4%B4"
+      }
+    },
+    {
+      "title": "\\r 回车符 表示将当前位置换到本行的开头",
+      "module": "Python",
+      "category": "输入、输出与格式化",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "print('sixstar\\r123') #123star 是123把six替换掉了 从而输出结果是123star",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "print('sixstar\\r123') #123star 是123把six替换掉了 从而输出结果是123star"
+      ],
+      "links": [],
+      "id": "python-45f9372413",
+      "summary": "print('sixstar\\r123') 123star 是123把six替换掉了 从而输出结果是123star",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%5Cr%20%E5%9B%9E%E8%BD%A6%E7%AC%A6%20%E8%A1%A8%E7%A4%BA%E5%B0%86%E5%BD%93%E5%89%8D%E4%BD%8D%E7%BD%AE%E6%8D%A2%E5%88%B0%E6%9C%AC%E8%A1%8C%E7%9A%84%E5%BC%80%E5%A4%B4",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%5Cr%20%E5%9B%9E%E8%BD%A6%E7%AC%A6%20%E8%A1%A8%E7%A4%BA%E5%B0%86%E5%BD%93%E5%89%8D%E4%BD%8D%E7%BD%AE%E6%8D%A2%E5%88%B0%E6%9C%AC%E8%A1%8C%E7%9A%84%E5%BC%80%E5%A4%B4"
+      }
+    },
+    {
+      "title": "\\t 制表符  通常表示四个字符，也称缩进",
+      "module": "Python",
+      "category": "输入、输出与格式化",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "print('sixstar') #sixstar\nprint('six\\tstar') #six    star\nprint('姓名\\t年龄\\t性别') #姓名    年龄    性别",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "print('sixstar') #sixstar\nprint('six\\tstar') #six    star\nprint('姓名\\t年龄\\t性别') #姓名    年龄    性别"
+      ],
+      "links": [],
+      "id": "python-c4b414b60f",
+      "summary": "print('sixstar') sixstar\nprint('six\\tstar') six    star\nprint('姓名\\t年龄\\t性别') 姓名    年龄    性别",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%5Ct%20%E5%88%B6%E8%A1%A8%E7%AC%A6%20%20%E9%80%9A%E5%B8%B8%E8%A1%A8%E7%A4%BA%E5%9B%9B%E4%B8%AA%E5%AD%97%E7%AC%A6%EF%BC%8C%E4%B9%9F%E7%A7%B0%E7%BC%A9%E8%BF%9B",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%5Ct%20%E5%88%B6%E8%A1%A8%E7%AC%A6%20%20%E9%80%9A%E5%B8%B8%E8%A1%A8%E7%A4%BA%E5%9B%9B%E4%B8%AA%E5%AD%97%E7%AC%A6%EF%BC%8C%E4%B9%9F%E7%A7%B0%E7%BC%A9%E8%BF%9B"
+      }
+    },
+    {
+      "title": "input()输入函数",
+      "module": "Python",
+      "category": "输入、输出与格式化",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "input(prompt) #prompt是提示信息，括号内的内容会显示在控制台上\nname = input(\"请输入你的姓名：\")\nprint(f'你的姓名是{name}') #f-string格式化输出\npwd = input(\"请输入你的密码：\")\nprint(f'你的密码是{pwd}') #f-string格式化输出",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "name = input(\"请输入你的姓名：\")\nprint(f'你的姓名是{name}') #f-string格式化输出\npwd = input(\"请输入你的密码：\")\nprint(f'你的密码是{pwd}') #f-string格式化输出"
+      ],
+      "links": [],
+      "id": "python-d2f9331321",
+      "summary": "input(prompt) prompt是提示信息，括号内的内容会显示在控制台上\nname = input(\"请输入你的姓名：\")\nprint(f'你的姓名是{name}') f-string格式化输出\npwd = input(\"请输入你的密码：\")\nprint(f'你的密码是{",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20input%28%29%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20input%28%29%E8%BE%93%E5%85%A5%E5%87%BD%E6%95%B0"
+      }
+    },
+    {
+      "title": "len()求长度",
+      "module": "Python",
+      "category": "输入、输出与格式化",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "dic = {'name':'kk','age':22}\nprint(len(dic))  #2 有两对键值对",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "dic = {'name':'kk','age':22}\nprint(len(dic))  #2 有两对键值对"
+      ],
+      "links": [],
+      "id": "python-82bdb43c59",
+      "summary": "dic = {'name':'kk','age':22}\nprint(len(dic))  2 有两对键值对",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20len%28%29%E6%B1%82%E9%95%BF%E5%BA%A6",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20len%28%29%E6%B1%82%E9%95%BF%E5%BA%A6"
+      }
+    },
+    {
+      "title": "应用场景",
+      "module": "Python",
+      "category": "输入、输出与格式化",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "函数的参数和返回值\n格式化输出后面的()本质上是一个元组\nname = 'kk'\nage = 22\n# print('%s的年龄是:%d' %(name,age))\ninfo = (name,age)\nprint('%s的年龄是:%d' %info)\n数据不可以被修改的时候,保护数据的安全",
+          "source": "practice.py",
+          "date": "11月5日"
+        }
+      ],
+      "code": [
+        "name = 'kk'\nage = 22\ninfo = (name,age)\nprint('%s的年龄是:%d' %info)"
+      ],
+      "links": [],
+      "id": "python-f2dc2f7e18",
+      "summary": "函数的参数和返回值\n格式化输出后面的()本质上是一个元组\nname = 'kk'\nage = 22\n print('%s的年龄是:%d' %(name,age))\ninfo = (name,age)\nprint('%s的年龄是:%d' %info)\n数据不可以被修改的时候,保护数",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"
+      }
+    },
+    {
+      "title": "格式化输出",
+      "module": "Python",
+      "category": "输入、输出与格式化",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、占位符：生成一定格式的字符串**\n\n**2、%:**\n\n**① %s 字符串（常用）**\n\n```python\nname = 'kk'\nprint('我的名字：%s' % name)----我的名字：kk\n```\n\n**② %d 整数（常用）**\n\n```python\nage = 22\nname = 'kk'\nprint('我的名字:%s,年龄:%d' %(name,age))----我的名字：kk,年龄：22\n```\n\n> **注意：** 注意！：这里的冒号也需要是英文的格式\n\n**③ %数字d 整数：数字设置位数，补足前面的空白，数字一样时不变**\n\n```python\na = 123\nprint('%6d' % a)---- &nbsp;&nbsp;&nbsp;123(前面多了三个空白)\n```\n\n当想用0补足时：print('%06d' % a)----000123\n**④ %f 浮点数(常用)**\n\n```python\na = 1.2\nb = 1.23\nprint('%f' % a)----1.200000\nprint('%f' % b)----1.230000\n```\n\n> **注意：** 默认后六位小数，当位数超过时，遵循四舍五入原则\n\n**⑤ %.数字f 浮点数：数字设置小数位数,同样遵循四舍五入原则(注意这里的百分号后有“.”)**\n\n```python\na = 2.34567\nprint('%.3f' % a)----2.346\nprint('%.7f' % a)----2.3456700 # 默认显示7位小数\n```\n\n**⑥ %%**\n\n```python\nprint('我是%%的1%%' % ())----我是%的%1\n```\n\n**3、f格式化**\n\n**① 格式：f'{表达式}'**\n\n```python\nname  = kk\nage = 22\nprint(f'我的名字是{name},我今年{age}岁了')----我的名字是kk，我今年22岁了\n```",
+          "source": "daily_note.md",
+          "date": "10月16日"
+        }
+      ],
+      "code": [
+        "name = 'kk'\nprint('我的名字：%s' % name)----我的名字：kk",
+        "age = 22\nname = 'kk'\nprint('我的名字:%s,年龄:%d' %(name,age))----我的名字：kk,年龄：22",
+        "a = 123\nprint('%6d' % a)---- &nbsp;&nbsp;&nbsp;123(前面多了三个空白)",
+        "a = 1.2\nb = 1.23\nprint('%f' % a)----1.200000\nprint('%f' % b)----1.230000",
+        "a = 2.34567\nprint('%.3f' % a)----2.346\nprint('%.7f' % a)----2.3456700 # 默认显示7位小数",
+        "print('我是%%的1%%' % ())----我是%的%1",
+        "name  = kk\nage = 22\nprint(f'我的名字是{name},我今年{age}岁了')----我的名字是kk，我今年22岁了"
+      ],
+      "links": [],
+      "id": "python-144c3170ac",
+      "summary": "1、占位符：生成一定格式的字符串\n\n2、%:\n\n① %s 字符串（常用）\n\npython\nname = 'kk'\nprint('我的名字：%s' % name)----我的名字：kk\n\n\n② %d 整数（常用）\n\npython\nage = 22\nname = 'kk'\nprint",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"
+      }
+    },
+    {
+      "title": "输出函数print()",
+      "module": "Python",
+      "category": "输入、输出与格式化",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、*value 值：表示一次可以输出多个对象，输出多个对象时，需要用“，”分隔**\n\n**示例：** eg. print('哈哈'，'呵呵','嘿嘿')-----结果：哈哈 呵呵 嘿嘿\n**2、sep: 用来间隔多个对象，默认值是一个空格**\n\n**示例：** eg. print('哈哈'，'呵呵','嘿嘿',sep=',')---结果：哈哈,呵呵,嘿嘿<这里中间的空格用了逗号代替>\n**3、end: 用来设定以...结尾，默认值是换行符\\n，可以切换成其他字符**\n\n**示例：** eg.  print(字符串，end='后面要拼接的值')\n输入:\n\n```python\nprint('hello')\nprint('world')\n```\n\n输出：\nhello\nworld\n输入：\n\n```python\nprint('hello',end=',')\nprint('world')\n```\n\n输出：\nhello,world",
+          "source": "daily_note.md",
+          "date": "10月16日"
+        }
+      ],
+      "code": [
+        "print('hello')\nprint('world')",
+        "print('hello',end=',')\nprint('world')"
+      ],
+      "links": [],
+      "id": "python-d7a78d55b8",
+      "summary": "1、value 值：表示一次可以输出多个对象，输出多个对象时，需要用“，”分隔\n\n示例： eg. print('哈哈'，'呵呵','嘿嘿')-----结果：哈哈 呵呵 嘿嘿\n2、sep: 用来间隔多个对象，默认值是一个空格\n\n示例： eg. print('哈哈'，'呵呵','嘿嘿",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E8%BE%93%E5%87%BA%E5%87%BD%E6%95%B0print%28%29",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E8%BE%93%E5%87%BA%E5%87%BD%E6%95%B0print%28%29"
+      }
+    },
+    {
+      "title": "if-elif结构",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "if-else 二选一 if-elif 多选一\nif 条件1：\n满足条件1做的事情\nelif 条件2：\n满足条件2做的事情\nelif 条件3：\n满足条件3做的事情\n......\nscore = 85\nif 85 <= score <= 100:\nprint('优秀')\nelif 60 <= score <85:\nprint('及格')\nelif 0 <= score <60:\nprint('不及格')\n\nquestion = input('你喜欢函数团吗？')\nif question == '喜欢':\nprint('函数团也喜欢你！')\nelif question == '不喜欢':\nprint('你叫什么名字？？！')\nelse:\nprint('听不懂你在说什么.......')",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "if 条件1：\nelif 条件2：\nelif 条件3：\nscore = 85\nif 85 <= score <= 100:\nprint('优秀')\nelif 60 <= score <85:\nprint('及格')\nelif 0 <= score <60:\nprint('不及格')\nquestion = input('你喜欢函数团吗？')\nif question == '喜欢':\nprint('函数团也喜欢你！')\nelif question == '不喜欢':\nprint('你叫什么名字？？！')\nelse:\nprint('听不懂你在说什么.......')"
+      ],
+      "links": [],
+      "id": "python-8685be97c9",
+      "summary": "if-else 二选一 if-elif 多选一\nif 条件1：\n满足条件1做的事情\nelif 条件2：\n满足条件2做的事情\nelif 条件3：\n满足条件3做的事情\n......\nscore = 85\nif 85 <= score <= 100:\nprint('优秀')\nelif ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20if-elif%E7%BB%93%E6%9E%84",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20if-elif%E7%BB%93%E6%9E%84"
+      }
+    },
+    {
+      "title": "if-else",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "语法格式：\nif 判断条件：\n满足条件做的事情\nelse:\n不满足条件做的事情\na = 666\nif a == 666:\nprint('你真棒！')\nelse:\nprint('还要继续加油哈！')",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "if 判断条件：\nelse:\na = 666\nif a == 666:\nprint('你真棒！')\nelse:\nprint('还要继续加油哈！')"
+      ],
+      "links": [],
+      "id": "python-492fdd60e1",
+      "summary": "语法格式：\nif 判断条件：\n满足条件做的事情\nelse:\n不满足条件做的事情\na = 666\nif a == 666:\nprint('你真棒！')\nelse:\nprint('还要继续加油哈！')",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20if-else",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20if-else"
+      }
+    },
+    {
+      "title": "if判断基本格式",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "if 判断条件：\n满足条件做的事情\nage = 17\nif age<18:\nprint('未成年不能上网')\n\n练习：用户从控制台输入成绩，如果满分，输出“你真棒！”，如果及格，输出“还要继续加油哈！”\nscore = input(\"请输入你的成绩：\") #  input()函数获取的内容都是字符串类型\nif score == '100': #'=='是判断是否相等，'='是赋值运算符\nprint('你真棒！')\nif score == '60':\nprint('还要继续加油哈！')",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "if 判断条件：\nage = 17\nif age<18:\nprint('未成年不能上网')\nscore = input(\"请输入你的成绩：\") #  input()函数获取的内容都是字符串类型\nif score == '100': #'=='是判断是否相等，'='是赋值运算符\nprint('你真棒！')\nif score == '60':\nprint('还要继续加油哈！')"
+      ],
+      "links": [],
+      "id": "python-cab3f785f3",
+      "summary": "if 判断条件：\n满足条件做的事情\nage = 17\nif age<18:\nprint('未成年不能上网')\n\n练习：用户从控制台输入成绩，如果满分，输出“你真棒！”，如果及格，输出“还要继续加油哈！”\nscore = input(\"请输入你的成绩：\")   input()函数获",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20if%E5%88%A4%E6%96%AD%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20if%E5%88%A4%E6%96%AD%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F"
+      }
+    },
+    {
+      "title": "if判断：",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- 基本格式：\n\n```python\nif 要判断的条件：\n条件成立时要做的事\n```\n\n---",
+          "source": "daily_note.md",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "if 要判断的条件：\n条件成立时要做的事"
+      ],
+      "links": [],
+      "id": "python-abbaf8cef0",
+      "summary": "- 基本格式：\n\npython\nif 要判断的条件：\n条件成立时要做的事\n\n\n---",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20if%E5%88%A4%E6%96%AD%EF%BC%9A",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20if%E5%88%A4%E6%96%AD%EF%BC%9A"
+      }
+    },
+    {
+      "title": "if嵌套",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "基本格式\nif 条件1：\n事情1\nif 条件2：\n事情2\nelse：\n不满足条件做的事情\n注意：内层if判断和外层if判断都可以是if-else结构\n\n定义一个布尔型变量，表示是否有车票\nticket = True  #True代表有车票，False代表没车票\n# 定义一个浮点型变量保存体温\ntemp = 38.5\n# 判断是否有车票\nif ticket == True:  #外层if判断\nprint('请进站',end=',')\n# 正常人腋下体温是36.3到37.2\nif 36.3 <= temp <= 37.2:\nprint(\"体温正常\")\nelse:\nprint(\"体温异常，请隔离\")\nelse:\nprint('请先购买车票')\n\n不管有没有车票都会询问体温，用input输入\n输入是否有车票\nticket_input = input('请问您是否有车票？（有/无）：')\nticket = ticket_input == '有'  # 输入“有”得到True，其他输入得到False\n\n# 输入体温\ntemp = float(input('请输入您的体温：'))  #因为temp是需要比较大小的，input里面默认是字符串，所以需要改成浮点数\n\n# 判断是否有车票\nif ticket == True:\nprint('请进站', end=',')\n# 正常人腋下体温是36.3到37.2\nif 36.3 <= temp <= 37.2:\nprint('体温正常')\nelse:\nprint('体温异常，请隔离')\nelse:\nprint('请先购买车票')\n\n\nticket_input = input('请问您是否有车票？（有/无）：')\n#有布尔值判断就用==\nif ticket_input == '有':\nprint('请进站', end=',')\n\ntemp = float(input('请输入您的体温：'))\n\nif 36.3 <= temp <= 37.2:\nprint('体温正常')\nelse:\nprint('体温异常，请隔离')\nelse:\nprint('请先购买车票')",
+          "source": "practice.py",
+          "date": "10月23日"
+        }
+      ],
+      "code": [
+        "if 条件1：\nif 条件2：\nticket = True  #True代表有车票，False代表没车票\ntemp = 38.5\nif ticket == True:  #外层if判断\nprint('请进站',end=',')\nif 36.3 <= temp <= 37.2:\nprint(\"体温正常\")\nelse:\nprint(\"体温异常，请隔离\")\nelse:\nprint('请先购买车票')\nticket_input = input('请问您是否有车票？（有/无）：')\nticket = ticket_input == '有'  # 输入“有”得到True，其他输入得到False\ntemp = float(input('请输入您的体温：'))  #因为temp是需要比较大小的，input里面默认是字符串，所以需要改成浮点数\nif ticket == True:\nprint('请进站', end=',')\nif 36.3 <= temp <= 37.2:\nprint('体温正常')\nelse:\nprint('体温异常，请隔离')\nelse:\nprint('请先购买车票')\nticket_input = input('请问您是否有车票？（有/无）：')\nif ticket_input == '有':\nprint('请进站', end=',')\ntemp = float(input('请输入您的体温：'))\nif 36.3 <= temp <= 37.2:\nprint('体温正常')\nelse:\nprint('体温异常，请隔离')\nelse:\nprint('请先购买车票')"
+      ],
+      "links": [],
+      "id": "python-695942d7ba",
+      "summary": "基本格式\nif 条件1：\n事情1\nif 条件2：\n事情2\nelse：\n不满足条件做的事情\n注意：内层if判断和外层if判断都可以是if-else结构\n\n定义一个布尔型变量，表示是否有车票\nticket = True  True代表有车票，False代表没车票\n 定义一个浮点型变量",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20if%E5%B5%8C%E5%A5%97",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20if%E5%B5%8C%E5%A5%97"
+      }
+    },
+    {
+      "title": "三目运算符（三元表达式）",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "语法格式：为真结果 if 判断条件 else 为假结果",
+          "source": "practice.py",
+          "date": "10月22日"
+        },
+        {
+          "content": "语法格式：为真结果 if 判断条件 else 为假结果\na = 5\nb = 8\nif a <= b:\nprint('a小于等于b') #为真结果\nelse:\nprint('a大于b') #为假结果\nprint('a小于等于b' if a <= b else 'a大于b') #三目运算符",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "a = 5\nb = 8\nif a <= b:\nprint('a小于等于b') #为真结果\nelse:\nprint('a大于b') #为假结果\nprint('a小于等于b' if a <= b else 'a大于b') #三目运算符"
+      ],
+      "links": [],
+      "id": "python-5e8804bcc7",
+      "summary": "语法格式：为真结果 if 判断条件 else 为假结果",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88%E4%B8%89%E5%85%83%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%88%E4%B8%89%E5%85%83%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%89"
+      }
+    },
+    {
+      "title": "成员运算符",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "作用：检查字符串中是否包含了某个子字符串（即某个字符或多个字符）\nin 检查是否包含，返回布尔值True或False\nnot in 检查是否不包含，返回布尔值True或False\nname = '函数团'\nprint('函数' in name) # True\nprint('函数' not in name) # False",
+          "source": "practice.py",
+          "date": "11月3日"
+        }
+      ],
+      "code": [
+        "name = '函数团'\nprint('函数' in name) # True\nprint('函数' not in name) # False"
+      ],
+      "links": [],
+      "id": "python-c8098a74ec",
+      "summary": "作用：检查字符串中是否包含了某个子字符串（即某个字符或多个字符）\nin 检查是否包含，返回布尔值True或False\nnot in 检查是否不包含，返回布尔值True或False\nname = '函数团'\nprint('函数' in name)  True\nprint('函数' ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%88%90%E5%91%98%E8%BF%90%E7%AE%97%E7%AC%A6",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%88%90%E5%91%98%E8%BF%90%E7%AE%97%E7%AC%A6"
+      }
+    },
+    {
+      "title": "查找元素",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "in：判断指定元素是否存在列表中，如果存在就返回Ture，不存在就返回False\nnot in:判断指定元素是否存在列表中，如果不存在就返回Ture，存在就返回False\nli=['a','b','c','d']\nprint('b' in li) #True\n\n用户输入昵称，昵称重复则不能使用\n定义一个列表，保存已经存在的昵称\nname_list=['baobao','jinbaobao','baobaojin']\nwhile True:\nname=input(\"请输入您的昵称\")\n# 判断昵称是否已经存在\nif name in name_list:\nprint (f\"您输入的昵称{name}已经存在了哦\")\n# 如果昵称不存在\nelse:\nprint(f\"昵称{name}已经被您使用\")\n# 把昵称新增到列表\nname_list.append(name)\nprint(name_list)\nbreak",
+          "source": "practice.py",
+          "date": "11月4日"
+        }
+      ],
+      "code": [
+        "li=['a','b','c','d']\nprint('b' in li) #True\nname_list=['baobao','jinbaobao','baobaojin']\nwhile True:\nname=input(\"请输入您的昵称\")\nif name in name_list:\nelse:\nprint(f\"昵称{name}已经被您使用\")\nprint(name_list)"
+      ],
+      "links": [],
+      "id": "python-f9cf4b201b",
+      "summary": "in：判断指定元素是否存在列表中，如果存在就返回Ture，不存在就返回False\nnot in:判断指定元素是否存在列表中，如果不存在就返回Ture，存在就返回False\nli=['a','b','c','d']\nprint('b' in li) True\n\n用户输入昵称，昵称重",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0"
+      }
+    },
+    {
+      "title": "比较（关系）运算符",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "== 比较的是两个变量的值是否相等，相等返回布尔值True，不相等返回布尔值False\n!= 比较的是两个变量的值是否不相等，不相等返回布尔值True，相等返回布尔值False\na = 55\nb = 88\nprint(a==b) #False\nprint(a!=b) #True\nprint(a>b) #False\nprint(a<b) #True\nif a>b:\nprint('a大于b')",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "a = 55\nb = 88\nprint(a==b) #False\nprint(a!=b) #True\nprint(a>b) #False\nprint(a<b) #True\nif a>b:\nprint('a大于b')"
+      ],
+      "links": [],
+      "id": "python-2fa942411a",
+      "summary": "== 比较的是两个变量的值是否相等，相等返回布尔值True，不相等返回布尔值False\n!= 比较的是两个变量的值是否不相等，不相等返回布尔值True，相等返回布尔值False\na = 55\nb = 88\nprint(a==b) False\nprint(a!=b) True\npr",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E6%AF%94%E8%BE%83%EF%BC%88%E5%85%B3%E7%B3%BB%EF%BC%89%E8%BF%90%E7%AE%97%E7%AC%A6",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E6%AF%94%E8%BE%83%EF%BC%88%E5%85%B3%E7%B3%BB%EF%BC%89%E8%BF%90%E7%AE%97%E7%AC%A6"
+      }
+    },
+    {
+      "title": "算数运算符：加(+)、减(-)、乘(*)、除(/)、",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "取整除(//)：返回除法的整数部分、取余数(%)、幂(**)\n- 使用算数运算符/，商一定是浮点数\n- 取整除就是向下取整，不管四舍五入的原则\n- 使用算术运算符，其中若有浮点数，结果也会用浮点数表示\n- 优先级排序：幂（最高优先级）> 乘、除、取余、取整除 > 加减",
+          "source": "daily_note.md",
+          "date": "10月22日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-1ab628765d",
+      "summary": "取整除(//)：返回除法的整数部分、取余数(%)、幂()\n- 使用算数运算符/，商一定是浮点数\n- 取整除就是向下取整，不管四舍五入的原则\n- 使用算术运算符，其中若有浮点数，结果也会用浮点数表示\n- 优先级排序：幂（最高优先级） 乘、除、取余、取整除  加减",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A%E5%8A%A0%28%2B%29%E3%80%81%E5%87%8F%28-%29%E3%80%81%E4%B9%98%28%2A%29%E3%80%81%E9%99%A4%28/%29%E3%80%81",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A%E5%8A%A0%28%2B%29%E3%80%81%E5%87%8F%28-%29%E3%80%81%E4%B9%98%28%2A%29%E3%80%81%E9%99%A4%28/%29%E3%80%81"
+      }
+    },
+    {
+      "title": "算术运算符",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "print(1/1) #使用算术运算符/，商一定是浮点数(float)\na = 5\nb = 2\nprint(a//b) #2 取整\nprint(7.0//2) #取整除若有浮点数，结果也会用浮点数表示\nprint(a%b) #1 取余（取模）\nprint(a**b) #25 幂（乘方）\nprint(3**2+5/2) # 9+2.5=11.5",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "print(1/1) #使用算术运算符/，商一定是浮点数(float)\na = 5\nb = 2\nprint(a//b) #2 取整\nprint(7.0//2) #取整除若有浮点数，结果也会用浮点数表示\nprint(a%b) #1 取余（取模）\nprint(a**b) #25 幂（乘方）\nprint(3**2+5/2) # 9+2.5=11.5"
+      ],
+      "links": [],
+      "id": "python-e1782d961a",
+      "summary": "print(1/1) 使用算术运算符/，商一定是浮点数(float)\na = 5\nb = 2\nprint(a//b) 2 取整\nprint(7.0//2) 取整除若有浮点数，结果也会用浮点数表示\nprint(a%b) 1 取余（取模）\nprint(ab) 25 幂（乘方）\npri",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"
+      }
+    },
+    {
+      "title": "赋值运算符",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "2.1 =\nnum1 = 5\nnum2 = 8\n将一个变量值赋给另外一个变量\nnum3 = num1\nprint(num3) #5\n\n2.2 +=\na = 1\nprint(a) #1\na= a+1\na += 1  #等效于a = a + 1\nprint(a) #2\nn1 = 99 #成本\nn2 = 55 #利润\nn3 = n2 + n1 # 售价\nn1 += n2 #等效于n1 = n1 + n2\nprint(n1) #154\n\n2.3 -=\nb = 1\nb -= 1 #等效于b = b - 1\nprint(b) #0\nprint(10 +=3) #语法错误，纯数字不能直接在print中使用赋值运算符，需要先赋值",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "num1 = 5\nnum2 = 8\nnum3 = num1\nprint(num3) #5\na = 1\nprint(a) #1\na= a+1\nprint(a) #2\nn1 = 99 #成本\nn2 = 55 #利润\nn3 = n2 + n1 # 售价\nprint(n1) #154\nb = 1\nprint(b) #0\nprint(10 +=3) #语法错误，纯数字不能直接在print中使用赋值运算符，需要先赋值"
+      ],
+      "links": [],
+      "id": "python-9ee4585f68",
+      "summary": "2.1 =\nnum1 = 5\nnum2 = 8\n将一个变量值赋给另外一个变量\nnum3 = num1\nprint(num3) 5\n\n2.2 +=\na = 1\nprint(a) 1\na= a+1\na += 1  等效于a = a + 1\nprint(a) 2\nn1 = 99 成本\n",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"
+      }
+    },
+    {
+      "title": "赋值运算符：+= 、—= 、",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- 赋值运算符必须连着写，中间不能有空格，否则会报错\n\n- 输入函数：input()输入函数",
+          "source": "daily_note.md",
+          "date": "10月22日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "python-512ca95bec",
+      "summary": "- 赋值运算符必须连着写，中间不能有空格，否则会报错\n\n- 输入函数：input()输入函数",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A%2B%3D%20%E3%80%81%E2%80%94%3D%20%E3%80%81",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%EF%BC%9A%2B%3D%20%E3%80%81%E2%80%94%3D%20%E3%80%81"
+      }
+    },
+    {
+      "title": "逻辑运算符",
+      "module": "Python",
+      "category": "运算符与条件判断",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "and 左右两边都符合才为真\na = 'Hello'\nb = 'World'\nif a == 'Hello' and b == 'World':\nprint('Hello World') #Hello World\nif a == 'Hello' and b == 'Python':\nprint('Hello Python') #不输出\nor 左右两边有一个符合就为真\nfruit = 'apple'\nif fruit == 'apple' or fruit == 'banana':\nprint('带来了水果') #带来了水果\nnot 表示相反的结果\nprint(not 3>9) #True",
+          "source": "practice.py",
+          "date": "10月22日"
+        }
+      ],
+      "code": [
+        "a = 'Hello'\nb = 'World'\nif a == 'Hello' and b == 'World':\nprint('Hello World') #Hello World\nif a == 'Hello' and b == 'Python':\nprint('Hello Python') #不输出\nfruit = 'apple'\nif fruit == 'apple' or fruit == 'banana':\nprint('带来了水果') #带来了水果\nprint(not 3>9) #True"
+      ],
+      "links": [],
+      "id": "python-9acb48d12f",
+      "summary": "and 左右两边都符合才为真\na = 'Hello'\nb = 'World'\nif a == 'Hello' and b == 'World':\nprint('Hello World') Hello World\nif a == 'Hello' and b == 'Python':",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=Python%20%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6",
+        "leetcode": "https://leetcode.cn/problemset/?search=Python%20%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"
+      }
+    },
+    {
+      "title": "事务控制语句：",
+      "module": "SQL",
+      "category": "事务、锁与存储过程",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- ROLLBACK代表回滚，会结束用户的事务，并撤销正在进行的所有未提交的修改\n- SAVEPOINT identifier 表示在事务中创建一个保存点，一个事务可以有多个保存点\n- COMMIT WORK可以提交事务，并使得已对数据库做的所有修改成为永久性的\n- RELEASE SAVEPOINT identifier 的主要作用是删除一个保存点，但他不会自动撤销该保存点之后执行的操作\n- ROLLBACK TO SAVEPOINT identifier 回滚到该保存点，撤销保存点之后执行的操作，但保存点本身仍然存在",
+          "source": "daily_note.md",
+          "date": "10月23日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-a602ebe9a5",
+      "summary": "- ROLLBACK代表回滚，会结束用户的事务，并撤销正在进行的所有未提交的修改\n- SAVEPOINT identifier 表示在事务中创建一个保存点，一个事务可以有多个保存点\n- COMMIT WORK可以提交事务，并使得已对数据库做的所有修改成为永久性的\n- RELEAS",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5%EF%BC%9A",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5%EF%BC%9A"
+      }
+    },
+    {
+      "title": "存储过程的优点：",
+      "module": "SQL",
+      "category": "事务、锁与存储过程",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、执行速度快**\n\n**2、允许组件式编程**\n\n**3、减少网络流量**\n\n**4、提高系统安全性**",
+          "source": "daily_note.md",
+          "date": "10月27日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-a7937608a1",
+      "summary": "1、执行速度快\n\n2、允许组件式编程\n\n3、减少网络流量\n\n4、提高系统安全性",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E4%BC%98%E7%82%B9%EF%BC%9A",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E4%BC%98%E7%82%B9%EF%BC%9A"
+      }
+    },
+    {
+      "title": "存储过程的缺点：",
+      "module": "SQL",
+      "category": "事务、锁与存储过程",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、移植性差**\n\n**2、难以调试维护**\n\n**3、服务器不能负载均衡**\n\n- USING FILESORT表名数据库对结果集进行排序但无法使用索引",
+          "source": "daily_note.md",
+          "date": "10月27日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-a9a68e3b3a",
+      "summary": "1、移植性差\n\n2、难以调试维护\n\n3、服务器不能负载均衡\n\n- USING FILESORT表名数据库对结果集进行排序但无法使用索引",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E7%BC%BA%E7%82%B9%EF%BC%9A",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E7%9A%84%E7%BC%BA%E7%82%B9%EF%BC%9A"
+      }
+    },
+    {
+      "title": "WHERE 和 HAVING的区别",
+      "module": "SQL",
+      "category": "分组与聚合",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、WHERE在分组前工作，过滤原始数据行；HAVING在分组后工作，过滤分组后的结果，专门用来筛选GROUP BY产生的结果或聚合函数的值**\n\n**2、WHERE后不可以接聚合函数，而HAVING是专门处理这些的**",
+          "source": "daily_note.md",
+          "date": "10月27日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-6cb3bfbf17",
+      "summary": "1、WHERE在分组前工作，过滤原始数据行；HAVING在分组后工作，过滤分组后的结果，专门用来筛选GROUP BY产生的结果或聚合函数的值\n\n2、WHERE后不可以接聚合函数，而HAVING是专门处理这些的",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20WHERE%20%E5%92%8C%20HAVING%E7%9A%84%E5%8C%BA%E5%88%AB",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20WHERE%20%E5%92%8C%20HAVING%E7%9A%84%E5%8C%BA%E5%88%AB"
+      }
+    },
+    {
+      "title": "分组取极值",
+      "module": "SQL",
+      "category": "分组与聚合",
+      "aliases": [
+        "每组最大值",
+        "每组最小值",
+        "GPA最低"
+      ],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、窗口函数＋子查询：ROW_NUMBER() OVER (PARTITION BY 分组列 ORDER BY 排序列) as rn**\n\nROW_NUMBER():生成1、2、3的行号\nPARTITION BY 列：按这个列分区，就是分组，每个区里独立编号\nORDER BY 列：区内按这个列排序，决定谁编号在前\nrn:是ROW_NUMBER生成的编号列的命名，后续取极值的时候用\n\n```sql\nSELECT device_id,university,gpa\nFROM (SELECT device_id,university,gpa,ROW_NUMVER() OVER (PARTITION BY university ORDER BY gpa ASC) as rn\nFROM user_profile) as t\nWHERE rn = 1\n```\n\n**2、子查询＋连接:先找每组最低值，再到原表中匹配**\n\n子查询：把一个SELECT的结果，当作另一个查询的“数据源”或比较值\n**①SELECT...FROM(SELECT...FROM) AS 表名**\n\n**②SELECT(SELECT...FROM...) AS 列名**\n\n**③SELECT...FROM...WHERE 表1中的列=(SELECT...FROM...WHERE)#这里的第二个WHERE被称为相关，把两个表给关联起来了**\n\n连接：把两个不同的表连接起来，但是要求有一列有相同的数据作为对应关系\n\n```sql\nINNER JOIN 表2 ON 约束条件\nSELECT t1.device_id,t1.university,t1.gpa\nFROM user_profile as t1\nINNER JOIN\n(SELECT university,MIN(gpa) AS min_gpa\nFROM user_profile\nGROUP BY university) AS t2\nON t1.university = t2.university\nAND t1.gpa = t2.min_gpa\nORDER BY t1.university\n```\n\n> **注意：** 注意！这里第一个SELECT里需要加上t1.，因为t2也在外层\n\n**3、相关子查询：子查询的一种类型，加在WHERE后**\n\n```sql\nSELECT device_id,university,gpa\nFROM user_profile as t1\nWHERE gpa = (SELECT MIN(gpa) as min_gpa\nFROM user_profile as t2\nWHERE t1.university = t2.university)\nORDER by university\n```\n\n> **注意：** 这里第一个SELECT不用加是因为两个表一个在内层一个在外层\n\n---",
+          "source": "daily_note.md",
+          "date": "10月16日"
+        }
+      ],
+      "code": [
+        "SELECT device_id,university,gpa\nFROM (SELECT device_id,university,gpa,ROW_NUMVER() OVER (PARTITION BY university ORDER BY gpa ASC) as rn\nFROM user_profile) as t\nWHERE rn = 1",
+        "INNER JOIN 表2 ON 约束条件\nSELECT t1.device_id,t1.university,t1.gpa\nFROM user_profile as t1\nINNER JOIN\n(SELECT university,MIN(gpa) AS min_gpa\nFROM user_profile\nGROUP BY university) AS t2\nON t1.university = t2.university\nAND t1.gpa = t2.min_gpa\nORDER BY t1.university",
+        "SELECT device_id,university,gpa\nFROM user_profile as t1\nWHERE gpa = (SELECT MIN(gpa) as min_gpa\nFROM user_profile as t2\nWHERE t1.university = t2.university)\nORDER by university"
+      ],
+      "links": [],
+      "id": "sql-b981564f4e",
+      "summary": "1、窗口函数＋子查询：ROWNUMBER() OVER (PARTITION BY 分组列 ORDER BY 排序列) as rn\n\nROWNUMBER():生成1、2、3的行号\nPARTITION BY 列：按这个列分区，就是分组，每个区里独立编号\nORDER BY 列：区内按",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E5%88%86%E7%BB%84%E5%8F%96%E6%9E%81%E5%80%BC%20%E6%AF%8F%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%20%E6%AF%8F%E7%BB%84%E6%9C%80%E5%B0%8F%E5%80%BC",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E5%88%86%E7%BB%84%E5%8F%96%E6%9E%81%E5%80%BC%20%E6%AF%8F%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC%20%E6%AF%8F%E7%BB%84%E6%9C%80%E5%B0%8F%E5%80%BC"
+      }
+    },
+    {
+      "title": "JOIN类型：",
+      "module": "SQL",
+      "category": "多表连接",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- FULL JOIN ：会返回两表所有行，不匹配部分用NULL填充\n- CROSS JOIN ：返回两表的笛卡尔积，无论NULL值\n\n- 查看stu表中索引的索引信息时，应使用的存储过程是：sp_helpindex",
+          "source": "daily_note.md",
+          "date": "10月23日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-2d85339f81",
+      "summary": "- FULL JOIN ：会返回两表所有行，不匹配部分用NULL填充\n- CROSS JOIN ：返回两表的笛卡尔积，无论NULL值\n\n- 查看stu表中索引的索引信息时，应使用的存储过程是：sphelpindex",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20JOIN%E7%B1%BB%E5%9E%8B%EF%BC%9A",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20JOIN%E7%B1%BB%E5%9E%8B%EF%BC%9A"
+      }
+    },
+    {
+      "title": "LEFT JOIN、RIGHT JOIN、INNER JOIN的相同点和区别：",
+      "module": "SQL",
+      "category": "多表连接",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- 相同点：所有连接方式都是前表在左，后表在右\n- LEFT JOIN 以左表为基准，去右表里找匹配的行，最终生成的行数只能是等于左表或者大于(这种情况是右表有重复条件)，如果说右表行数小于左表行数，那么剩下的右表就用NULL补齐\n- RIGHT JOIN是以右表为基准，去左表里找匹配的行，其他都一样\n- INNER JOIN是取“交集”，只保留两边都能匹配上的",
+          "source": "daily_note.md",
+          "date": "10月26日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-969574bcc5",
+      "summary": "- 相同点：所有连接方式都是前表在左，后表在右\n- LEFT JOIN 以左表为基准，去右表里找匹配的行，最终生成的行数只能是等于左表或者大于(这种情况是右表有重复条件)，如果说右表行数小于左表行数，那么剩下的右表就用NULL补齐\n- RIGHT JOIN是以右表为基准，去左表里",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81INNER%20JOIN%E7%9A%84%E7%9B%B8%E5%90%8C%E7%82%B9%E5%92%8C%E5%8C%BA%E5%88%AB%EF%BC%9A",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20LEFT%20JOIN%E3%80%81RIGHT%20JOIN%E3%80%81INNER%20JOIN%E7%9A%84%E7%9B%B8%E5%90%8C%E7%82%B9%E5%92%8C%E5%8C%BA%E5%88%AB%EF%BC%9A"
+      }
+    },
+    {
+      "title": "SQL笔记（10月20日）",
+      "module": "SQL",
+      "category": "多表连接",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- 在SQL的语法里，WHERE一定要放到所有的INNER JOIN后；\n\n- 遇到“没有记录返回0”的需求，一律用LEFT JOIN\n\n- 子查询想用来做连接的时候，必须把该字段SELECT出来\n\n- 想算某一列限定条件的数量，可以用SUM（IF( ，1，0)）来计算\n\n- 只要写了GROUP BY ，SELECT 后面出现的所有列，要么必须包含在GROUP BY里，要么必须被聚合函数（如COUNT、SUM、MAX）包起来\n\n- 当一次性想在FROM写清楚所有表格时，每个表格后面需要加逗号，然后再用WHERE表示限定条件，这个可以替代INNER JOIN...ON...\n\n- 在用INNER JOIN时，哪怕开头select里的数据不在第一个表中，也要按顺序去向左链接表",
+          "source": "daily_note.md",
+          "date": "10月20日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-51d0f59bda",
+      "summary": "- 在SQL的语法里，WHERE一定要放到所有的INNER JOIN后；\n\n- 遇到“没有记录返回0”的需求，一律用LEFT JOIN\n\n- 子查询想用来做连接的时候，必须把该字段SELECT出来\n\n- 想算某一列限定条件的数量，可以用SUM（IF( ，1，0)）来计算\n\n- 只",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20SQL%E7%AC%94%E8%AE%B0%EF%BC%8810%E6%9C%8820%E6%97%A5%EF%BC%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20SQL%E7%AC%94%E8%AE%B0%EF%BC%8810%E6%9C%8820%E6%97%A5%EF%BC%89"
+      }
+    },
+    {
+      "title": "SQL笔记（10月27日）",
+      "module": "SQL",
+      "category": "多表连接",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- 数据库主从复制延迟时，读操作要求强一致性应选择直连主库查询\n\n- FULL JOIN关键字只要其中某个表存在匹配，FULL JOIN关键字就会返回行",
+          "source": "daily_note.md",
+          "date": "10月27日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-8e64995847",
+      "summary": "- 数据库主从复制延迟时，读操作要求强一致性应选择直连主库查询\n\n- FULL JOIN关键字只要其中某个表存在匹配，FULL JOIN关键字就会返回行",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20SQL%E7%AC%94%E8%AE%B0%EF%BC%8810%E6%9C%8827%E6%97%A5%EF%BC%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20SQL%E7%AC%94%E8%AE%B0%EF%BC%8810%E6%9C%8827%E6%97%A5%EF%BC%89"
+      }
+    },
+    {
+      "title": "SQL 字符串函数练习",
+      "module": "SQL",
+      "category": "字符串处理",
+      "aliases": [
+        "substring练习",
+        "replace练习"
+      ],
+      "note": "",
+      "records": [
+        {
+          "content": "sql",
+          "source": "practice.py",
+          "date": "10月15日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-657246f955",
+      "summary": "sql",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20SQL%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0%20substring%E7%BB%83%E4%B9%A0%20replace%E7%BB%83%E4%B9%A0",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20SQL%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0%E7%BB%83%E4%B9%A0%20substring%E7%BB%83%E4%B9%A0%20replace%E7%BB%83%E4%B9%A0"
+      }
+    },
+    {
+      "title": "replace函数：当前缀相同时，提取后面的字段",
+      "module": "SQL",
+      "category": "字符串处理",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "replace（字符串，'固定前缀',''）：把固定前缀替换成字符串，剩下的就是后面部分\n**示例：** eg. replace(code,'user_','')----提取user_后面的部分",
+          "source": "daily_note.md",
+          "date": "10月15日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-0751be3443",
+      "summary": "replace（字符串，'固定前缀',''）：把固定前缀替换成字符串，剩下的就是后面部分\n示例： eg. replace(code,'user','')----提取user后面的部分",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20replace%E5%87%BD%E6%95%B0%EF%BC%9A%E5%BD%93%E5%89%8D%E7%BC%80%E7%9B%B8%E5%90%8C%E6%97%B6%EF%BC%8C%E6%8F%90%E5%8F%96%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AD%97%E6%AE%B5",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20replace%E5%87%BD%E6%95%B0%EF%BC%9A%E5%BD%93%E5%89%8D%E7%BC%80%E7%9B%B8%E5%90%8C%E6%97%B6%EF%BC%8C%E6%8F%90%E5%8F%96%E5%90%8E%E9%9D%A2%E7%9A%84%E5%AD%97%E6%AE%B5"
+      }
+    },
+    {
+      "title": "substring_index函数：当提取字段前面或者后面有相同的分隔符时使用",
+      "module": "SQL",
+      "category": "字符串处理",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "substring_index(字符串，'相同分隔符'，数字)：正数代表从左往右数分隔符前面的部分，负数代表从右往左数分隔符后面的部分\n**示例：** eg. (180cm,75kg,27,male) (175cm,65kg,25,female)\nsubstring_index(substring_index(proflie,',',-2),',',1)----第一个括号提取的结果是后两个数据，第二个括号内提取的是后两个中的第一个\n\n> **注意：** 有conunt函数时，有分组一定要使用group by函数\n\n---",
+          "source": "daily_note.md",
+          "date": "10月15日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-3cca4fb41b",
+      "summary": "substringindex(字符串，'相同分隔符'，数字)：正数代表从左往右数分隔符前面的部分，负数代表从右往左数分隔符后面的部分\n示例： eg. (180cm,75kg,27,male) (175cm,65kg,25,female)\nsubstringindex(substr",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20substring_index%E5%87%BD%E6%95%B0%EF%BC%9A%E5%BD%93%E6%8F%90%E5%8F%96%E5%AD%97%E6%AE%B5%E5%89%8D%E9%9D%A2%E6%88%96%E8%80%85%E5%90%8E%E9%9D%A2%E6%9C%89%E7%9B%B8%E5%90%8C%E7%9A%84%E5%88%86%E9%9A%94%E7%AC%A6%E6%97%B6%E4%BD%BF%E7%94%A8",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20substring_index%E5%87%BD%E6%95%B0%EF%BC%9A%E5%BD%93%E6%8F%90%E5%8F%96%E5%AD%97%E6%AE%B5%E5%89%8D%E9%9D%A2%E6%88%96%E8%80%85%E5%90%8E%E9%9D%A2%E6%9C%89%E7%9B%B8%E5%90%8C%E7%9A%84%E5%88%86%E9%9A%94%E7%AC%A6%E6%97%B6%E4%BD%BF%E7%94%A8"
+      }
+    },
+    {
+      "title": "substring函数：当需要选取某一列中除了相同字段的词语时使用",
+      "module": "SQL",
+      "category": "字符串处理",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "substring（字符串，起始位置<数字>）：从第几个字符开始截止到末尾\n**示例：** eg. substring(code,6)----从第六个字符到末尾\n\n> **注意：** substring换成substr效果相同",
+          "source": "daily_note.md",
+          "date": "10月15日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-2e63fbb537",
+      "summary": "substring（字符串，起始位置<数字）：从第几个字符开始截止到末尾\n示例： eg. substring(code,6)----从第六个字符到末尾\n\n 注意： substring换成substr效果相同",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20substring%E5%87%BD%E6%95%B0%EF%BC%9A%E5%BD%93%E9%9C%80%E8%A6%81%E9%80%89%E5%8F%96%E6%9F%90%E4%B8%80%E5%88%97%E4%B8%AD%E9%99%A4%E4%BA%86%E7%9B%B8%E5%90%8C%E5%AD%97%E6%AE%B5%E7%9A%84%E8%AF%8D%E8%AF%AD%E6%97%B6%E4%BD%BF%E7%94%A8",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20substring%E5%87%BD%E6%95%B0%EF%BC%9A%E5%BD%93%E9%9C%80%E8%A6%81%E9%80%89%E5%8F%96%E6%9F%90%E4%B8%80%E5%88%97%E4%B8%AD%E9%99%A4%E4%BA%86%E7%9B%B8%E5%90%8C%E5%AD%97%E6%AE%B5%E7%9A%84%E8%AF%8D%E8%AF%AD%E6%97%B6%E4%BD%BF%E7%94%A8"
+      }
+    },
+    {
+      "title": "正则表达：以SQL40为例",
+      "module": "SQL",
+      "category": "字符串处理",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "^：字符串开头  \n[1-9]:是一个字符类，第一位必须是1到9之间的数字  \n[0-9]{9}\\$:前面的[0-9]也是一个字符类，后面的{9}是量词，表示在前面约束条件下的字符类出现9次，就是9个数字的意思  \n<!-- 这里$之前的反斜杠只是为了防止转义 实际在SQL里不用写 -->\n| ：或者  \n^[1-9][0-9]{2}:以1到9开头，后面两个数字在0到9之间  \n-[0-9]{3}:跟一个横线，再跟3个数字  \n-[0-9]{4}\\$:跟一个横线，再跟4个数字，并结束\n\n---",
+          "source": "daily_note.md",
+          "date": "10月20日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-073e7f0203",
+      "summary": "^：字符串开头  \n[1-9]:是一个字符类，第一位必须是1到9之间的数字  \n[0-9]{9}\\$:前面的[0-9]也是一个字符类，后面的{9}是量词，表示在前面约束条件下的字符类出现9次，就是9个数字的意思  \n<!-- 这里$之前的反斜杠只是为了防止转义 实际在SQL里不用",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%EF%BC%9A%E4%BB%A5SQL40%E4%B8%BA%E4%BE%8B",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%EF%BC%9A%E4%BB%A5SQL40%E4%B8%BA%E4%BE%8B"
+      }
+    },
+    {
+      "title": "CONV 进制转换",
+      "module": "SQL",
+      "category": "日期与数值函数",
+      "aliases": [],
+      "note": "原笔记示例中的 COVN 应为 CONV。",
+      "records": [
+        {
+          "content": "- N :要转换的数字或字符串\n- from_base :原来的进制\n- to_base ：目标进制\n- COVN( )函数中，from_base和to_base的有效范围是2到36，如果超出这个范围，会返回NULL\n\n- 联合索引遵循最左前缀原则\n\n- SELECT..FOR UPDATE：锁定行，事务内生效，可以匹配WHERE过滤；\n\n- LOCK TABLES..IN EXCLUSIVE MODE：锁整张表，不依赖事务",
+          "source": "daily_note.md",
+          "date": "10月27日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-18806a4f11",
+      "summary": "- N :要转换的数字或字符串\n- frombase :原来的进制\n- tobase ：目标进制\n- COVN( )函数中，frombase和tobase的有效范围是2到36，如果超出这个范围，会返回NULL\n\n- 联合索引遵循最左前缀原则\n\n- SELECT..FOR UPDA",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20CONV%20%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20CONV%20%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"
+      }
+    },
+    {
+      "title": "DATE_FORMAT 日期格式化",
+      "module": "SQL",
+      "category": "日期与数值函数",
+      "aliases": [],
+      "note": "原笔记中的 DATE_FORMATE 应为 MySQL 的 DATE_FORMAT，参数名 format 也少一个 e。",
+      "records": [
+        {
+          "content": "```sql\nDATE_FORMATE(create_time,'%Y%m')\n```\n\n占位符大全\n- %Y：四位年份\n- %y：两位年份\n- %m：两位月份\n- %c：月份\n- %d：两位日期\n- %H：24小时制\n- %i：分钟\n- %s：秒\n\n- CURDATE( )/CURRENT_DATE( ):只返回当前日期(2023-10-27)\n\n- CURTIME( ):只返回当前时间(15：30：00)\n\n- NOW( )/SYSDATE( ):返回当前的日期和时间(2023-10-27 15：30：00)",
+          "source": "daily_note.md",
+          "date": "10月27日"
+        }
+      ],
+      "code": [
+        "DATE_FORMATE(create_time,'%Y%m')"
+      ],
+      "links": [],
+      "id": "sql-69608e0418",
+      "summary": "sql\nDATEFORMATE(createtime,'%Y%m')\n\n\n占位符大全\n- %Y：四位年份\n- %y：两位年份\n- %m：两位月份\n- %c：月份\n- %d：两位日期\n- %H：24小时制\n- %i：分钟\n- %s：秒\n\n- CURDATE( )/CURRENTDA",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20DATE_FORMAT%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E5%8C%96",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20DATE_FORMAT%20%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E5%8C%96"
+      }
+    },
+    {
+      "title": "TIMESTAMPDIFF(单位，开始时间，结束时间)",
+      "module": "SQL",
+      "category": "日期与数值函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- 计算的是“结束时间-开始时间”\n\n- 并发访问数据库时，各并发事务之间数据库是独立的\n\n- UNION ALL连接去重\n\n- UNION连接不去重",
+          "source": "daily_note.md",
+          "date": "10月27日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-c7b2971147",
+      "summary": "- 计算的是“结束时间-开始时间”\n\n- 并发访问数据库时，各并发事务之间数据库是独立的\n\n- UNION ALL连接去重\n\n- UNION连接不去重",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20TIMESTAMPDIFF%28%E5%8D%95%E4%BD%8D%EF%BC%8C%E5%BC%80%E5%A7%8B%E6%97%B6%E9%97%B4%EF%BC%8C%E7%BB%93%E6%9D%9F%E6%97%B6%E9%97%B4%29",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20TIMESTAMPDIFF%28%E5%8D%95%E4%BD%8D%EF%BC%8C%E5%BC%80%E5%A7%8B%E6%97%B6%E9%97%B4%EF%BC%8C%E7%BB%93%E6%9D%9F%E6%97%B6%E9%97%B4%29"
+      }
+    },
+    {
+      "title": "ALL( ):对所有数据都满足才成立 ，>= all( )等价于max，<=all( )等价于min",
+      "module": "SQL",
+      "category": "查询基础",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- ANY( )：只要有一条数据满足条件，整个条件成立 ，和SOME( )的作用一样,>=any( )等价于 >min，<any( )等价于< max",
+          "source": "daily_note.md",
+          "date": "10月23日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-076645beee",
+      "summary": "- ANY( )：只要有一条数据满足条件，整个条件成立 ，和SOME( )的作用一样,=any( )等价于 min，<any( )等价于< max",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20ALL%28%20%29%3A%E5%AF%B9%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%E9%83%BD%E6%BB%A1%E8%B6%B3%E6%89%8D%E6%88%90%E7%AB%8B%20%EF%BC%8C%3E%3D%20all%28%20%29%E7%AD%89%E4%BB%B7%E4%BA%8Emax%EF%BC%8C%3C%3Dall%28%20%29%E7%AD%89%E4%BB%B7%E4%BA%8Emin",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20ALL%28%20%29%3A%E5%AF%B9%E6%89%80%E6%9C%89%E6%95%B0%E6%8D%AE%E9%83%BD%E6%BB%A1%E8%B6%B3%E6%89%8D%E6%88%90%E7%AB%8B%20%EF%BC%8C%3E%3D%20all%28%20%29%E7%AD%89%E4%BB%B7%E4%BA%8Emax%EF%BC%8C%3C%3Dall%28%20%29%E7%AD%89%E4%BB%B7%E4%BA%8Emin"
+      }
+    },
+    {
+      "title": "SQL基础函数",
+      "module": "SQL",
+      "category": "查询基础",
+      "aliases": [
+        "SQL函数",
+        "基础函数"
+      ],
+      "note": "",
+      "records": [
+        {
+          "content": "- ABS ( ) :绝对值\n\n- CEIL ( ) /CEILING ( ) :向上取整\n\n- FLOOR ( ) :向下取整\n\n- ROUND ( ,数字) :四舍五入\n\n- TRUNCATE ( ，数字) :截断函数——直接截断保留规定位数小数，不进行四舍五入\n\n---",
+          "source": "daily_note.md",
+          "date": "10月21日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-61124d6a30",
+      "summary": "- ABS ( ) :绝对值\n\n- CEIL ( ) /CEILING ( ) :向上取整\n\n- FLOOR ( ) :向下取整\n\n- ROUND ( ,数字) :四舍五入\n\n- TRUNCATE ( ，数字) :截断函数——直接截断保留规定位数小数，不进行四舍五入\n\n---",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20SQL%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0%20SQL%E5%87%BD%E6%95%B0%20%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20SQL%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0%20SQL%E5%87%BD%E6%95%B0%20%E5%9F%BA%E7%A1%80%E5%87%BD%E6%95%B0"
+      }
+    },
+    {
+      "title": "SQL笔记（10月23日）",
+      "module": "SQL",
+      "category": "查询基础",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- SQL中的视图(VIEW)本质上是基于SELECT查询定义的虚拟表，不储存物理数据，而是提供数据的逻辑表示。\n\n- 删除触发器操作： DROP TRIGGER #DELETE是删除所有行记录",
+          "source": "daily_note.md",
+          "date": "10月23日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-44f58746c8",
+      "summary": "- SQL中的视图(VIEW)本质上是基于SELECT查询定义的虚拟表，不储存物理数据，而是提供数据的逻辑表示。\n\n- 删除触发器操作： DROP TRIGGER DELETE是删除所有行记录",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20SQL%E7%AC%94%E8%AE%B0%EF%BC%8810%E6%9C%8823%E6%97%A5%EF%BC%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20SQL%E7%AC%94%E8%AE%B0%EF%BC%8810%E6%9C%8823%E6%97%A5%EF%BC%89"
+      }
+    },
+    {
+      "title": "SQL语言的四大分类",
+      "module": "SQL",
+      "category": "查询基础",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、DDL(数据定义类型-Data Definition Language)**\n\n- 作用：定义和修改表结构、数据库结构\n- 代表命令：CREAT(建表、建库)、DROP(删表删库，连结构一起端掉)、ALERT(修改表结构，比如加一列、改字段类型)、TURNCATE(清空表结构，保留数据)、RENAME(重命名)、MODIFY(对列进行修改)\n**2、DML(数据操纵语言-Data Manipulation Language)**\n\n- 作用：对表里面的数据进行增删减\n- 代表命令：INSERT(插入数据)、UPDATE(更新数据)、DELETE(删除数据，是一行)\n**3、DCL(数据控制语言-Data Control Language)**\n\n- 作用：权限设置\n- 代表命令：GRANT(授权，比如把查询权限给某个用户)、REVOKE(收回权限)\n**4、DQL(数据查询语言-Data Query Language)**\n\n- 作用：专门用于查询\n- 代表命令：SELECT",
+          "source": "daily_note.md",
+          "date": "10月26日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-3eb63989cb",
+      "summary": "1、DDL(数据定义类型-Data Definition Language)\n\n- 作用：定义和修改表结构、数据库结构\n- 代表命令：CREAT(建表、建库)、DROP(删表删库，连结构一起端掉)、ALERT(修改表结构，比如加一列、改字段类型)、TURNCATE(清空表结构，保",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20SQL%E8%AF%AD%E8%A8%80%E7%9A%84%E5%9B%9B%E5%A4%A7%E5%88%86%E7%B1%BB",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20SQL%E8%AF%AD%E8%A8%80%E7%9A%84%E5%9B%9B%E5%A4%A7%E5%88%86%E7%B1%BB"
+      }
+    },
+    {
+      "title": "判断奇数",
+      "module": "SQL",
+      "category": "查询基础",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**1、MOD(数字，2) = 1 (取余)**\n\n**2、数字 % 2 = 1，等价于取余函数**\n\n**3、数字 & 1 = 1(按位与)**\n\n- &是运算符，将数字转成二进制后与1(二进制也是1)进行AND运算\n- 任何奇数的二进制末位一定是1；任何偶数的末位一定是0\n\n- 子查询中，父查询中一般使用IN运算符的是：单列多值嵌套查询\n\n---",
+          "source": "daily_note.md",
+          "date": "10月26日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-d673b3f08d",
+      "summary": "1、MOD(数字，2) = 1 (取余)\n\n2、数字 % 2 = 1，等价于取余函数\n\n3、数字 & 1 = 1(按位与)\n\n- &是运算符，将数字转成二进制后与1(二进制也是1)进行AND运算\n- 任何奇数的二进制末位一定是1；任何偶数的末位一定是0\n\n- 子查询中，父查询中一",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E5%88%A4%E6%96%AD%E5%A5%87%E6%95%B0",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E5%88%A4%E6%96%AD%E5%A5%87%E6%95%B0"
+      }
+    },
+    {
+      "title": "常用函数分类（三大派）",
+      "module": "SQL",
+      "category": "窗口函数",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "**① 聚合窗口函数(SUM/AVG/COUNT/MAX/MIN)**\n\n在不合并行的情况下算出聚合值\n- 累计求和：SUM (profit) OVER (ORDER BY date) (没写PARTITION BY,全表一块，按，按照日期一行行滑着叠加，最后每一行的结果都是之前的总和)———对应SQL40题\n- 分组占比：SUM (profit) OVER (PARTITION BY department)(按每个部门进行分块，每个部门的销售总额，会重复显示在部门每个员工的行上)    \n**常用形式:**  \nSUM(profit) OVER (ORDER BY date ROWS BETWEEN 1 PRECEDING AND CURRENT ROW):计算当前行加上一行的的滑动和，常用于算移动平均  \n\n**② 排序窗口函数 (ROW_NUMBER/RANK/DENSE_RANK)**\n\n给数据排名\n- ROW_NUMBER ( ) :绝对序号，数字不重复。如1、2、3\n- RANK ( ) :并列跳号，类似于比赛排名。如1、1、3\n- DENSE_RANK ( ) :并列不跳号。如1、1、2  \n典型用法：ROW_NUMBER ( ) OVER (PARTITION BY university ORDER BY gpa) = 1(取每个学校的第一名)  \n\n**③ 偏移窗口函数(LEAD/LAG)**\n\n```sql\nLAG(列，1)：上一行的值\nLEAD(列，1)：下一行的值\n```\n\n**示例：** eg：\n\n```sql\nSELECT  sale_date,  amount AS 今日销售额,\nLAG(amount, 1) OVER (ORDER BY sale_date) AS 昨日销售额,\namount - LAG(amount, 1) OVER (ORDER BY sale_date) AS 比昨日差额   #可以直接拿函数相减\nFROM daily_sales;\n```",
+          "source": "daily_note.md",
+          "date": "10月21日"
+        }
+      ],
+      "code": [
+        "LAG(列，1)：上一行的值\nLEAD(列，1)：下一行的值",
+        "SELECT  sale_date,  amount AS 今日销售额,\nLAG(amount, 1) OVER (ORDER BY sale_date) AS 昨日销售额,\namount - LAG(amount, 1) OVER (ORDER BY sale_date) AS 比昨日差额   #可以直接拿函数相减\nFROM daily_sales;"
+      ],
+      "links": [],
+      "id": "sql-e142199cad",
+      "summary": "① 聚合窗口函数(SUM/AVG/COUNT/MAX/MIN)\n\n在不合并行的情况下算出聚合值\n- 累计求和：SUM (profit) OVER (ORDER BY date) (没写PARTITION BY,全表一块，按，按照日期一行行滑着叠加，最后每一行的结果都是之前的总和)",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E5%88%86%E7%B1%BB%EF%BC%88%E4%B8%89%E5%A4%A7%E6%B4%BE%EF%BC%89",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E5%88%86%E7%B1%BB%EF%BC%88%E4%B8%89%E5%A4%A7%E6%B4%BE%EF%BC%89"
+      }
+    },
+    {
+      "title": "窗口函数基本格式",
+      "module": "SQL",
+      "category": "窗口函数",
+      "aliases": [
+        "排名",
+        "OVER",
+        "PARTITION BY"
+      ],
+      "note": "",
+      "records": [
+        {
+          "content": "- 函数名 ( ) :想做的事  比如说SUM、ROW_NUMBER、找上一行(LAG)\n- PARTITION BY : 开窗/分块，就是把数据按照某一个指标分成几个部分，可以省略，这时候整个表就是一块\n- ORDER BY ： 在块内部按照什么顺序排。累加、排名类必须写，求平均值可以不写",
+          "source": "daily_note.md",
+          "date": "10月21日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-36ee90b724",
+      "summary": "- 函数名 ( ) :想做的事  比如说SUM、ROWNUMBER、找上一行(LAG)\n- PARTITION BY : 开窗/分块，就是把数据按照某一个指标分成几个部分，可以省略，这时候整个表就是一块\n- ORDER BY ： 在块内部按照什么顺序排。累加、排名类必须写，求平均",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F%20%E6%8E%92%E5%90%8D%20OVER",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F%20%E6%8E%92%E5%90%8D%20OVER"
+      }
+    },
+    {
+      "title": "ALTER TABLE MODIFY 修改字段",
+      "module": "SQL",
+      "category": "表结构与数据修改",
+      "aliases": [],
+      "note": "原笔记中的 ALERT TABLE 应为 ALTER TABLE。",
+      "records": [
+        {
+          "content": "**1、数据类型(比如把INT改成VARCHAR)**\n\n**2、长度(比如把VARCHAR(20)改成VARCHAR(100))**\n\n**3、约束条件(比如加个默认值DEFAULT、改个非空NOT NULL、加个主键)**\n\n- 主键：Primary Key 用来唯一标识表中每一行数据的那个字段（或字段组合）\n必须满足的三个条件：\n**① 唯一 (Unique) ：不能有两行数据的主键值相同**\n\n**② 非空 (Not Null) ：不可以是Null**\n\n**③ 一个表只能有一个主键**\n\n**示例：** eg：\n\n```sql\nCREATE TABLE students（\nid INT PRIMARY KEY,\nname VARCHAR(20)\n）\n```\n\n---",
+          "source": "daily_note.md",
+          "date": "10月28日"
+        }
+      ],
+      "code": [
+        "CREATE TABLE students（\nid INT PRIMARY KEY,\nname VARCHAR(20)\n）"
+      ],
+      "links": [],
+      "id": "sql-397985c872",
+      "summary": "1、数据类型(比如把INT改成VARCHAR)\n\n2、长度(比如把VARCHAR(20)改成VARCHAR(100))\n\n3、约束条件(比如加个默认值DEFAULT、改个非空NOT NULL、加个主键)\n\n- 主键：Primary Key 用来唯一标识表中每一行数据的那个字段（或",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20ALTER%20TABLE%20MODIFY%20%E4%BF%AE%E6%94%B9%E5%AD%97%E6%AE%B5",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20ALTER%20TABLE%20MODIFY%20%E4%BF%AE%E6%94%B9%E5%AD%97%E6%AE%B5"
+      }
+    },
+    {
+      "title": "删除DELETE：",
+      "module": "SQL",
+      "category": "表结构与数据修改",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- 单表删除：DELETE FROM 表名 WHERE 条件\n- 多关联表删除：要根据另一张表（或临时表）的数据来删除本表的数据，需要写\n  - DELETE 别名 FROM 表名 别名 JOIN ----\n- 多表删除的时候，delete和from之间必须要写明想删除记录的表名\n\n- in( )括号里只能有一个字段\n\n- 使用delete语句删除表中的数据，drop语句删除数据表 eg. DROP table example.tb_ack\n\n- WITH CHECK OPTION在视图中用于强制通过视图插入或更新的数据必须满足视图定义中的WHERE条件\n\n- COUNT()属于聚合函数 WHERE后面不能跟聚合函数\n\n- 先分组再过滤：group by...having...\n\n- 执行CREAT INDEX语句会触发隐式事务提交\n\n- count(*)统计所有行数，哪怕是null也算一行；count(列名)统计这一列不含null的行数\n\n---",
+          "source": "daily_note.md",
+          "date": "10月23日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-f2173d307b",
+      "summary": "- 单表删除：DELETE FROM 表名 WHERE 条件\n- 多关联表删除：要根据另一张表（或临时表）的数据来删除本表的数据，需要写\n  - DELETE 别名 FROM 表名 别名 JOIN ----\n- 多表删除的时候，delete和from之间必须要写明想删除记录的表名",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E5%88%A0%E9%99%A4DELETE%EF%BC%9A",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E5%88%A0%E9%99%A4DELETE%EF%BC%9A"
+      }
+    },
+    {
+      "title": "向表中添加列的标准语法",
+      "module": "SQL",
+      "category": "表结构与数据修改",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- ALERT TABLE 表名 ADD [COLUMN] 列名 数据类型 [约束条件]（中括号里的CLOUMN）可写可不写\n- eg：\n- ALERT TABLE student ADD age INT；\n或者\n- ALERT TABLE student ADD CLOUMN age INT\n\n- 视图是虚拟的表，只能动态检索数据，不存储任何数据，并且大部分视图都不可以更新\n\n- 视图是一种数据库对象，是从数据库的表或其他视图中导出的基表\n\n---",
+          "source": "daily_note.md",
+          "date": "10月27日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-2fd5491b97",
+      "summary": "- ALERT TABLE 表名 ADD [COLUMN] 列名 数据类型 [约束条件]（中括号里的CLOUMN）可写可不写\n- eg：\n- ALERT TABLE student ADD age INT；\n或者\n- ALERT TABLE student ADD CLOUMN ",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E5%90%91%E8%A1%A8%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%88%97%E7%9A%84%E6%A0%87%E5%87%86%E8%AF%AD%E6%B3%95",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E5%90%91%E8%A1%A8%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%88%97%E7%9A%84%E6%A0%87%E5%87%86%E8%AF%AD%E6%B3%95"
+      }
+    },
+    {
+      "title": "基础数据插入——INSERT基础语法：INSERT INTO 表名(列名1，列名2...) VALUES (值1，值2...)",
+      "module": "SQL",
+      "category": "表结构与数据修改",
+      "aliases": [],
+      "note": "",
+      "records": [
+        {
+          "content": "- 注意只要前面的列名顺序和后面的值顺序一一对应即可，不需要和建表时的原始顺序一致\n\n- 在MYSQL里，字符串(varchar)必须加单引号",
+          "source": "daily_note.md",
+          "date": "10月26日"
+        }
+      ],
+      "code": [],
+      "links": [],
+      "id": "sql-04529715ca",
+      "summary": "- 注意只要前面的列名顺序和后面的值顺序一一对应即可，不需要和建表时的原始顺序一致\n\n- 在MYSQL里，字符串(varchar)必须加单引号",
+      "practice": {
+        "nowcoder": "https://www.nowcoder.com/exam/oj?keyword=SQL%20%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%8F%92%E5%85%A5%E2%80%94%E2%80%94INSERT%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%9AINSERT%20INTO%20%E8%A1%A8%E5%90%8D%28%E5%88%97%E5%90%8D1%EF%BC%8C%E5%88%97%E5%90%8D2...%29%20VALUES%20%28%E5%80%BC1%EF%BC%8C%E5%80%BC2...%29",
+        "leetcode": "https://leetcode.cn/problemset/?search=SQL%20%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E6%8F%92%E5%85%A5%E2%80%94%E2%80%94INSERT%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%EF%BC%9AINSERT%20INTO%20%E8%A1%A8%E5%90%8D%28%E5%88%97%E5%90%8D1%EF%BC%8C%E5%88%97%E5%90%8D2...%29%20VALUES%20%28%E5%80%BC1%EF%BC%8C%E5%80%BC2...%29"
+      }
+    }
+  ]
+}
