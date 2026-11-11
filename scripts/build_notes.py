@@ -125,17 +125,20 @@ def parse_practice(text: str, source: str = "practice.py") -> list[dict]:
     module = "Python"
     title = ""
     content: list[str] = []
+    in_code_fence = False
 
     def flush() -> None:
-        nonlocal title, content
+        nonlocal title, content, in_code_fence
         if title and any(line.strip() for line in content):
             records.append(raw_record(title, module, date, source, content))
         title = ""
         content = []
+        in_code_fence = False
 
     for raw_line in text.splitlines():
         stripped = raw_line.strip()
-        comment_text = re.sub(r"^#+\s?", "", stripped).strip() if stripped.startswith("#") else stripped
+        comment_body = re.sub(r"^\s*# ?", "", raw_line.rstrip()) if stripped.startswith("#") else raw_line.rstrip()
+        comment_text = comment_body.strip()
         found_date = parse_date(comment_text)
         if found_date and ("日" in comment_text or re.fullmatch(r"\d{1,2}[.-]\d{1,2}", comment_text)):
             flush()
@@ -164,7 +167,9 @@ def parse_practice(text: str, source: str = "practice.py") -> list[dict]:
         if not title and comment_text:
             title = f"{module}笔记（{date or '未标日期'}）"
         if title:
-            content.append(comment_text if stripped.startswith("#") else raw_line.rstrip())
+            content.append(comment_body.rstrip() if in_code_fence and stripped.startswith("#") else comment_text)
+            if comment_text.startswith("```"):
+                in_code_fence = not in_code_fence
 
     flush()
     return records

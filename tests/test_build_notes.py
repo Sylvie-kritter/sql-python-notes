@@ -79,6 +79,19 @@ class PracticeParserTests(unittest.TestCase):
         self.assertEqual(notes[0]["module"], "SQL")
         self.assertTrue(notes[0]["title"].startswith("SQL笔记"))
 
+    def test_preserves_indentation_inside_commented_code_fence(self):
+        text = """# 11月10日
+# 1.示例函数
+# ```python
+# def add():
+#     return 1
+# ```
+"""
+
+        notes = parse_practice(text, "practice.py")
+
+        self.assertIn("def add():\n    return 1", notes[0]["content"])
+
 
 
 class BuildTests(unittest.TestCase):
