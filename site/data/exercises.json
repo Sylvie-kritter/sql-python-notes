@@ -1,0 +1,2382 @@
+{
+  "version": 1,
+  "exercises": [
+    {
+      "id": "ex-sql-6cb3bfbf17-01",
+      "note_id": "sql-6cb3bfbf17",
+      "type": "choice",
+      "prompt": "关于 WHERE 和 HAVING，下列说法正确的是？",
+      "options": [
+        {
+          "id": "A",
+          "text": "WHERE 在分组后过滤结果，HAVING 在分组前过滤原始行"
+        },
+        {
+          "id": "B",
+          "text": "WHERE 和 HAVING 都只能用于过滤原始数据行"
+        },
+        {
+          "id": "C",
+          "text": "WHERE 在分组前过滤原始行，HAVING 在分组后过滤聚合结果"
+        },
+        {
+          "id": "D",
+          "text": "WHERE 后可以直接使用聚合函数，HAVING 不可以"
+        }
+      ],
+      "answer": {
+        "grading": "auto",
+        "value": "C",
+        "accepted": [],
+        "case_sensitive": true
+      },
+      "explanation": "WHERE 先过滤参与分组的原始数据行；HAVING 在 GROUP BY 之后筛选分组结果或聚合函数的值。",
+      "basis": {
+        "kind": "note",
+        "excerpt": "WHERE在分组前工作，过滤原始数据行；HAVING在分组后工作，过滤分组后的结果"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-5e8804bcc7-01",
+      "note_id": "python-5e8804bcc7",
+      "type": "code_output",
+      "prompt": "下面代码会依次输出什么？",
+      "code": "a = 5\nb = 8\nif a <= b:\n    print('a小于等于b')\nelse:\n    print('a大于b')\nprint('a小于等于b' if a <= b else 'a大于b')",
+      "answer": {
+        "grading": "auto",
+        "value": "a小于等于b\na小于等于b",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "a 小于等于 b，因此普通 if 选择第一个分支；三目运算符的条件也为真，所以两次都输出“a小于等于b”。",
+      "basis": {
+        "kind": "note",
+        "excerpt": "为真结果 if 判断条件 else 为假结果"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-4b34bce40f-01",
+      "note_id": "python-4b34bce40f",
+      "type": "fill_blank",
+      "prompt": "补全函数定义，使它可以接收任意数量的关键字参数：def func(____):",
+      "answer": {
+        "grading": "auto",
+        "value": "**kwargs",
+        "accepted": [],
+        "case_sensitive": true
+      },
+      "explanation": "关键字参数使用两个星号和参数名，笔记中的格式是 def func(**kwargs)。",
+      "basis": {
+        "kind": "note",
+        "excerpt": "格式：def func(**kwargs)"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-71a5cb82ac-01",
+      "note_id": "python-71a5cb82ac",
+      "type": "reference",
+      "prompt": "请用自己的话说明 return 和 print 的主要区别。",
+      "answer": {
+        "grading": "self",
+        "value": "return 用来返回计算值；print 用来打印或显示结果。",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "判断重点是是否区分了“把值返回给调用者”和“把内容显示出来”这两个作用。",
+      "basis": {
+        "kind": "note",
+        "excerpt": "return是返回计算值，print是打印结果"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-90e9526582-01",
+      "note_id": "python-90e9526582",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「return会给函数的执行者返回值」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "def buy():\n    return'杨枝甘露'\nbuy()\nprint(buy())          #函数里有return必须要打印才有结果",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：def buy():\n    return'杨枝甘露'\nbuy()\nprint(buy())          #函数里有return必须要打印才有结果",
+      "basis": {
+        "kind": "note",
+        "excerpt": "def buy():\n    return'杨枝甘露'\nbuy()\nprint(buy())          #函数里有return必须要打印才有结果"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-230db07053-01",
+      "note_id": "python-230db07053",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「return表示此函数结束，print会一直执行」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "def funa():\n    return 123\n    print(456)\nprint(funa())               #没有结果",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：def funa():\n    return 123\n    print(456)\nprint(funa())               #没有结果",
+      "basis": {
+        "kind": "note",
+        "excerpt": "def funa():\n    return 123\n    print(456)\nprint(funa())               #没有结果"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-3ebf433ab5-01",
+      "note_id": "python-3ebf433ab5",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「函数中遇到return，表示此函数结束，不继续执行」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "def buy():\n    return'杨枝甘露',20     #return返回多个值，以元组的形式返回给调用者\n    return'20'             #不会输出，因为第一个return下面的代码不会被执行\nprint(buy())\n返回值的三种情况：None（没有返回值），单个，多个（以元组的形式）\nreturn和print的区别",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：def buy():\n    return'杨枝甘露',20     #return返回多个值，以元组的形式返回给调用者\n    return'20'             #不会输出，因为第一个return下面的代码不会被执行\nprint(buy())\n返回值的三种情况：None（没有返回值），单个，多个（以元组的形式）\nreturn和print的区别",
+      "basis": {
+        "kind": "note",
+        "excerpt": "def buy():\n    return'杨枝甘露',20     #return返回多个值，以元组的形式返回给调用者\n    return'20'             #不会输出，因为第一个return下面的代码不会被执行\nprint(buy())\n返回值的三种情况：None（没有返回值），单个，多个（以元组的形式）\nreturn和print的区别"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-0552a1ee03-01",
+      "note_id": "python-0552a1ee03",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「可变参数」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "含义：传入的值的数量是可以改变的，可以传入多个，也可以不传\n格式：def func(*args)      #args可以改成其他名字 但是args符合代码的规范性\ndef func(*args):\n    print(args)\n# func(1)                 #(1,)  以元组形式接受\nfunc('金宝宝','函数团')    #('金宝宝', '函数团')",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：含义：传入的值的数量是可以改变的，可以传入多个，也可以不传\n格式：def func(*args)      #args可以改成其他名字 但是args符合代码的规范性\ndef func(*args):\n    print(args)\n# func(1)                 #(1,)  以元组形式接受\nfunc('金宝宝','函数团')    #(…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "含义：传入的值的数量是可以改变的，可以传入多个，也可以不传\n格式：def func(*args)      #args可以改成其他名字 但是args符合代码的规范性\ndef func(*args):\n    print(args)\n# func(1)                 #(1,)  以元组形式接受\nfunc('金宝宝','函数团')    #(…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-5b48460912-01",
+      "note_id": "python-5b48460912",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「嵌套定义」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "含义：在一个函数中定义另一个函数\ndef study():              #外函数\n    print('晚上在学习')\n    def course():         #内函数\n        print('Python基础')\n    course()              #内函数需要先调用    定义和调用是同级的\nstudy()                   #晚上在学习/Python基础",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：含义：在一个函数中定义另一个函数\ndef study():              #外函数\n    print('晚上在学习')\n    def course():         #内函数\n        print('Python基础')\n    course()              #内函数需要先调用    定义和调用是同级的\nstudy()…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "含义：在一个函数中定义另一个函数\ndef study():              #外函数\n    print('晚上在学习')\n    def course():         #内函数\n        print('Python基础')\n    course()              #内函数需要先调用    定义和调用是同级的\nstudy()…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-9e58145c59-01",
+      "note_id": "python-9e58145c59",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「嵌套调用」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "含义：在一个函数里面调用另一个函数\ndef study():\n    print('晚上在学习')\ndef course():\n    study()\n    print('Python基础')\ncourse()            #晚上在学习/Python基础        /是换行的意思",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：含义：在一个函数里面调用另一个函数\ndef study():\n    print('晚上在学习')\ndef course():\n    study()\n    print('Python基础')\ncourse()            #晚上在学习/Python基础        /是换行的意思",
+      "basis": {
+        "kind": "note",
+        "excerpt": "含义：在一个函数里面调用另一个函数\ndef study():\n    print('晚上在学习')\ndef course():\n    study()\n    print('Python基础')\ncourse()            #晚上在学习/Python基础        /是换行的意思"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-8cf0bbc9eb-01",
+      "note_id": "python-8cf0bbc9eb",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「形参和实参」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "定义格式：\ndef 函数名(形参a，形参b):       #形参：定义函数时，小括号里面的变量\n        函数体\n     ...(如a=1，b=2)\n调用格式；\n函数名(实参1，实参2)            #实参：调用函数时，小括号里面具体的值\ndef add(a,b):\n    return a+b\nprint(add(1,3))         #4",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：定义格式：\ndef 函数名(形参a，形参b):       #形参：定义函数时，小括号里面的变量\n        函数体\n     ...(如a=1，b=2)\n调用格式；\n函数名(实参1，实参2)            #实参：调用函数时，小括号里面具体的值\ndef add(a,b):\n    return a+b\nprint(add(1,3))…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "定义格式：\ndef 函数名(形参a，形参b):       #形参：定义函数时，小括号里面的变量\n        函数体\n     ...(如a=1，b=2)\n调用格式；\n函数名(实参1，实参2)            #实参：调用函数时，小括号里面具体的值\ndef add(a,b):\n    return a+b\nprint(add(1,3))…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-d5311109b8-01",
+      "note_id": "python-d5311109b8",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「必备参数(位置参数)」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "含义：传递和定义参数的顺序及个数必须一致\n格式：def func(a,b)\ndef func(name1,name2):\n    print(name1)\n    print(name2)\n# func()      #报错\nfunc('kk','bb')         #写了几个就传几个，多传少传都不行",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：含义：传递和定义参数的顺序及个数必须一致\n格式：def func(a,b)\ndef func(name1,name2):\n    print(name1)\n    print(name2)\n# func()      #报错\nfunc('kk','bb')         #写了几个就传几个，多传少传都不行",
+      "basis": {
+        "kind": "note",
+        "excerpt": "含义：传递和定义参数的顺序及个数必须一致\n格式：def func(a,b)\ndef func(name1,name2):\n    print(name1)\n    print(name2)\n# func()      #报错\nfunc('kk','bb')         #写了几个就传几个，多传少传都不行"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-63c2e65bb6-01",
+      "note_id": "python-63c2e65bb6",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「调用函数」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "函数名()\ndef login():\n    print('这是登录函数')\nlogin()\n调用几次，函数里面的代码就会运行几次，每次调用的时候，函数都会从头开始执行\n编写一个打招呼的函数并调用它\ndef hello():\n    name = input('你叫什么名字：')\n    print(f'你好呀{name}')\nhello()\n调用函数前，必须保证函数已经存在",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：函数名()\ndef login():\n    print('这是登录函数')\nlogin()\n调用几次，函数里面的代码就会运行几次，每次调用的时候，函数都会从头开始执行\n编写一个打招呼的函数并调用它\ndef hello():\n    name = input('你叫什么名字：')\n    print(f'你好呀{name}')\nhello()\n调用函数前，必…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "函数名()\ndef login():\n    print('这是登录函数')\nlogin()\n调用几次，函数里面的代码就会运行几次，每次调用的时候，函数都会从头开始执行\n编写一个打招呼的函数并调用它\ndef hello():\n    name = input('你叫什么名字：')\n    print(f'你好呀{name}')\nhello()\n调用函数前，必…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-737cb0945f-01",
+      "note_id": "python-737cb0945f",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「返回值  return」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "函数执行结束后，最后给调用者的一个结果\n作用：",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：函数执行结束后，最后给调用者的一个结果\n作用：",
+      "basis": {
+        "kind": "note",
+        "excerpt": "函数执行结束后，最后给调用者的一个结果\n作用："
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-2fd5686a28-01",
+      "note_id": "python-2fd5686a28",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「默认参数」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "含义：为参数提供默认值，调用参数时可不传该默认参数的值\n注意：所有的位置参数必须出现在默认参数前，包括函数定义和调用\n格式：def func(a=12):\ndef funb(a=8):\n    print(a)\nfunb()           #8\nfunb(22)         #22\n设置默认值，没有传值会根据默认值来执行代码，传了值根据传入的值来执行代码\ndef funb(b,a=8):\n    print(a,b)\nfunb(33)",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：含义：为参数提供默认值，调用参数时可不传该默认参数的值\n注意：所有的位置参数必须出现在默认参数前，包括函数定义和调用\n格式：def func(a=12):\ndef funb(a=8):\n    print(a)\nfunb()           #8\nfunb(22)         #22\n设置默认值，没有传值会根据默认值来执行代码，传了值根据传入的值来执…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "含义：为参数提供默认值，调用参数时可不传该默认参数的值\n注意：所有的位置参数必须出现在默认参数前，包括函数定义和调用\n格式：def func(a=12):\ndef funb(a=8):\n    print(a)\nfunb()           #8\nfunb(22)         #22\n设置默认值，没有传值会根据默认值来执行代码，传了值根据传入的值来执…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-498fdf1db2-01",
+      "note_id": "python-498fdf1db2",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「add() 添加是是一个整体」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "s1 = {1,2,3,4}\nprint('原集合:',s1)\n集合的唯一性决定了,如果需要添加的元素在原集合中已经存在,就不进行任何操作\ns1.add(5)\ns1.add(5,6)      #报错,一次只能添加一个元素\nprint('现集合:',s1)\n原集合: {1, 2, 3, 4}\n现集合: {1, 2, 3, 4, 5}",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：s1 = {1,2,3,4}\nprint('原集合:',s1)\n集合的唯一性决定了,如果需要添加的元素在原集合中已经存在,就不进行任何操作\ns1.add(5)\ns1.add(5,6)      #报错,一次只能添加一个元素\nprint('现集合:',s1)\n原集合: {1, 2, 3, 4}\n现集合: {1, 2, 3, 4, 5}",
+      "basis": {
+        "kind": "note",
+        "excerpt": "s1 = {1,2,3,4}\nprint('原集合:',s1)\n集合的唯一性决定了,如果需要添加的元素在原集合中已经存在,就不进行任何操作\ns1.add(5)\ns1.add(5,6)      #报错,一次只能添加一个元素\nprint('现集合:',s1)\n原集合: {1, 2, 3, 4}\n现集合: {1, 2, 3, 4, 5}"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-0a9d79a6ea-01",
+      "note_id": "python-0a9d79a6ea",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「discard:选择要删除的元素,有就会删除,没有也不会发生改变」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "s2 = {1,2,3,4}\nprint('原集合:',s2)\ns2.discard(3)          #{1,2,4}\ns2.discard(7)          #没有任何改变\nprint('删除后:',s2)",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：s2 = {1,2,3,4}\nprint('原集合:',s2)\ns2.discard(3)          #{1,2,4}\ns2.discard(7)          #没有任何改变\nprint('删除后:',s2)",
+      "basis": {
+        "kind": "note",
+        "excerpt": "s2 = {1,2,3,4}\nprint('原集合:',s2)\ns2.discard(3)          #{1,2,4}\ns2.discard(7)          #没有任何改变\nprint('删除后:',s2)"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-0f32660dd2-01",
+      "note_id": "python-0f32660dd2",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「items() 获取字典键值对」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "dic = {'name':'kk','age':22}\n# print(dic.items())             #dict_items([('name', 'kk'), ('age', 22)])\nfor i in dic.items():\n    print(i)                     #('name', 'kk')  ('age', 22)  i是元组类型\n原笔记中的 item() 应为 items()。",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：dic = {'name':'kk','age':22}\n# print(dic.items())             #dict_items([('name', 'kk'), ('age', 22)])\nfor i in dic.items():\n    print(i)                     #('name', 'kk')  ('a…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "dic = {'name':'kk','age':22}\n# print(dic.items())             #dict_items([('name', 'kk'), ('age', 22)])\nfor i in dic.items():\n    print(i)                     #('name', 'kk')  ('a…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-1df16ca2c4-01",
+      "note_id": "python-1df16ca2c4",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「keys() :返回字典里包含的所有键名」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "dic = {'name':'kk','age':22}\nprint(dic.keys())   #dict_keys(['name', 'age'])  注意返回的不是列表类型\nfor循环取出键名\nfor i in dic.keys():      #只取出键名\nprint(i)              #name age",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：dic = {'name':'kk','age':22}\nprint(dic.keys())   #dict_keys(['name', 'age'])  注意返回的不是列表类型\nfor循环取出键名\nfor i in dic.keys():      #只取出键名\nprint(i)              #name age",
+      "basis": {
+        "kind": "note",
+        "excerpt": "dic = {'name':'kk','age':22}\nprint(dic.keys())   #dict_keys(['name', 'age'])  注意返回的不是列表类型\nfor循环取出键名\nfor i in dic.keys():      #只取出键名\nprint(i)              #name age"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-e61f1fee61-01",
+      "note_id": "python-e61f1fee61",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「list():将可迭代对象转换成列表」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "支持转换为list的类型：str、tuple、dict、set\nstr->list\nprint(list('abcd'))                        #['a', 'b', 'c', 'd']\ntuple->list\nprint(list((1,2,3,4)))                     #[1, 2, 3, 4]\ndict->list\nprint(list({'namme':'kk','age':22}))      #['namme', 'age']\n字典转换成列表，会取键名作为列表的值\n\nset->list\nprint(list({1,2,3,4,5}))                  #[1, 2, 3, 4, 5]\n集合转换成列表会先去重再转换",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：支持转换为list的类型：str、tuple、dict、set\nstr->list\nprint(list('abcd'))                        #['a', 'b', 'c', 'd']\ntuple->list\nprint(list((1,2,3,4)))                     #[1, 2, 3, 4]\ndict…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "支持转换为list的类型：str、tuple、dict、set\nstr->list\nprint(list('abcd'))                        #['a', 'b', 'c', 'd']\ntuple->list\nprint(list((1,2,3,4)))                     #[1, 2, 3, 4]\ndict…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-e8b4b5dda4-01",
+      "note_id": "python-e8b4b5dda4",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「pop 对集合进行无序排列,然后将左边的第一个元素删除」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "s2 = {1,2,3,4}\ns2.pop()  #删除的是第一个元素 当集合内是字符串时,默认删除根据hash表排序后的第一个元素\nprint(s2)",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：s2 = {1,2,3,4}\ns2.pop()  #删除的是第一个元素 当集合内是字符串时,默认删除根据hash表排序后的第一个元素\nprint(s2)",
+      "basis": {
+        "kind": "note",
+        "excerpt": "s2 = {1,2,3,4}\ns2.pop()  #删除的是第一个元素 当集合内是字符串时,默认删除根据hash表排序后的第一个元素\nprint(s2)"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-81d8f418cc-01",
+      "note_id": "python-81d8f418cc",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「remove :选择删除的元素,如果集合中有就删除,没有就会报错」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "s2 = {1,2,3,4}\ns2.remove(3)  #{1,2,4}\ns2.remove(5)  #报错",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：s2 = {1,2,3,4}\ns2.remove(3)  #{1,2,4}\ns2.remove(5)  #报错",
+      "basis": {
+        "kind": "note",
+        "excerpt": "s2 = {1,2,3,4}\ns2.remove(3)  #{1,2,4}\ns2.remove(5)  #报错"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-1a688eb419-01",
+      "note_id": "python-1a688eb419",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「update 把传入的元素拆分,一个个放入集合中」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "s2 = {1,2,3,4}\nprint('原集合:',s2)\ns2.update(567)         #报错,因为update里要加入可迭代对象\ns2.update('567')\n原集合: {1, 2, 3, 4}\n添加后: {'5', 1, 2, 3, 4, '7', '6'}\ns2.update([5,6,7])     #{1, 2, 3, 4, 5, 6, 7}\ns2.update((5,6,7))     #{1, 2, 3, 4, 5, 6, 7}\ns2.update({5,6,7})     #{1, 2, 3, 4, 5, 6, 7}\ns2.update({'name':'kk','age':'22'})        #{1, 2, 3, 4, 'name', 'age'}\nprint('添加后:',s2)",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：s2 = {1,2,3,4}\nprint('原集合:',s2)\ns2.update(567)         #报错,因为update里要加入可迭代对象\ns2.update('567')\n原集合: {1, 2, 3, 4}\n添加后: {'5', 1, 2, 3, 4, '7', '6'}\ns2.update([5,6,7])     #{1, 2, 3, 4…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "s2 = {1,2,3,4}\nprint('原集合:',s2)\ns2.update(567)         #报错,因为update里要加入可迭代对象\ns2.update('567')\n原集合: {1, 2, 3, 4}\n添加后: {'5', 1, 2, 3, 4, '7', '6'}\ns2.update([5,6,7])     #{1, 2, 3, 4…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-454d852155-01",
+      "note_id": "python-454d852155",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「values():返回字典里面包含的所有值」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "dic = {'name':'kk','age':22}\n# print(dic.values())       #dict_values(['kk', 22])\nfor i in dic.values():\n    print(i)                #kk 22",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：dic = {'name':'kk','age':22}\n# print(dic.values())       #dict_values(['kk', 22])\nfor i in dic.values():\n    print(i)                #kk 22",
+      "basis": {
+        "kind": "note",
+        "excerpt": "dic = {'name':'kk','age':22}\n# print(dic.values())       #dict_values(['kk', 22])\nfor i in dic.values():\n    print(i)                #kk 22"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-806591267c-01",
+      "note_id": "python-806591267c",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「交集 &」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "含义:共有的部分\na = {1,2,3,4}\nb = {3,4,5,6}\nprint(a & b)      #{3,4}\n没有共有的部分 返回空集合set()",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：含义:共有的部分\na = {1,2,3,4}\nb = {3,4,5,6}\nprint(a & b)      #{3,4}\n没有共有的部分 返回空集合set()",
+      "basis": {
+        "kind": "note",
+        "excerpt": "含义:共有的部分\na = {1,2,3,4}\nb = {3,4,5,6}\nprint(a & b)      #{3,4}\n没有共有的部分 返回空集合set()"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-d284c64ebd-01",
+      "note_id": "python-d284c64ebd",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「元组只支持查询操作,不支持增删改操作」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "li = [1,2,3]\nli[1] = 'a'  #[1, 'a', 3]\nprint(li)\ntua = (1,2,3)\nprint(tua[2])  #3  #元组也有下标 也是从零开始\ntua[2] = 'a'   #报错,不支持修改\ncount() index() len() 跟列表的用法相同\nprint(tua.index(2)) #3 #tua中下标为2的元素\nprint(tua.count(1)) #1 #tua中1出现的次数\nprint(len(tua))     #3 #tua元组的长度\nprint(tua[1:])        #(2,3) #切片,包前不包后原则 所以从2开始切,包含2本身到最后",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：li = [1,2,3]\nli[1] = 'a'  #[1, 'a', 3]\nprint(li)\ntua = (1,2,3)\nprint(tua[2])  #3  #元组也有下标 也是从零开始\ntua[2] = 'a'   #报错,不支持修改\ncount() index() len() 跟列表的用法相同\nprint(tua.index(2)) #3 #tua…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "li = [1,2,3]\nli[1] = 'a'  #[1, 'a', 3]\nprint(li)\ntua = (1,2,3)\nprint(tua[2])  #3  #元组也有下标 也是从零开始\ntua[2] = 'a'   #报错,不支持修改\ncount() index() len() 跟列表的用法相同\nprint(tua.index(2)) #3 #tua…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-9f0a4b4985-01",
+      "note_id": "python-9f0a4b4985",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「列表」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "基本格式：\n列表名=[元素1，元素2,元素3..]\n所有元素放在[]内，元素与元素之间用，隔开\n元素之间的数据类型可以各不相同\nli=[1,2,'a',4]\nprint(li,type(li)) #list\nprint(li[2]) # a\n列表也可以进行切片操作\n列表是可迭代对象，可以for循环遍历取值\nfor i in li:\nprint(i) #1 2 a 4",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：基本格式：\n列表名=[元素1，元素2,元素3..]\n所有元素放在[]内，元素与元素之间用，隔开\n元素之间的数据类型可以各不相同\nli=[1,2,'a',4]\nprint(li,type(li)) #list\nprint(li[2]) # a\n列表也可以进行切片操作\n列表是可迭代对象，可以for循环遍历取值\nfor i in li:\nprint(i) #1 2…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "基本格式：\n列表名=[元素1，元素2,元素3..]\n所有元素放在[]内，元素与元素之间用，隔开\n元素之间的数据类型可以各不相同\nli=[1,2,'a',4]\nprint(li,type(li)) #list\nprint(li[2]) # a\n列表也可以进行切片操作\n列表是可迭代对象，可以for循环遍历取值\nfor i in li:\nprint(i) #1 2…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-74c2c1b8f2-01",
+      "note_id": "python-74c2c1b8f2",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「列表推导式」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "格式一:[表达式 for 变量 in 列表]\n注意:in后面不仅可以放列表,还可以放range() 可迭代对象\nli = [1,2,3,4,5,6]\n[print(i) for i in li] #1 2 3 4 5 6 #前面的i是表达式 也可以换成i*5之类的\nli = []\nfor i in range(1,6):\n    # print(i)\n    li.append(i)\nprint(li) #[1,2,3,4,5]\n[li.append(i) for i in range(1,6)] #[1,2,3,4,5]\nprint(li)\n格式二:[表达式 for 变量 in 列表 if 条件]\n把奇数放进列表里\nli = []\nfor i in range(1,11):\n    if i % 2 == 1:\n        print(i)\n        li.append(i)\nprint(li) #[1,3,5,7,9]\n[li.append(i) for i in range(1,11) if i % 2 == 1]\nprint(li) #[1,3,5,7,9]\n# 2.7列表嵌套\n# 含义:一个列表里面又有一…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：格式一:[表达式 for 变量 in 列表]\n注意:in后面不仅可以放列表,还可以放range() 可迭代对象\nli = [1,2,3,4,5,6]\n[print(i) for i in li] #1 2 3 4 5 6 #前面的i是表达式 也可以换成i*5之类的\nli = []\nfor i in range(1,6):\n    # print(i)…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "格式一:[表达式 for 变量 in 列表]\n注意:in后面不仅可以放列表,还可以放range() 可迭代对象\nli = [1,2,3,4,5,6]\n[print(i) for i in li] #1 2 3 4 5 6 #前面的i是表达式 也可以换成i*5之类的\nli = []\nfor i in range(1,6):\n    # print(i)…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-b5dc600b40-01",
+      "note_id": "python-b5dc600b40",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「基本格式:元组名 = (元素1,元素2,元素3...)」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "所有元素包含在小括号内,元素与元素之间用逗号隔开,不同元素也可以是不同的数据类型\ntua = (1,2,3,4,5) #也可以写成tuq = (1,2,3,'a','b',[1,2,3])\nprint(type(tua)) #tuple\ntub = (1,) #只有一个元素的时候末尾必须加上逗号,否则返回这个唯一的值的数据类型\ntua = ()   #定义空元组",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：所有元素包含在小括号内,元素与元素之间用逗号隔开,不同元素也可以是不同的数据类型\ntua = (1,2,3,4,5) #也可以写成tuq = (1,2,3,'a','b',[1,2,3])\nprint(type(tua)) #tuple\ntub = (1,) #只有一个元素的时候末尾必须加上逗号,否则返回这个唯一的值的数据类型\ntua = ()   #定义空…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "所有元素包含在小括号内,元素与元素之间用逗号隔开,不同元素也可以是不同的数据类型\ntua = (1,2,3,4,5) #也可以写成tuq = (1,2,3,'a','b',[1,2,3])\nprint(type(tua)) #tuple\ntub = (1,) #只有一个元素的时候末尾必须加上逗号,否则返回这个唯一的值的数据类型\ntua = ()   #定义空…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-7d6601c38c-01",
+      "note_id": "python-7d6601c38c",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「基本格式:字典名 = {键1:值1,键2:值2...}」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "键值对形式保存,键和值之间用:隔开,每个键值对之间用,隔开\ndic = {'name':'kk','age':22}\nprint(type(dic)) #dict\n# 字典中的键具有唯一性,但是值可以重复\ndic2 = {'name':'kk','name':'bb'}\nprint(dic2) #{'name': 'bb'} #不会报错,键名重复的值会被后面的值覆盖",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：键值对形式保存,键和值之间用:隔开,每个键值对之间用,隔开\ndic = {'name':'kk','age':22}\nprint(type(dic)) #dict\n# 字典中的键具有唯一性,但是值可以重复\ndic2 = {'name':'kk','name':'bb'}\nprint(dic2) #{'name': 'bb'} #不会报错,键名重复的值会被后面…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "键值对形式保存,键和值之间用:隔开,每个键值对之间用,隔开\ndic = {'name':'kk','age':22}\nprint(type(dic)) #dict\n# 字典中的键具有唯一性,但是值可以重复\ndic2 = {'name':'kk','name':'bb'}\nprint(dic2) #{'name': 'bb'} #不会报错,键名重复的值会被后面…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-059a26dd0b-01",
+      "note_id": "python-059a26dd0b",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「基本格式:集合名 = {元素1,元素2,元素3...}」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "s1 = {1,2,3}\ns1 = {}          #定义空字典\ns1 = set()       #定义空集合",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：s1 = {1,2,3}\ns1 = {}          #定义空字典\ns1 = set()       #定义空集合",
+      "basis": {
+        "kind": "note",
+        "excerpt": "s1 = {1,2,3}\ns1 = {}          #定义空字典\ns1 = set()       #定义空集合"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-93ca4404de-01",
+      "note_id": "python-93ca4404de",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「字典的应用场景」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "使用键值对,存储描述一个物体的相关信息",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：使用键值对,存储描述一个物体的相关信息",
+      "basis": {
+        "kind": "note",
+        "excerpt": "使用键值对,存储描述一个物体的相关信息"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-3da9d53728-01",
+      "note_id": "python-3da9d53728",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「并集 |」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "a = {1,2,3,4}\nb = {3,4,5,6}\nprint(a | b)     #{1, 2, 3, 4, 5, 6}",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：a = {1,2,3,4}\nb = {3,4,5,6}\nprint(a | b)     #{1, 2, 3, 4, 5, 6}",
+      "basis": {
+        "kind": "note",
+        "excerpt": "a = {1,2,3,4}\nb = {3,4,5,6}\nprint(a | b)     #{1, 2, 3, 4, 5, 6}"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-49d089b9f9-01",
+      "note_id": "python-49d089b9f9",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「排序」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "sort:将列表按特定顺序重新排列,默认从小到大\nreverse:倒序,将列表倒置,不按大小排列\nli = [1,4,67,45,8,9]\n# li.sort()  #[1, 4, 8, 9, 45, 67] 按照从小到大的顺序排列\nli.reverse() #[9, 8, 45, 67, 4, 1]\n当上面两个命令同时运行时 就可以得到从大到小的排列\nprint(li)",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：sort:将列表按特定顺序重新排列,默认从小到大\nreverse:倒序,将列表倒置,不按大小排列\nli = [1,4,67,45,8,9]\n# li.sort()  #[1, 4, 8, 9, 45, 67] 按照从小到大的顺序排列\nli.reverse() #[9, 8, 45, 67, 4, 1]\n当上面两个命令同时运行时 就可以得到从大到小的排列\npr…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "sort:将列表按特定顺序重新排列,默认从小到大\nreverse:倒序,将列表倒置,不按大小排列\nli = [1,4,67,45,8,9]\n# li.sort()  #[1, 4, 8, 9, 45, 67] 按照从小到大的顺序排列\nli.reverse() #[9, 8, 45, 67, 4, 1]\n当上面两个命令同时运行时 就可以得到从大到小的排列\npr…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-9484fd6999-01",
+      "note_id": "python-9484fd6999",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「赋值：会随着原对象一起变化」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "li = [1,2,3,4]\nli2 = li     #将li直接赋值给li2\nprint(li,li2)         #[1, 2, 3, 4] [1, 2, 3, 4]\n给li列表新增元素\nli.append(5)\nprint(li,li2)         #[1, 2, 3, 4, 5] [1, 2, 3, 4, 5]\n赋值：等于完全共享资源，一个值的改变会完全被另一个值共享",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：li = [1,2,3,4]\nli2 = li     #将li直接赋值给li2\nprint(li,li2)         #[1, 2, 3, 4] [1, 2, 3, 4]\n给li列表新增元素\nli.append(5)\nprint(li,li2)         #[1, 2, 3, 4, 5] [1, 2, 3, 4, 5]\n赋值：等于完全共享资源，…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "li = [1,2,3,4]\nli2 = li     #将li直接赋值给li2\nprint(li,li2)         #[1, 2, 3, 4] [1, 2, 3, 4]\n给li列表新增元素\nli.append(5)\nprint(li,li2)         #[1, 2, 3, 4, 5] [1, 2, 3, 4, 5]\n赋值：等于完全共享资源，…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-ad7f604fbc-01",
+      "note_id": "python-ad7f604fbc",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「集合具有唯一性,可以自动去重」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "s1 = {1,2,4,6,3,4,2}  #{1, 2, 3, 4, 6} 没有重复的元素\nprint(s1)",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：s1 = {1,2,4,6,3,4,2}  #{1, 2, 3, 4, 6} 没有重复的元素\nprint(s1)",
+      "basis": {
+        "kind": "note",
+        "excerpt": "s1 = {1,2,4,6,3,4,2}  #{1, 2, 3, 4, 6} 没有重复的元素\nprint(s1)"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-e0d8303f62-01",
+      "note_id": "python-e0d8303f62",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「集合具有无序性」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "s1 = {'a','b','c','d','e','f'}\nprint(s1)  #{'e', 'a', 'f', 'd', 'b', 'c'} 其中一次的结果,每次运行结果都不一样\ns2 = {1,2,3,4,5,6}\nprint(s2)     #{1, 2, 3, 4, 5, 6}    数字运行结果一样\n集合无序的实现方式涉及哈希表\nprint(hash('a'))\nprint(hash('b'))\nprint(hash('c'))\n每次运行结果都不同,hash(哈希)值不同,那么在hash表中的位置也不同,这就实现了集合的无序性\nprint(hash(1))\nprint(hash(2))\nprint(hash(3))\npython中int整型的hash值就是他本身,在hash表中的位置不会发生改变,所以顺序就不会改变\n无序性:不能修改集合中的值",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：s1 = {'a','b','c','d','e','f'}\nprint(s1)  #{'e', 'a', 'f', 'd', 'b', 'c'} 其中一次的结果,每次运行结果都不一样\ns2 = {1,2,3,4,5,6}\nprint(s2)     #{1, 2, 3, 4, 5, 6}    数字运行结果一样\n集合无序的实现方式涉及哈希表\nprint(h…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "s1 = {'a','b','c','d','e','f'}\nprint(s1)  #{'e', 'a', 'f', 'd', 'b', 'c'} 其中一次的结果,每次运行结果都不一样\ns2 = {1,2,3,4,5,6}\nprint(s2)     #{1, 2, 3, 4, 5, 6}    数字运行结果一样\n集合无序的实现方式涉及哈希表\nprint(h…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-0d7defe046-01",
+      "note_id": "python-0d7defe046",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「Python 变量与格式化练习」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- bug类型：英文符号、缩进错误、语法错误（SyntaxError）、命名错误(nameerror)\n\nPython\nname = '函数团'\nage = 22\nuniversity = 'HEU'\nGPA = 3.9\nprint(f'我的名字是{name}，今年{age}岁，就读于{university},GPA为{GPA:.2f}')\nprint(GPA >= 3.5)#直接print输出的就是布尔值\nname = '金宝宝'\nage = 23\nuniversity = 'HEU'\nGPA = 4.0\nprint(f'我的好朋友是{name},今年{age}岁,也在{university}上学,她的GPA为{GPA}')",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- bug类型：英文符号、缩进错误、语法错误（SyntaxError）、命名错误(nameerror)\n\nPython\nname = '函数团'\nage = 22\nuniversity = 'HEU'\nGPA = 3.9\nprint(f'我的名字是{name}，今年{age}岁，就读于{university},GPA为{GPA:.2f}')\nprint(GP…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- bug类型：英文符号、缩进错误、语法错误（SyntaxError）、命名错误(nameerror)\n\nPython\nname = '函数团'\nage = 22\nuniversity = 'HEU'\nGPA = 3.9\nprint(f'我的名字是{name}，今年{age}岁，就读于{university},GPA为{GPA:.2f}')\nprint(GP…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-ef883b83b0-01",
+      "note_id": "python-ef883b83b0",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「float():转换为一个小数」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "print(float(11))     #11.0 整型转换成浮点型，会自动添加一位小数",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：print(float(11))     #11.0 整型转换成浮点型，会自动添加一位小数",
+      "basis": {
+        "kind": "note",
+        "excerpt": "print(float(11))     #11.0 整型转换成浮点型，会自动添加一位小数"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-d7b3543d8a-01",
+      "note_id": "python-d7b3543d8a",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「int() 整数类型转换」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "a = 1.2 #浮点数 float\nb = int(a)\nprint(b,type(b))  # 1 int  强制转换成整型了\n# 浮点型强制转整型只保留整数部分 不遵循四舍五入原则\n# str -> int\na = int('123')\nprint(a,type(a))    #123  int\nprint(int('kk'))    #报错\n如果字符串中有数字和正负号以外的字符就会报错\n\n用户从控制台输入，判断年龄\nage = input('请输入您的年龄：')    #会报错 因为input输出是字符串 要转整型\nage = int(input('请输入您的年龄：'))\nif age >= 18:\n    print('成年了')",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：a = 1.2 #浮点数 float\nb = int(a)\nprint(b,type(b))  # 1 int  强制转换成整型了\n# 浮点型强制转整型只保留整数部分 不遵循四舍五入原则\n# str -> int\na = int('123')\nprint(a,type(a))    #123  int\nprint(int('kk'))    #报错\n如果字符…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "a = 1.2 #浮点数 float\nb = int(a)\nprint(b,type(b))  # 1 int  强制转换成整型了\n# 浮点型强制转整型只保留整数部分 不遵循四舍五入原则\n# str -> int\na = int('123')\nprint(a,type(a))    #123  int\nprint(int('kk'))    #报错\n如果字符…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-8fd109e5e4-01",
+      "note_id": "python-8fd109e5e4",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「变量：计算机的储存空间，用于保存数据」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、定义变量格式：变量名 = 值**\n\n**示例：** eg.\n\nnum1 = 3 #变量1\nnum2 = 10 #变量2\ntotal = num1 + num2\nprint(num1)----3\nprint('num1')----num1 #加上引号会打印引号里面的内容，没有引号就会打印变量的值，如果该变量没有被赋值，就会报命名错误",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、定义变量格式：变量名 = 值**\n\n**示例：** eg.\n\nnum1 = 3 #变量1\nnum2 = 10 #变量2\ntotal = num1 + num2\nprint(num1)----3\nprint('num1')----num1 #加上引号会打印引号里面的内容，没有引号就会打印变量的值，如果该变量没有被赋值，就会报命名错误",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、定义变量格式：变量名 = 值**\n\n**示例：** eg.\n\nnum1 = 3 #变量1\nnum2 = 10 #变量2\ntotal = num1 + num2\nprint(num1)----3\nprint('num1')----num1 #加上引号会打印引号里面的内容，没有引号就会打印变量的值，如果该变量没有被赋值，就会报命名错误"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-03d00c037c-01",
+      "note_id": "python-03d00c037c",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「多行注释：三引号中间的内容就是多行注释，可以是三对单引号，也可以是三对双引号；」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "crtl+/既可以添加注释也可以取消注释，使用的是单行注释",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：crtl+/既可以添加注释也可以取消注释，使用的是单行注释",
+      "basis": {
+        "kind": "note",
+        "excerpt": "crtl+/既可以添加注释也可以取消注释，使用的是单行注释"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-701f0879f3-01",
+      "note_id": "python-701f0879f3",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「数值类型：」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、int整型：任意大小的整数**\n\nnum = 1\n> **注意：** 检验数据类型的方法 type()\n\nprint(type(num))----<class'int'>\n**2、float浮点数:小数**\n\n**3、bool布尔型（重点）：有固定写法，一个为True(真)，一个为Flase(假)#通常用于判断**\n\nprint(type(True))----<class'bool'>\n> **注意：** 布尔值可以当作正值来对待，True相当于整数1，Flase相当于整数0\n\n**4、complex复数型（了解）**\n\n固定写法：z = a + bj",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、int整型：任意大小的整数**\n\nnum = 1\n> **注意：** 检验数据类型的方法 type()\n\nprint(type(num))----<class'int'>\n**2、float浮点数:小数**\n\n**3、bool布尔型（重点）：有固定写法，一个为True(真)，一个为Flase(假)#通常用于判断**\n\nprint(type(True)…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、int整型：任意大小的整数**\n\nnum = 1\n> **注意：** 检验数据类型的方法 type()\n\nprint(type(num))----<class'int'>\n**2、float浮点数:小数**\n\n**3、bool布尔型（重点）：有固定写法，一个为True(真)，一个为Flase(假)#通常用于判断**\n\nprint(type(True)…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-67b5166b80-01",
+      "note_id": "python-67b5166b80",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「查看元素」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "格式1:变量名[键名]\ndic = {'name':'kk','age':22}\nprint(dic[2]) #报错,字典中没有下标,查找元素需要根据键名,键名相当于下标\nprint(dic['age']) #22\n注意:查看元素不存在时会报错\n\n格式2:变量名.get(键名)\ndic = {'name':'kk','age':22}\nprint(dic.get('name'))  #kk\nprint(dic.get('tel'))     #None  #当键名不存在时不会报错,会返回None\nprint(dic.get('tel','不存在'))   #不存在 可以在后面设置返回的值是什么",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：格式1:变量名[键名]\ndic = {'name':'kk','age':22}\nprint(dic[2]) #报错,字典中没有下标,查找元素需要根据键名,键名相当于下标\nprint(dic['age']) #22\n注意:查看元素不存在时会报错\n\n格式2:变量名.get(键名)\ndic = {'name':'kk','age':22}\nprint(dic.g…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "格式1:变量名[键名]\ndic = {'name':'kk','age':22}\nprint(dic[2]) #报错,字典中没有下标,查找元素需要根据键名,键名相当于下标\nprint(dic['age']) #22\n注意:查看元素不存在时会报错\n\n格式2:变量名.get(键名)\ndic = {'name':'kk','age':22}\nprint(dic.g…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-b102bcac54-01",
+      "note_id": "python-b102bcac54",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「标识符：程序员定义的变量名和函数名」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "标识符规定：只能由数字、字母、_（下划线）组成；#python3可以用中文命名，但不推荐，标识符被包含在（）内对标识符本身没有影响，（（print））\n不能以数字开头；\n不能是关键字；#关键字是python中已经使用了的标识符，具有特殊的功能和含义\n**示例：** eg.False = 1 print(False)会报错\n严格区分大小写",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：标识符规定：只能由数字、字母、_（下划线）组成；#python3可以用中文命名，但不推荐，标识符被包含在（）内对标识符本身没有影响，（（print））\n不能以数字开头；\n不能是关键字；#关键字是python中已经使用了的标识符，具有特殊的功能和含义\n**示例：** eg.False = 1 print(False)会报错\n严格区分大小写",
+      "basis": {
+        "kind": "note",
+        "excerpt": "标识符规定：只能由数字、字母、_（下划线）组成；#python3可以用中文命名，但不推荐，标识符被包含在（）内对标识符本身没有影响，（（print））\n不能以数字开头；\n不能是关键字；#关键字是python中已经使用了的标识符，具有特殊的功能和含义\n**示例：** eg.False = 1 print(False)会报错\n严格区分大小写"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-847146bbda-01",
+      "note_id": "python-847146bbda",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「* 字符串重复」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "print('函数团'*3) # 函数团函数团函数团，字符串相乘，*是字符串重复\nprint('函数团\\n'*3) # 会换行",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：print('函数团'*3) # 函数团函数团函数团，字符串相乘，*是字符串重复\nprint('函数团\\n'*3) # 会换行",
+      "basis": {
+        "kind": "note",
+        "excerpt": "print('函数团'*3) # 函数团函数团函数团，字符串相乘，*是字符串重复\nprint('函数团\\n'*3) # 会换行"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-12e2d18b68-01",
+      "note_id": "python-12e2d18b68",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「+ 字符串拼接」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "print('函数团'+'在此') # 函数团在此，字符串相加，+是字符串拼接",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：print('函数团'+'在此') # 函数团在此，字符串相加，+是字符串拼接",
+      "basis": {
+        "kind": "note",
+        "excerpt": "print('函数团'+'在此') # 函数团在此，字符串相加，+是字符串拼接"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-8daaa643e4-01",
+      "note_id": "python-8daaa643e4",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「capitalize() :将字符串的首字母大写,其他字母小写」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "name = 'sylvive'\nprint(name.capitalize()) # Sylvive\nname = 'SYLVIVE'\nprint(name.capitalize()) # Sylvive",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：name = 'sylvive'\nprint(name.capitalize()) # Sylvive\nname = 'SYLVIVE'\nprint(name.capitalize()) # Sylvive",
+      "basis": {
+        "kind": "note",
+        "excerpt": "name = 'sylvive'\nprint(name.capitalize()) # Sylvive\nname = 'SYLVIVE'\nprint(name.capitalize()) # Sylvive"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-f1154dbae5-01",
+      "note_id": "python-f1154dbae5",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「endswith() 判断字符串结尾」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "endswith(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'\n原笔记中的 endswitch() 应为 endswith()。",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：endswith(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'\n原笔记中的 endswitch() 应为 endswith()。",
+      "basis": {
+        "kind": "note",
+        "excerpt": "endswith(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'\n原笔记中的 endswitch() 应为 endswith()。"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-d4e775a872-01",
+      "note_id": "python-d4e775a872",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「eval() ：用来执行一个字符串表达式，并返回表达式的值」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "print(10+10)                #20\nprint('10'+'10')            #1010\nprint('10+10')              #10+10\nprint(eval('10+10'))        #20   执行运算并返回运算值\na = eval('10+10')\nprint(type(a))              #int\neval() 可以实现list、dict、tuple和str之间的转换\nstr ——> list\nst1 = '[[1,2],[3,4],[5,6]]'\nli = eval(st1)\nprint(li,type(li))                #[[1, 2], [3, 4], [5, 6]] <class 'list'>\n同理可得字典、元组之间的转换\neval()强大但不够安全",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：print(10+10)                #20\nprint('10'+'10')            #1010\nprint('10+10')              #10+10\nprint(eval('10+10'))        #20   执行运算并返回运算值\na = eval('10+10')\nprint(type(a))…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "print(10+10)                #20\nprint('10'+'10')            #1010\nprint('10+10')              #10+10\nprint(eval('10+10'))        #20   执行运算并返回运算值\na = eval('10+10')\nprint(type(a))…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-72ee32863a-01",
+      "note_id": "python-72ee32863a",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「lower() :将字符串中的所有字母转换为小写」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "name = 'SylVIve'\nprint(name.lower()) # sylvive",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：name = 'SylVIve'\nprint(name.lower()) # sylvive",
+      "basis": {
+        "kind": "note",
+        "excerpt": "name = 'SylVIve'\nprint(name.lower()) # sylvive"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-27c1109c6d-01",
+      "note_id": "python-27c1109c6d",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「replace :替换字符串中的某个子字符串」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "replace(旧子字符串,新子字符串,替换次数)\n注意:替换次数可以省略,表示替换所有的旧子字符串\nname = 'sylvive'\nprint(name.replace('v', 'n')) # sylnine\nprint(name.replace('i', 'I', 1)) # sylvIve",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：replace(旧子字符串,新子字符串,替换次数)\n注意:替换次数可以省略,表示替换所有的旧子字符串\nname = 'sylvive'\nprint(name.replace('v', 'n')) # sylnine\nprint(name.replace('i', 'I', 1)) # sylvIve",
+      "basis": {
+        "kind": "note",
+        "excerpt": "replace(旧子字符串,新子字符串,替换次数)\n注意:替换次数可以省略,表示替换所有的旧子字符串\nname = 'sylvive'\nprint(name.replace('v', 'n')) # sylnine\nprint(name.replace('i', 'I', 1)) # sylvIve"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-ecacb6e1c4-01",
+      "note_id": "python-ecacb6e1c4",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「split() :按照指定的分隔符将字符串分割成列表」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "split(分隔符,分割次数)\n注意:分割次数可以省略,表示分割所有的分隔符\nname = 'sylvive'\nprint(name.split('v')) # ['syl', 'i', 'e']\nprint(name.split('v', 1)) # ['syl', 'ive']",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：split(分隔符,分割次数)\n注意:分割次数可以省略,表示分割所有的分隔符\nname = 'sylvive'\nprint(name.split('v')) # ['syl', 'i', 'e']\nprint(name.split('v', 1)) # ['syl', 'ive']",
+      "basis": {
+        "kind": "note",
+        "excerpt": "split(分隔符,分割次数)\n注意:分割次数可以省略,表示分割所有的分隔符\nname = 'sylvive'\nprint(name.split('v')) # ['syl', 'i', 'e']\nprint(name.split('v', 1)) # ['syl', 'ive']"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-08624cba71-01",
+      "note_id": "python-08624cba71",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「startswith() :判断字符串是否以指定的子字符串开头,返回布尔值True或False」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "startswith(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'\nprint(name.startswith('s')) # True\nprint(name.startswith('sylv')) # True\nprint(name.startswith('v',3,5)) #True",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：startswith(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'\nprint(name.startswith('s')) # True\nprint(name.startswith('sylv')) # True\nprint(name.startswith('v',3,5)) #True",
+      "basis": {
+        "kind": "note",
+        "excerpt": "startswith(子字符串,开始位置下标,结束位置下标)\nname = 'sylvive'\nprint(name.startswith('s')) # True\nprint(name.startswith('sylv')) # True\nprint(name.startswith('v',3,5)) #True"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-bfe1bbef3d-01",
+      "note_id": "python-bfe1bbef3d",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「str():转换成字符串类型，任何类型都可以转换成字符串类型」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "n = 100\nprint(str(n))   #100   str\nst = str(1.80)\nprint(st,type(st))     #1.8 str      float转换成str会去除末尾为0的小数部分\n列表类型也可以转 反正就是万物几乎都可以转字符串",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：n = 100\nprint(str(n))   #100   str\nst = str(1.80)\nprint(st,type(st))     #1.8 str      float转换成str会去除末尾为0的小数部分\n列表类型也可以转 反正就是万物几乎都可以转字符串",
+      "basis": {
+        "kind": "note",
+        "excerpt": "n = 100\nprint(str(n))   #100   str\nst = str(1.80)\nprint(st,type(st))     #1.8 str      float转换成str会去除末尾为0的小数部分\n列表类型也可以转 反正就是万物几乎都可以转字符串"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-88dccfd61d-01",
+      "note_id": "python-88dccfd61d",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「upper() :将字符串中的所有字母转换为大写」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "name = 'SylVIve'\nprint(name.upper()) # SYLVIVE",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：name = 'SylVIve'\nprint(name.upper()) # SYLVIVE",
+      "basis": {
+        "kind": "note",
+        "excerpt": "name = 'SylVIve'\nprint(name.upper()) # SYLVIVE"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-f3e8cb1f3e-01",
+      "note_id": "python-f3e8cb1f3e",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「下标」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "python中下标从0开始\n作用：通过下标能够快速找到对应的数据\n格式：字符串名[下标]\nname = 'sylvive'\nprint(name[0]) # s\nprint(name[1]) # y\n# 从右往左数，下标从-1开始\nprint(name[-1]) # e\n注意：下标不能超过字符串的长度，否则会报错",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：python中下标从0开始\n作用：通过下标能够快速找到对应的数据\n格式：字符串名[下标]\nname = 'sylvive'\nprint(name[0]) # s\nprint(name[1]) # y\n# 从右往左数，下标从-1开始\nprint(name[-1]) # e\n注意：下标不能超过字符串的长度，否则会报错",
+      "basis": {
+        "kind": "note",
+        "excerpt": "python中下标从0开始\n作用：通过下标能够快速找到对应的数据\n格式：字符串名[下标]\nname = 'sylvive'\nprint(name[0]) # s\nprint(name[1]) # y\n# 从右往左数，下标从-1开始\nprint(name[-1]) # e\n注意：下标不能超过字符串的长度，否则会报错"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-a3add307c8-01",
+      "note_id": "python-a3add307c8",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「修改元素」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "直接通过下标就可以进行修改\nli=[1,2,3]\nli[2]='a' #超过索引值会报错\nprint(li) #[1, 2, 'a']\n格式:变量名[键名] = 值\ndic = {'name':'kk','age':22}\ndic['age'] = 20     # {'name': 'kk', 'age': 20} #列表通过下标修改,字典通过键名修改\nprint(dic)",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：直接通过下标就可以进行修改\nli=[1,2,3]\nli[2]='a' #超过索引值会报错\nprint(li) #[1, 2, 'a']\n格式:变量名[键名] = 值\ndic = {'name':'kk','age':22}\ndic['age'] = 20     # {'name': 'kk', 'age': 20} #列表通过下标修改,字典通过键名修改\np…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "直接通过下标就可以进行修改\nli=[1,2,3]\nli[2]='a' #超过索引值会报错\nprint(li) #[1, 2, 'a']\n格式:变量名[键名] = 值\ndic = {'name':'kk','age':22}\ndic['age'] = 20     # {'name': 'kk', 'age': 20} #列表通过下标修改,字典通过键名修改\np…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-17e311f527-01",
+      "note_id": "python-17e311f527",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「切片」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "含义：指对操作的对象截取其中一部分的操作\n语法：[开始位置:结束位置:步长]\n注意：包前不包后原则，即从起始位置开始，到结束位置的前一个位置结束（不包含结束位置本身）\nst = 'abcdefghijklmn'\n从左往右\nprint(st[0:5]) # abcde\nprint(st[4:7]) # efg\nprint(st[3:])  # defghijklmn,下标从3开始，一直到最后\nprint(st[:5])  # abcde,从开头到下标为5的前一个位置\n# 从右往左\nprint(st[-1:])  # n,下标为-1的最后一个位置\nprint(st[:-1])  # abcdefghijklm,从开头到下标为-1的前一个位置\nprint(st[-1:-5]) # 空,从右往左切片时，起始位置要大于结束位置，否则会报错\n步长 :表示选取间隔,不写步长,则默认是1\n步长的绝对值大小决定切取的间隔,正负号决定切取的方向,正数代表从左往右取值,负数表示从右往左取值\nprint(st[-1::1]) # n,从下标为-1的最后一个位置开始，步长为1，向右取值\nprint(st[-1::-1]) # nmlkjihgfedc…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：含义：指对操作的对象截取其中一部分的操作\n语法：[开始位置:结束位置:步长]\n注意：包前不包后原则，即从起始位置开始，到结束位置的前一个位置结束（不包含结束位置本身）\nst = 'abcdefghijklmn'\n从左往右\nprint(st[0:5]) # abcde\nprint(st[4:7]) # efg\nprint(st[3:])  # defghijk…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "含义：指对操作的对象截取其中一部分的操作\n语法：[开始位置:结束位置:步长]\n注意：包前不包后原则，即从起始位置开始，到结束位置的前一个位置结束（不包含结束位置本身）\nst = 'abcdefghijklmn'\n从左往右\nprint(st[0:5]) # abcde\nprint(st[4:7]) # efg\nprint(st[3:])  # defghijk…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-f37ddae531-01",
+      "note_id": "python-f37ddae531",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「删除元素」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "del\nli = ['a','b','c','d']\ndel li #删除列表，报错\ndel li[2] #根据下标删除 #['a', 'b', 'd']\nprint(li)\npop：删除指定下标的数据，python3版本默认删除最后一个元素\nli = ['a','b','c','d']\nli.pop() #默认删除最后一个元素 #['a','b','c']\nli.pop(2) #不能指定元素删除，只能根据下标删除，下标不能超出范围 #['a', 'b', 'd']\nprint(li)\nremove:根据元素的值进行删除\nli = ['a','b','c','d']\nli.remove('a') #['b', 'c', 'd']\n列表中不存在这个元素的时候就会报错\nli = ['a','b','c','d','b']\nli.remove('b') #['a','c','d','b'] #默认删除最开始出现的指定元素\nprint(li)\ndel : 删除整个字典\n基本格式: del 字典名\ndic = {'name':'kk','age':22}\ndel dic\nprint(dic)   #报错 因为已经被删除了\n删除指定键值…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：del\nli = ['a','b','c','d']\ndel li #删除列表，报错\ndel li[2] #根据下标删除 #['a', 'b', 'd']\nprint(li)\npop：删除指定下标的数据，python3版本默认删除最后一个元素\nli = ['a','b','c','d']\nli.pop() #默认删除最后一个元素 #['a','b','c']…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "del\nli = ['a','b','c','d']\ndel li #删除列表，报错\ndel li[2] #根据下标删除 #['a', 'b', 'd']\nprint(li)\npop：删除指定下标的数据，python3版本默认删除最后一个元素\nli = ['a','b','c','d']\nli.pop() #默认删除最后一个元素 #['a','b','c']…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-298f8691a8-01",
+      "note_id": "python-298f8691a8",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「字符串str」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、特点：需要加上引号，单双引号都可以，包含了多行内容时用三引号**\n\n**示例：** eg. name = sixstar----会报错 # sixstar没有被赋值\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = 'sixstar'----加了引号后就正确了",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、特点：需要加上引号，单双引号都可以，包含了多行内容时用三引号**\n\n**示例：** eg. name = sixstar----会报错 # sixstar没有被赋值\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = 'sixstar'----加了引号后就正确了",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、特点：需要加上引号，单双引号都可以，包含了多行内容时用三引号**\n\n**示例：** eg. name = sixstar----会报错 # sixstar没有被赋值\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = 'sixstar'----加了引号后就正确了"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-23541506b0-01",
+      "note_id": "python-23541506b0",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「字符串编码」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "本质上就是二进制与语言文字的一一对应关系\nUnicode：所有字符都是两个字节 ，好处：字符与数字之间转换速度更快一点 ， 坏处：占用空间大\nUTF-8：精准，对不同的字符用不同的长度表示， 好处：节省空间 ， 坏处：字符与数字之间转换速度慢一点，每次都需要计算字符需要用多少个字节来表示",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：本质上就是二进制与语言文字的一一对应关系\nUnicode：所有字符都是两个字节 ，好处：字符与数字之间转换速度更快一点 ， 坏处：占用空间大\nUTF-8：精准，对不同的字符用不同的长度表示， 好处：节省空间 ， 坏处：字符与数字之间转换速度慢一点，每次都需要计算字符需要用多少个字节来表示",
+      "basis": {
+        "kind": "note",
+        "excerpt": "本质上就是二进制与语言文字的一一对应关系\nUnicode：所有字符都是两个字节 ，好处：字符与数字之间转换速度更快一点 ， 坏处：占用空间大\nUTF-8：精准，对不同的字符用不同的长度表示， 好处：节省空间 ， 坏处：字符与数字之间转换速度慢一点，每次都需要计算字符需要用多少个字节来表示"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-1bef01eb8a-01",
+      "note_id": "python-1bef01eb8a",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「字符串编码转换」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "a  = 'hello'\n# print(a,type(a)) # str,字符串是以字符为单位进行处理\na1 = a.encode()      # 编码\nprint('编码后：',a1)  # b'hello'\nprint(type(a1))      # bytes,编码后是以字节为单位进行处理\na2 = a1.decode()     # 解码\nprint('解码后：',a2)  # hello\nprint(type(a2))      # str,解码后是以字符为单位进行处理\n注意：对于bytes，只需要知道它和字符串之间的相互转换\n\nst = '函数团在此'\nst1 = st.encode('utf-8') #编码\nprint(st1,type(st1))\nst2 = st1.decode('utf-8') #解码\nprint(st2,type(st2))",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：a  = 'hello'\n# print(a,type(a)) # str,字符串是以字符为单位进行处理\na1 = a.encode()      # 编码\nprint('编码后：',a1)  # b'hello'\nprint(type(a1))      # bytes,编码后是以字节为单位进行处理\na2 = a1.decode()     # 解码\npr…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "a  = 'hello'\n# print(a,type(a)) # str,字符串是以字符为单位进行处理\na1 = a.encode()      # 编码\nprint('编码后：',a1)  # b'hello'\nprint(type(a1))      # bytes,编码后是以字节为单位进行处理\na2 = a1.decode()     # 解码\npr…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-2084993b12-01",
+      "note_id": "python-2084993b12",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「待整理笔记」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "index:返回指定数据所在位置的下标，如果查找的数据不存在就会报错\ncount：统计指定数据在当前列表出现的次数\n跟字符串的用法相同",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：index:返回指定数据所在位置的下标，如果查找的数据不存在就会报错\ncount：统计指定数据在当前列表出现的次数\n跟字符串的用法相同",
+      "basis": {
+        "kind": "note",
+        "excerpt": "index:返回指定数据所在位置的下标，如果查找的数据不存在就会报错\ncount：统计指定数据在当前列表出现的次数\n跟字符串的用法相同"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-96cd249ee9-01",
+      "note_id": "python-96cd249ee9",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「查找」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "3.1.1\nfind :检测某个子字符串是否包含在字符串中,如果在就返回这个子字符串的第一个下标,如果不在就返回-1\nfind(子字符串,开始位置下标,结束位置下标)\n注意:开始位置下标和结束位置下标可以省略,表示在整个字符串中查找\nname = 'sylvive'\nprint(name.find('v')) # 3\nprint(name.find('z')) # -1\nprint(name.find('sylv')) # 0--检测到第一个sylv,s的下标是0\nprint(name.find('v',0,5)) # 3--在下标为0到下标为5的范围内查找v,找到了v,返回下标3\nprint(name.find('v',0,3)) # -1--在下标为0到下标为3的范围内查找v,没有找到v,返回-1\n3.1.2\nindex :检测某个子字符串是否包含在字符串中,如果在就返回这个子字符串的第一个下标,如果不在就报错\nindex(子字符串,开始位置下标,结束位置下标)\nname = '今晚早点睡觉'\nprint(name.index('早')) # 2\nprint(name.index('晚',2)) #报错,因为从下标为2开…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：3.1.1\nfind :检测某个子字符串是否包含在字符串中,如果在就返回这个子字符串的第一个下标,如果不在就返回-1\nfind(子字符串,开始位置下标,结束位置下标)\n注意:开始位置下标和结束位置下标可以省略,表示在整个字符串中查找\nname = 'sylvive'\nprint(name.find('v')) # 3\nprint(name.find('z')…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "3.1.1\nfind :检测某个子字符串是否包含在字符串中,如果在就返回这个子字符串的第一个下标,如果不在就返回-1\nfind(子字符串,开始位置下标,结束位置下标)\n注意:开始位置下标和结束位置下标可以省略,表示在整个字符串中查找\nname = 'sylvive'\nprint(name.find('v')) # 3\nprint(name.find('z')…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-f96f3c9239-01",
+      "note_id": "python-f96f3c9239",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「添加元素」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "append()  extend()  insert()\nli=['one','two','three']\nli.append(\"four\")   #attend 整体添加 #['one', 'two', 'three', 'four']\nli.extend('four')   #extend 分散添加，将另外一个类型中的元素逐一添加 #['one', 'two', 'three', 'f', 'o', 'u', 'r']\nli.insert(3,'four')  #insert 在指定位置插入元素 #['one', 'two', 'three', 'four']\nli.insert(0,'four')  #指定位置如果有元素，原有元素就会后移 #['four', 'one', 'two', 'three']\nli.insert(\"four\")   #报错，没有指定下标\nprint(li)\nli=[1,2,3]\nli.append(4)   #[1,2,3,4]\nli.extend(4)   #报错 #extend里要用可迭代对象 而整形不是可迭代对象\nli.insert(3,4)\nprint(li)\n格式:变量名[键名]…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：append()  extend()  insert()\nli=['one','two','three']\nli.append(\"four\")   #attend 整体添加 #['one', 'two', 'three', 'four']\nli.extend('four')   #extend 分散添加，将另外一个类型中的元素逐一添加 #['one', 't…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "append()  extend()  insert()\nli=['one','two','three']\nli.append(\"four\")   #attend 整体添加 #['one', 'two', 'three', 'four']\nli.extend('four')   #extend 分散添加，将另外一个类型中的元素逐一添加 #['one', 't…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-21fb66abb0-01",
+      "note_id": "python-21fb66abb0",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「break」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "作用:某一条件满足时退出循环\ni = 1\nwhile i <= 5:\n    print(f'小红在吃第{i}个苹果')\n    if i == 3:\n        print('吃饱了不吃了')\n        break # 结束break所在的循环\n    i += 1",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：作用:某一条件满足时退出循环\ni = 1\nwhile i <= 5:\n    print(f'小红在吃第{i}个苹果')\n    if i == 3:\n        print('吃饱了不吃了')\n        break # 结束break所在的循环\n    i += 1",
+      "basis": {
+        "kind": "note",
+        "excerpt": "作用:某一条件满足时退出循环\ni = 1\nwhile i <= 5:\n    print(f'小红在吃第{i}个苹果')\n    if i == 3:\n        print('吃饱了不吃了')\n        break # 结束break所在的循环\n    i += 1"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-bbb150aa0f-01",
+      "note_id": "python-bbb150aa0f",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「break 和 continue关键字」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "都是专门在循环中使用的关键字\ni = 1\nif i <= 5:\n    print('我在吃苹果')\n    break# 会报错,break 和continue只能放在循环内",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：都是专门在循环中使用的关键字\ni = 1\nif i <= 5:\n    print('我在吃苹果')\n    break# 会报错,break 和continue只能放在循环内",
+      "basis": {
+        "kind": "note",
+        "excerpt": "都是专门在循环中使用的关键字\ni = 1\nif i <= 5:\n    print('我在吃苹果')\n    break# 会报错,break 和continue只能放在循环内"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-1b2da181b0-01",
+      "note_id": "python-1b2da181b0",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「continue」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "作用:退出本次循环,下一次循环继续执行\ni = 1\nwhile i <= 5:\n    print(f'小明在吃第{i}个苹果')\n    if i == 3:\n        print(f'吃到了虫子,第{i}个苹果不吃了')\n        # 在continue之前,一定要修改计数器,否则会陷入死循环\n        i += 1# 加上这个之后是为了让他出了continue之后不在等于3 从而不会遍历if里的语句\n        continue # 会忽略continue之后的所有代码 所以他直接跳到开头之后会一直陷入循环\n    i += 1\nfor i in range(5):\n    if i == 3:\n        # break #i=3时结束循环\n    #结果是0 1 2\n        continue #跳过了3\n    #结果是0 1 2 4\n    print(i)",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：作用:退出本次循环,下一次循环继续执行\ni = 1\nwhile i <= 5:\n    print(f'小明在吃第{i}个苹果')\n    if i == 3:\n        print(f'吃到了虫子,第{i}个苹果不吃了')\n        # 在continue之前,一定要修改计数器,否则会陷入死循环\n        i += 1# 加上这个之后是为…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "作用:退出本次循环,下一次循环继续执行\ni = 1\nwhile i <= 5:\n    print(f'小明在吃第{i}个苹果')\n    if i == 3:\n        print(f'吃到了虫子,第{i}个苹果不吃了')\n        # 在continue之前,一定要修改计数器,否则会陷入死循环\n        i += 1# 加上这个之后是为…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-354c5431d1-01",
+      "note_id": "python-354c5431d1",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「range()」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "用来记录循环次数,相当于计数器\nrange(start,stop,step)\nfor i in range(1,6): #从1开始,到6结束,遵循包前不包后规则,[)\n# 或者写for i in range(5) #从0开始:0 1 2 3 4\nprint(i)         # 1 2 3 4 5\n# range()里面只写一个数,这个数就是循环的次数,默认从0开始\n\nfor循环应用:计算1+2+3+...+100的值\ns = 0 #定义一个变量来保存计算结果\nfor i in range(1,101): # 包前不包后,不包含101这个数\n    # print(i)\n    s += i #每循环一次计算结果与i相加\n    # print('计算结果是:',s) #在循环内,循环输出计算结果\nprint('计算结果:',s) # print放循环外 只会打印出最终的s结果",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：用来记录循环次数,相当于计数器\nrange(start,stop,step)\nfor i in range(1,6): #从1开始,到6结束,遵循包前不包后规则,[)\n# 或者写for i in range(5) #从0开始:0 1 2 3 4\nprint(i)         # 1 2 3 4 5\n# range()里面只写一个数,这个数就是循环的次数,…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "用来记录循环次数,相当于计数器\nrange(start,stop,step)\nfor i in range(1,6): #从1开始,到6结束,遵循包前不包后规则,[)\n# 或者写for i in range(5) #从0开始:0 1 2 3 4\nprint(i)         # 1 2 3 4 5\n# range()里面只写一个数,这个数就是循环的次数,…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-23aecd0467-01",
+      "note_id": "python-23aecd0467",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「while循环应用:计算1+2+3+...+100的和」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "i = 1 #定义一个初始值,从1开始计算,记录循环次数\ns = 0 #定义一个变量保存计算结果,最开始计算结果为0,没有相加\nwhile i <= 100:\n    # print(i) # 循环打印1-100\n    s += i   # 每次循环的计算结果和i进行相加\n    i += 1   # 每循环一次,i的值加1\n    # print('计算结果是:',s) #在循环内,循环输出计算结果\nprint('计算结果:',s) # print放循环外 只会打印出最终的s结果",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：i = 1 #定义一个初始值,从1开始计算,记录循环次数\ns = 0 #定义一个变量保存计算结果,最开始计算结果为0,没有相加\nwhile i <= 100:\n    # print(i) # 循环打印1-100\n    s += i   # 每次循环的计算结果和i进行相加\n    i += 1   # 每循环一次,i的值加1\n    # print('计算…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "i = 1 #定义一个初始值,从1开始计算,记录循环次数\ns = 0 #定义一个变量保存计算结果,最开始计算结果为0,没有相加\nwhile i <= 100:\n    # print(i) # 循环打印1-100\n    s += i   # 每次循环的计算结果和i进行相加\n    i += 1   # 每循环一次,i的值加1\n    # print('计算…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-6b0ceba7f1-01",
+      "note_id": "python-6b0ceba7f1",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「含义」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "一个while循环里面还有一个while循环",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：一个while循环里面还有一个while循环",
+      "basis": {
+        "kind": "note",
+        "excerpt": "一个while循环里面还有一个while循环"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-7829b5bc9f-01",
+      "note_id": "python-7829b5bc9f",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「基本格式」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "while 条件1:\n    循环体1\n    while 条件2:\n        循环体2\n        改变变量2\n    改变变量1\n注意:缩进决定层级,严格控制缩进,最好自动缩进\ni = 1 # 定义一个变量记录外循环的次数\nwhile i <= 3: #外循环\n    print(f'这是第{i}次外循环')\n    j = 1 # 定义一个初始值记录内循环的次数\n    while j <= 5: # 内循环\n        print(f'内循环{j}次')\n        j += 1\n    i += 1\nfor 临时变量 in 可迭代对象:\n    循环体\n注意:冒号和缩进\nstr = 'hellopython' #定义一个字符串\n# 可迭代对象就是要去遍历取值的整体,现在只需要记住字符串就是可迭代对象\nfor i in str: # i是临时变量,可以随便写,i是常规写法\n    print(i)\ndef 函数名():\n    函数体",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：while 条件1:\n    循环体1\n    while 条件2:\n        循环体2\n        改变变量2\n    改变变量1\n注意:缩进决定层级,严格控制缩进,最好自动缩进\ni = 1 # 定义一个变量记录外循环的次数\nwhile i <= 3: #外循环\n    print(f'这是第{i}次外循环')\n    j = 1 # 定义一个初…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "while 条件1:\n    循环体1\n    while 条件2:\n        循环体2\n        改变变量2\n    改变变量1\n注意:缩进决定层级,严格控制缩进,最好自动缩进\ni = 1 # 定义一个变量记录外循环的次数\nwhile i <= 3: #外循环\n    print(f'这是第{i}次外循环')\n    j = 1 # 定义一个初…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-8bbd24d466-01",
+      "note_id": "python-8bbd24d466",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「基本语法」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "定义初始变量\nwhile 条件:\n    循环体\n    改变变量\ni = 1 #定义一个初始值,记录循环的次数,i = 1表示从第一次开始\nwhile i <= 100:\n    print('好好学习,天天向上')\n    i += 1 # 每执行一次i的值就加1\n注意:如果没有改变变量,条件一直满足,就会一直循环下去,一直执行",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：定义初始变量\nwhile 条件:\n    循环体\n    改变变量\ni = 1 #定义一个初始值,记录循环的次数,i = 1表示从第一次开始\nwhile i <= 100:\n    print('好好学习,天天向上')\n    i += 1 # 每执行一次i的值就加1\n注意:如果没有改变变量,条件一直满足,就会一直循环下去,一直执行",
+      "basis": {
+        "kind": "note",
+        "excerpt": "定义初始变量\nwhile 条件:\n    循环体\n    改变变量\ni = 1 #定义一个初始值,记录循环的次数,i = 1表示从第一次开始\nwhile i <= 100:\n    print('好好学习,天天向上')\n    i += 1 # 每执行一次i的值就加1\n注意:如果没有改变变量,条件一直满足,就会一直循环下去,一直执行"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-5533f68a24-01",
+      "note_id": "python-5533f68a24",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「死循环」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "基本格式\nwhile True:\n    循环体\nwhile True: # 条件只写True,说明一直为真,就会一直执行,从而形成一个死循环\n    print('不要长大')\nwhile False: # 条件只写False,说明一直为真,就会一直执行,从而形成一个死循环\n    print('不要长大')\n只要不是False或0,其他单独存在的值也会是死循环",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：基本格式\nwhile True:\n    循环体\nwhile True: # 条件只写True,说明一直为真,就会一直执行,从而形成一个死循环\n    print('不要长大')\nwhile False: # 条件只写False,说明一直为真,就会一直执行,从而形成一个死循环\n    print('不要长大')\n只要不是False或0,其他单独存在的值也会是…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "基本格式\nwhile True:\n    循环体\nwhile True: # 条件只写True,说明一直为真,就会一直执行,从而形成一个死循环\n    print('不要长大')\nwhile False: # 条件只写False,说明一直为真,就会一直执行,从而形成一个死循环\n    print('不要长大')\n只要不是False或0,其他单独存在的值也会是…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-0a7841290c-01",
+      "note_id": "python-0a7841290c",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「不可变对象」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "含义：变量对应的值不能被修改，如果修改就会生成一个新的值从而分配新的内存空间\n常见不可变对象：数值类型（int，bool，float，complex）、字符串、元组\nn = 10  #整型\nprint(n,'原地址：',id(n))\nn = 15\nprint(n,'现地址：',id(n))\n内存地址不一样：修改n的值就会生成新的值\n注意：深浅拷贝只针对可变类型，不可变对象没有拷贝说法",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：含义：变量对应的值不能被修改，如果修改就会生成一个新的值从而分配新的内存空间\n常见不可变对象：数值类型（int，bool，float，complex）、字符串、元组\nn = 10  #整型\nprint(n,'原地址：',id(n))\nn = 15\nprint(n,'现地址：',id(n))\n内存地址不一样：修改n的值就会生成新的值\n注意：深浅拷贝只针对可变类…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "含义：变量对应的值不能被修改，如果修改就会生成一个新的值从而分配新的内存空间\n常见不可变对象：数值类型（int，bool，float，complex）、字符串、元组\nn = 10  #整型\nprint(n,'原地址：',id(n))\nn = 15\nprint(n,'现地址：',id(n))\n内存地址不一样：修改n的值就会生成新的值\n注意：深浅拷贝只针对可变类…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-40867b0124-01",
+      "note_id": "python-40867b0124",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「可变类型」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "含义：变量对应的值可以修改，但是内存地址不会改变\n常见可变类型：list 、dict 、set\nli = [1,2,3,4]\nprint(li,'原内存地址：',id(li))         #[1, 2, 3, 4] 原内存地址： 1284879735168\nli.append(5)\nprint(li,'现内存地址：',id(li))         #[1, 2, 3, 4, 5] 现内存地址： 1284879735168\n内存地址未改变",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：含义：变量对应的值可以修改，但是内存地址不会改变\n常见可变类型：list 、dict 、set\nli = [1,2,3,4]\nprint(li,'原内存地址：',id(li))         #[1, 2, 3, 4] 原内存地址： 1284879735168\nli.append(5)\nprint(li,'现内存地址：',id(li))         #…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "含义：变量对应的值可以修改，但是内存地址不会改变\n常见可变类型：list 、dict 、set\nli = [1,2,3,4]\nprint(li,'原内存地址：',id(li))         #[1, 2, 3, 4] 原内存地址： 1284879735168\nli.append(5)\nprint(li,'现内存地址：',id(li))         #…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-a723b1ee71-01",
+      "note_id": "python-a723b1ee71",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「浅拷贝（数据半共享）」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "会创建新的对象，拷贝第一层的数据，嵌套层会指向原来的内存地址\nimport copy         #导入copy模块\nli = [1,2,3,[4,5,6]]           #定义一个嵌套列表\nli2 = copy.copy(li)\nprint(li,li2)                  #[1, 2, 3, [4, 5, 6]] [1, 2, 3, [4, 5, 6]]\n# 查看内存地址 id()\nprint('li内存地址：',id(li))\nprint('li2内存地址：',id(li2))\n# 内存地址不一样,说明不是同一个对象\nli.append(8)\nprint(li,li2)          #[1, 2, 3, [4, 5, 6], 8] [1, 2, 3, [4, 5, 6]]\n# 往嵌套列表添加元素\nli[3].append(7)\nprint(li,li2)          #[1, 2, 3, [4, 5, 6, 7], 8] [1, 2, 3, [4, 5, 6, 7]]\nprint('li[3]内存地址：',id(li[3]))\nprint('li2[3]内存地址：',id(li…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：会创建新的对象，拷贝第一层的数据，嵌套层会指向原来的内存地址\nimport copy         #导入copy模块\nli = [1,2,3,[4,5,6]]           #定义一个嵌套列表\nli2 = copy.copy(li)\nprint(li,li2)                  #[1, 2, 3, [4, 5, 6]] [1, 2…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "会创建新的对象，拷贝第一层的数据，嵌套层会指向原来的内存地址\nimport copy         #导入copy模块\nli = [1,2,3,[4,5,6]]           #定义一个嵌套列表\nli2 = copy.copy(li)\nprint(li,li2)                  #[1, 2, 3, [4, 5, 6]] [1, 2…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-f662ec191b-01",
+      "note_id": "python-f662ec191b",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「深拷贝（数据完全不共享）」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "外层的对象和内部的元素都拷贝了一遍\nimport copy\nli = [1,2,3,[4,5,6]]\nli2 = copy.deepcopy(li)      #深拷贝\nprint(li,li2)                #相同\nprint(li,id(li))\nprint(li2,id(li2))           #地址不同\n# 在嵌套列表添加\nli[3].append(7)\nprint(li,li2)                #[1, 2, 3, [4, 5, 6, 7]] [1, 2, 3, [4, 5, 6]]\n# 深拷贝数据变化只影响自己本身，和原来的对象没有关联",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：外层的对象和内部的元素都拷贝了一遍\nimport copy\nli = [1,2,3,[4,5,6]]\nli2 = copy.deepcopy(li)      #深拷贝\nprint(li,li2)                #相同\nprint(li,id(li))\nprint(li2,id(li2))           #地址不同\n# 在嵌套列表添加…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "外层的对象和内部的元素都拷贝了一遍\nimport copy\nli = [1,2,3,[4,5,6]]\nli2 = copy.deepcopy(li)      #深拷贝\nprint(li,li2)                #相同\nprint(li,id(li))\nprint(li2,id(li2))           #地址不同\n# 在嵌套列表添加…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-3711ad49a4-01",
+      "note_id": "python-3711ad49a4",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「Python笔记（未标日期）」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "print (\"Hello, World!\")",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：print (\"Hello, World!\")",
+      "basis": {
+        "kind": "note",
+        "excerpt": "print (\"Hello, World!\")"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-0ffc31d9a4-01",
+      "note_id": "python-0ffc31d9a4",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「\\\\ 反斜杠」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "print('sixstar\\\\123') #sixstar\\123\nprint(r'sixstar\\\\\\123') #sixstar\\\\\\123  r表示原始字符串，里面的转义字符不生效",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：print('sixstar\\\\123') #sixstar\\123\nprint(r'sixstar\\\\\\123') #sixstar\\\\\\123  r表示原始字符串，里面的转义字符不生效",
+      "basis": {
+        "kind": "note",
+        "excerpt": "print('sixstar\\\\123') #sixstar\\123\nprint(r'sixstar\\\\\\123') #sixstar\\\\\\123  r表示原始字符串，里面的转义字符不生效"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-6cff865667-01",
+      "note_id": "python-6cff865667",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「\\n 换行符 表示将当前位置换到下一行的开头」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "print('姓名\\n年龄\\n性别')\n姓名\n年龄\n性别",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：print('姓名\\n年龄\\n性别')\n姓名\n年龄\n性别",
+      "basis": {
+        "kind": "note",
+        "excerpt": "print('姓名\\n年龄\\n性别')\n姓名\n年龄\n性别"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-45f9372413-01",
+      "note_id": "python-45f9372413",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「\\r 回车符 表示将当前位置换到本行的开头」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "print('sixstar\\r123') #123star 是123把six替换掉了 从而输出结果是123star",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：print('sixstar\\r123') #123star 是123把six替换掉了 从而输出结果是123star",
+      "basis": {
+        "kind": "note",
+        "excerpt": "print('sixstar\\r123') #123star 是123把six替换掉了 从而输出结果是123star"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-c4b414b60f-01",
+      "note_id": "python-c4b414b60f",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「\\t 制表符  通常表示四个字符，也称缩进」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "print('sixstar') #sixstar\nprint('six\\tstar') #six    star\nprint('姓名\\t年龄\\t性别') #姓名    年龄    性别",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：print('sixstar') #sixstar\nprint('six\\tstar') #six    star\nprint('姓名\\t年龄\\t性别') #姓名    年龄    性别",
+      "basis": {
+        "kind": "note",
+        "excerpt": "print('sixstar') #sixstar\nprint('six\\tstar') #six    star\nprint('姓名\\t年龄\\t性别') #姓名    年龄    性别"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-d2f9331321-01",
+      "note_id": "python-d2f9331321",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「input()输入函数」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "input(prompt) #prompt是提示信息，括号内的内容会显示在控制台上\nname = input(\"请输入你的姓名：\")\nprint(f'你的姓名是{name}') #f-string格式化输出\npwd = input(\"请输入你的密码：\")\nprint(f'你的密码是{pwd}') #f-string格式化输出",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：input(prompt) #prompt是提示信息，括号内的内容会显示在控制台上\nname = input(\"请输入你的姓名：\")\nprint(f'你的姓名是{name}') #f-string格式化输出\npwd = input(\"请输入你的密码：\")\nprint(f'你的密码是{pwd}') #f-string格式化输出",
+      "basis": {
+        "kind": "note",
+        "excerpt": "input(prompt) #prompt是提示信息，括号内的内容会显示在控制台上\nname = input(\"请输入你的姓名：\")\nprint(f'你的姓名是{name}') #f-string格式化输出\npwd = input(\"请输入你的密码：\")\nprint(f'你的密码是{pwd}') #f-string格式化输出"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-82bdb43c59-01",
+      "note_id": "python-82bdb43c59",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「len()求长度」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "dic = {'name':'kk','age':22}\nprint(len(dic))  #2 有两对键值对",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：dic = {'name':'kk','age':22}\nprint(len(dic))  #2 有两对键值对",
+      "basis": {
+        "kind": "note",
+        "excerpt": "dic = {'name':'kk','age':22}\nprint(len(dic))  #2 有两对键值对"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-f2dc2f7e18-01",
+      "note_id": "python-f2dc2f7e18",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「应用场景」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "函数的参数和返回值\n格式化输出后面的()本质上是一个元组\nname = 'kk'\nage = 22\n# print('%s的年龄是:%d' %(name,age))\ninfo = (name,age)\nprint('%s的年龄是:%d' %info)\n数据不可以被修改的时候,保护数据的安全",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：函数的参数和返回值\n格式化输出后面的()本质上是一个元组\nname = 'kk'\nage = 22\n# print('%s的年龄是:%d' %(name,age))\ninfo = (name,age)\nprint('%s的年龄是:%d' %info)\n数据不可以被修改的时候,保护数据的安全",
+      "basis": {
+        "kind": "note",
+        "excerpt": "函数的参数和返回值\n格式化输出后面的()本质上是一个元组\nname = 'kk'\nage = 22\n# print('%s的年龄是:%d' %(name,age))\ninfo = (name,age)\nprint('%s的年龄是:%d' %info)\n数据不可以被修改的时候,保护数据的安全"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-144c3170ac-01",
+      "note_id": "python-144c3170ac",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「格式化输出」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、占位符：生成一定格式的字符串**\n\n**2、%:**\n\n**① %s 字符串（常用）**\n\nname = 'kk'\nprint('我的名字：%s' % name)----我的名字：kk\n**② %d 整数（常用）**\n\nage = 22\nname = 'kk'\nprint('我的名字:%s,年龄:%d' %(name,age))----我的名字：kk,年龄：22\n> **注意：** 注意！：这里的冒号也需要是英文的格式\n\n**③ %数字d 整数：数字设置位数，补足前面的空白，数字一样时不变**\n\na = 123\nprint('%6d' % a)---- &nbsp;&nbsp;&nbsp;123(前面多了三个空白)\n当想用0补足时：print('%06d' % a)----000123\n**④ %f 浮点数(常用)**\n\na = 1.2\nb = 1.23\nprint('%f' % a)----1.200000\nprint('%f' % b)----1.230000\n> **注意：** 默认后六位小数，当位数超过时，遵循四舍五入原则\n\n**⑤ %.数字f 浮点数：数字设置小数位数,同样遵循四舍五入原则(注意这里的百分号…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、占位符：生成一定格式的字符串**\n\n**2、%:**\n\n**① %s 字符串（常用）**\n\nname = 'kk'\nprint('我的名字：%s' % name)----我的名字：kk\n**② %d 整数（常用）**\n\nage = 22\nname = 'kk'\nprint('我的名字:%s,年龄:%d' %(name,age))----我的名字：kk…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、占位符：生成一定格式的字符串**\n\n**2、%:**\n\n**① %s 字符串（常用）**\n\nname = 'kk'\nprint('我的名字：%s' % name)----我的名字：kk\n**② %d 整数（常用）**\n\nage = 22\nname = 'kk'\nprint('我的名字:%s,年龄:%d' %(name,age))----我的名字：kk…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-d7a78d55b8-01",
+      "note_id": "python-d7a78d55b8",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「输出函数print()」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、*value 值：表示一次可以输出多个对象，输出多个对象时，需要用“，”分隔**\n\n**示例：** eg. print('哈哈'，'呵呵','嘿嘿')-----结果：哈哈 呵呵 嘿嘿\n**2、sep: 用来间隔多个对象，默认值是一个空格**\n\n**示例：** eg. print('哈哈'，'呵呵','嘿嘿',sep=',')---结果：哈哈,呵呵,嘿嘿<这里中间的空格用了逗号代替>\n**3、end: 用来设定以...结尾，默认值是换行符\\n，可以切换成其他字符**\n\n**示例：** eg.  print(字符串，end='后面要拼接的值')\n输入:\n\nprint('hello')\nprint('world')\n输出：\nhello\nworld\n输入：\n\nprint('hello',end=',')\nprint('world')\n输出：\nhello,world",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、*value 值：表示一次可以输出多个对象，输出多个对象时，需要用“，”分隔**\n\n**示例：** eg. print('哈哈'，'呵呵','嘿嘿')-----结果：哈哈 呵呵 嘿嘿\n**2、sep: 用来间隔多个对象，默认值是一个空格**\n\n**示例：** eg. print('哈哈'，'呵呵','嘿嘿',sep=',')---结果：哈哈,呵呵,嘿…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、*value 值：表示一次可以输出多个对象，输出多个对象时，需要用“，”分隔**\n\n**示例：** eg. print('哈哈'，'呵呵','嘿嘿')-----结果：哈哈 呵呵 嘿嘿\n**2、sep: 用来间隔多个对象，默认值是一个空格**\n\n**示例：** eg. print('哈哈'，'呵呵','嘿嘿',sep=',')---结果：哈哈,呵呵,嘿…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-8685be97c9-01",
+      "note_id": "python-8685be97c9",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「if-elif结构」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "if-else 二选一 if-elif 多选一\nif 条件1：\n    满足条件1做的事情\nelif 条件2：\n    满足条件2做的事情\nelif 条件3：\n    满足条件3做的事情\n......\nscore = 85\nif 85 <= score <= 100:\n    print('优秀')\nelif 60 <= score <85:\n    print('及格')\nelif 0 <= score <60:\n    print('不及格')\nquestion = input('你喜欢函数团吗？')\nif question == '喜欢':\n    print('函数团也喜欢你！')\nelif question == '不喜欢':\n    print('你叫什么名字？？！')\nelse:\n    print('听不懂你在说什么.......')",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：if-else 二选一 if-elif 多选一\nif 条件1：\n    满足条件1做的事情\nelif 条件2：\n    满足条件2做的事情\nelif 条件3：\n    满足条件3做的事情\n......\nscore = 85\nif 85 <= score <= 100:\n    print('优秀')\nelif 60 <= score <85:\n    pri…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "if-else 二选一 if-elif 多选一\nif 条件1：\n    满足条件1做的事情\nelif 条件2：\n    满足条件2做的事情\nelif 条件3：\n    满足条件3做的事情\n......\nscore = 85\nif 85 <= score <= 100:\n    print('优秀')\nelif 60 <= score <85:\n    pri…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-492fdd60e1-01",
+      "note_id": "python-492fdd60e1",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「if-else」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "语法格式：\nif 判断条件：\n    满足条件做的事情\nelse:\n    不满足条件做的事情\na = 666\nif a == 666:\n    print('你真棒！')\nelse:\n    print('还要继续加油哈！')",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：语法格式：\nif 判断条件：\n    满足条件做的事情\nelse:\n    不满足条件做的事情\na = 666\nif a == 666:\n    print('你真棒！')\nelse:\n    print('还要继续加油哈！')",
+      "basis": {
+        "kind": "note",
+        "excerpt": "语法格式：\nif 判断条件：\n    满足条件做的事情\nelse:\n    不满足条件做的事情\na = 666\nif a == 666:\n    print('你真棒！')\nelse:\n    print('还要继续加油哈！')"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-cab3f785f3-01",
+      "note_id": "python-cab3f785f3",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「if判断基本格式」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "if 判断条件：\n    满足条件做的事情\nage = 17\nif age<18:\n    print('未成年不能上网')\n练习：用户从控制台输入成绩，如果满分，输出“你真棒！”，如果及格，输出“还要继续加油哈！”\nscore = input(\"请输入你的成绩：\") #  input()函数获取的内容都是字符串类型\nif score == '100': #'=='是判断是否相等，'='是赋值运算符\n    print('你真棒！')\nif score == '60':\n    print('还要继续加油哈！')",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：if 判断条件：\n    满足条件做的事情\nage = 17\nif age<18:\n    print('未成年不能上网')\n练习：用户从控制台输入成绩，如果满分，输出“你真棒！”，如果及格，输出“还要继续加油哈！”\nscore = input(\"请输入你的成绩：\") #  input()函数获取的内容都是字符串类型\nif score == '100': #…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "if 判断条件：\n    满足条件做的事情\nage = 17\nif age<18:\n    print('未成年不能上网')\n练习：用户从控制台输入成绩，如果满分，输出“你真棒！”，如果及格，输出“还要继续加油哈！”\nscore = input(\"请输入你的成绩：\") #  input()函数获取的内容都是字符串类型\nif score == '100': #…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-abbaf8cef0-01",
+      "note_id": "python-abbaf8cef0",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「if判断：」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- 基本格式：\n\nif 要判断的条件：\n条件成立时要做的事\n---",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- 基本格式：\n\nif 要判断的条件：\n条件成立时要做的事\n---",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- 基本格式：\n\nif 要判断的条件：\n条件成立时要做的事\n---"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-695942d7ba-01",
+      "note_id": "python-695942d7ba",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「if嵌套」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "基本格式\nif 条件1：\n    事情1\n    if 条件2：\n        事情2\nelse：\n    不满足条件做的事情\n注意：内层if判断和外层if判断都可以是if-else结构\n\n定义一个布尔型变量，表示是否有车票\nticket = True  #True代表有车票，False代表没车票\n# 定义一个浮点型变量保存体温\ntemp = 38.5\n# 判断是否有车票\nif ticket == True:  #外层if判断\n    print('请进站',end=',')\n    # 正常人腋下体温是36.3到37.2\n    if 36.3 <= temp <= 37.2:\n        print(\"体温正常\")\n    else:\n        print(\"体温异常，请隔离\")\nelse:\n    print('请先购买车票')\n不管有没有车票都会询问体温，用input输入\n输入是否有车票\nticket_input = input('请问您是否有车票？（有/无）：')\nticket = ticket_input == '有'  # 输入“有”得到True，其他输入得到False\n# 输入体温\ntemp =…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：基本格式\nif 条件1：\n    事情1\n    if 条件2：\n        事情2\nelse：\n    不满足条件做的事情\n注意：内层if判断和外层if判断都可以是if-else结构\n\n定义一个布尔型变量，表示是否有车票\nticket = True  #True代表有车票，False代表没车票\n# 定义一个浮点型变量保存体温\ntemp = 38.5\n#…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "基本格式\nif 条件1：\n    事情1\n    if 条件2：\n        事情2\nelse：\n    不满足条件做的事情\n注意：内层if判断和外层if判断都可以是if-else结构\n\n定义一个布尔型变量，表示是否有车票\nticket = True  #True代表有车票，False代表没车票\n# 定义一个浮点型变量保存体温\ntemp = 38.5\n#…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-c8098a74ec-01",
+      "note_id": "python-c8098a74ec",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「成员运算符」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "作用：检查字符串中是否包含了某个子字符串（即某个字符或多个字符）\nin 检查是否包含，返回布尔值True或False\nnot in 检查是否不包含，返回布尔值True或False\nname = '函数团'\nprint('函数' in name) # True\nprint('函数' not in name) # False",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：作用：检查字符串中是否包含了某个子字符串（即某个字符或多个字符）\nin 检查是否包含，返回布尔值True或False\nnot in 检查是否不包含，返回布尔值True或False\nname = '函数团'\nprint('函数' in name) # True\nprint('函数' not in name) # False",
+      "basis": {
+        "kind": "note",
+        "excerpt": "作用：检查字符串中是否包含了某个子字符串（即某个字符或多个字符）\nin 检查是否包含，返回布尔值True或False\nnot in 检查是否不包含，返回布尔值True或False\nname = '函数团'\nprint('函数' in name) # True\nprint('函数' not in name) # False"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-f9cf4b201b-01",
+      "note_id": "python-f9cf4b201b",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「查找元素」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "in：判断指定元素是否存在列表中，如果存在就返回Ture，不存在就返回False\nnot in:判断指定元素是否存在列表中，如果不存在就返回Ture，存在就返回False\nli=['a','b','c','d']\nprint('b' in li) #True\n用户输入昵称，昵称重复则不能使用\n定义一个列表，保存已经存在的昵称\nname_list=['baobao','jinbaobao','baobaojin']\nwhile True:\n  name=input(\"请输入您的昵称\")\n  # 判断昵称是否已经存在\n  if name in name_list:\n      print (f\"您输入的昵称{name}已经存在了哦\")\n  # 如果昵称不存在\n  else:\n      print(f\"昵称{name}已经被您使用\")\n      # 把昵称新增到列表\n      name_list.append(name)\n      print(name_list)\n      break",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：in：判断指定元素是否存在列表中，如果存在就返回Ture，不存在就返回False\nnot in:判断指定元素是否存在列表中，如果不存在就返回Ture，存在就返回False\nli=['a','b','c','d']\nprint('b' in li) #True\n用户输入昵称，昵称重复则不能使用\n定义一个列表，保存已经存在的昵称\nname_list=['baob…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "in：判断指定元素是否存在列表中，如果存在就返回Ture，不存在就返回False\nnot in:判断指定元素是否存在列表中，如果不存在就返回Ture，存在就返回False\nli=['a','b','c','d']\nprint('b' in li) #True\n用户输入昵称，昵称重复则不能使用\n定义一个列表，保存已经存在的昵称\nname_list=['baob…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-2fa942411a-01",
+      "note_id": "python-2fa942411a",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「比较（关系）运算符」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "== 比较的是两个变量的值是否相等，相等返回布尔值True，不相等返回布尔值False\n!= 比较的是两个变量的值是否不相等，不相等返回布尔值True，相等返回布尔值False\na = 55\nb = 88\nprint(a==b) #False\nprint(a!=b) #True\nprint(a>b) #False\nprint(a<b) #True\nif a>b:\n    print('a大于b')",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：== 比较的是两个变量的值是否相等，相等返回布尔值True，不相等返回布尔值False\n!= 比较的是两个变量的值是否不相等，不相等返回布尔值True，相等返回布尔值False\na = 55\nb = 88\nprint(a==b) #False\nprint(a!=b) #True\nprint(a>b) #False\nprint(a<b) #True\nif a>…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "== 比较的是两个变量的值是否相等，相等返回布尔值True，不相等返回布尔值False\n!= 比较的是两个变量的值是否不相等，不相等返回布尔值True，相等返回布尔值False\na = 55\nb = 88\nprint(a==b) #False\nprint(a!=b) #True\nprint(a>b) #False\nprint(a<b) #True\nif a>…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-1ab628765d-01",
+      "note_id": "python-1ab628765d",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「算数运算符：加(+)、减(-)、乘(*)、除(/)、」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "取整除(//)：返回除法的整数部分、取余数(%)、幂(**)\n- 使用算数运算符/，商一定是浮点数\n- 取整除就是向下取整，不管四舍五入的原则\n- 使用算术运算符，其中若有浮点数，结果也会用浮点数表示\n- 优先级排序：幂（最高优先级）> 乘、除、取余、取整除 > 加减",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：取整除(//)：返回除法的整数部分、取余数(%)、幂(**)\n- 使用算数运算符/，商一定是浮点数\n- 取整除就是向下取整，不管四舍五入的原则\n- 使用算术运算符，其中若有浮点数，结果也会用浮点数表示\n- 优先级排序：幂（最高优先级）> 乘、除、取余、取整除 > 加减",
+      "basis": {
+        "kind": "note",
+        "excerpt": "取整除(//)：返回除法的整数部分、取余数(%)、幂(**)\n- 使用算数运算符/，商一定是浮点数\n- 取整除就是向下取整，不管四舍五入的原则\n- 使用算术运算符，其中若有浮点数，结果也会用浮点数表示\n- 优先级排序：幂（最高优先级）> 乘、除、取余、取整除 > 加减"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-e1782d961a-01",
+      "note_id": "python-e1782d961a",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「算术运算符」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "print(1/1) #使用算术运算符/，商一定是浮点数(float)\na = 5\nb = 2\nprint(a//b) #2 取整\nprint(7.0//2) #取整除若有浮点数，结果也会用浮点数表示\nprint(a%b) #1 取余（取模）\nprint(a**b) #25 幂（乘方）\nprint(3**2+5/2) # 9+2.5=11.5",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：print(1/1) #使用算术运算符/，商一定是浮点数(float)\na = 5\nb = 2\nprint(a//b) #2 取整\nprint(7.0//2) #取整除若有浮点数，结果也会用浮点数表示\nprint(a%b) #1 取余（取模）\nprint(a**b) #25 幂（乘方）\nprint(3**2+5/2) # 9+2.5=11.5",
+      "basis": {
+        "kind": "note",
+        "excerpt": "print(1/1) #使用算术运算符/，商一定是浮点数(float)\na = 5\nb = 2\nprint(a//b) #2 取整\nprint(7.0//2) #取整除若有浮点数，结果也会用浮点数表示\nprint(a%b) #1 取余（取模）\nprint(a**b) #25 幂（乘方）\nprint(3**2+5/2) # 9+2.5=11.5"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-9ee4585f68-01",
+      "note_id": "python-9ee4585f68",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「赋值运算符」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "2.1 =\nnum1 = 5\nnum2 = 8\n将一个变量值赋给另外一个变量\nnum3 = num1\nprint(num3) #5\n2.2 +=\na = 1\nprint(a) #1\na= a+1\na += 1  #等效于a = a + 1\nprint(a) #2\nn1 = 99 #成本\nn2 = 55 #利润\nn3 = n2 + n1 # 售价\nn1 += n2 #等效于n1 = n1 + n2\nprint(n1) #154\n2.3 -=\nb = 1\nb -= 1 #等效于b = b - 1\nprint(b) #0\nprint(10 +=3) #语法错误，纯数字不能直接在print中使用赋值运算符，需要先赋值",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：2.1 =\nnum1 = 5\nnum2 = 8\n将一个变量值赋给另外一个变量\nnum3 = num1\nprint(num3) #5\n2.2 +=\na = 1\nprint(a) #1\na= a+1\na += 1  #等效于a = a + 1\nprint(a) #2\nn1 = 99 #成本\nn2 = 55 #利润\nn3 = n2 + n1 # 售价\nn1 +=…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "2.1 =\nnum1 = 5\nnum2 = 8\n将一个变量值赋给另外一个变量\nnum3 = num1\nprint(num3) #5\n2.2 +=\na = 1\nprint(a) #1\na= a+1\na += 1  #等效于a = a + 1\nprint(a) #2\nn1 = 99 #成本\nn2 = 55 #利润\nn3 = n2 + n1 # 售价\nn1 +=…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-512ca95bec-01",
+      "note_id": "python-512ca95bec",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「赋值运算符：+= 、—= 、」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- 赋值运算符必须连着写，中间不能有空格，否则会报错\n\n- 输入函数：input()输入函数",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- 赋值运算符必须连着写，中间不能有空格，否则会报错\n\n- 输入函数：input()输入函数",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- 赋值运算符必须连着写，中间不能有空格，否则会报错\n\n- 输入函数：input()输入函数"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-python-9acb48d12f-01",
+      "note_id": "python-9acb48d12f",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「逻辑运算符」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "and 左右两边都符合才为真\na = 'Hello'\nb = 'World'\nif a == 'Hello' and b == 'World':\n    print('Hello World') #Hello World\nif a == 'Hello' and b == 'Python':\n    print('Hello Python') #不输出\nor 左右两边有一个符合就为真\nfruit = 'apple'\nif fruit == 'apple' or fruit == 'banana':\n    print('带来了水果') #带来了水果\nnot 表示相反的结果\nprint(not 3>9) #True",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：and 左右两边都符合才为真\na = 'Hello'\nb = 'World'\nif a == 'Hello' and b == 'World':\n    print('Hello World') #Hello World\nif a == 'Hello' and b == 'Python':\n    print('Hello Python') #不输出\nor…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "and 左右两边都符合才为真\na = 'Hello'\nb = 'World'\nif a == 'Hello' and b == 'World':\n    print('Hello World') #Hello World\nif a == 'Hello' and b == 'Python':\n    print('Hello Python') #不输出\nor…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-a602ebe9a5-01",
+      "note_id": "sql-a602ebe9a5",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「事务控制语句：」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- ROLLBACK代表回滚，会结束用户的事务，并撤销正在进行的所有未提交的修改\n- SAVEPOINT identifier 表示在事务中创建一个保存点，一个事务可以有多个保存点\n- COMMIT WORK可以提交事务，并使得已对数据库做的所有修改成为永久性的\n- RELEASE SAVEPOINT identifier 的主要作用是删除一个保存点，但他不会自动撤销该保存点之后执行的操作\n- ROLLBACK TO SAVEPOINT identifier 回滚到该保存点，撤销保存点之后执行的操作，但保存点本身仍然存在",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- ROLLBACK代表回滚，会结束用户的事务，并撤销正在进行的所有未提交的修改\n- SAVEPOINT identifier 表示在事务中创建一个保存点，一个事务可以有多个保存点\n- COMMIT WORK可以提交事务，并使得已对数据库做的所有修改成为永久性的\n- RELEASE SAVEPOINT identifier 的主要作用是删除一个保存点，但他不…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- ROLLBACK代表回滚，会结束用户的事务，并撤销正在进行的所有未提交的修改\n- SAVEPOINT identifier 表示在事务中创建一个保存点，一个事务可以有多个保存点\n- COMMIT WORK可以提交事务，并使得已对数据库做的所有修改成为永久性的\n- RELEASE SAVEPOINT identifier 的主要作用是删除一个保存点，但他不…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-a7937608a1-01",
+      "note_id": "sql-a7937608a1",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「存储过程的优点：」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、执行速度快**\n\n**2、允许组件式编程**\n\n**3、减少网络流量**\n\n**4、提高系统安全性**",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、执行速度快**\n\n**2、允许组件式编程**\n\n**3、减少网络流量**\n\n**4、提高系统安全性**",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、执行速度快**\n\n**2、允许组件式编程**\n\n**3、减少网络流量**\n\n**4、提高系统安全性**"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-a9a68e3b3a-01",
+      "note_id": "sql-a9a68e3b3a",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「存储过程的缺点：」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、移植性差**\n\n**2、难以调试维护**\n\n**3、服务器不能负载均衡**\n\n- USING FILESORT表名数据库对结果集进行排序但无法使用索引",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、移植性差**\n\n**2、难以调试维护**\n\n**3、服务器不能负载均衡**\n\n- USING FILESORT表名数据库对结果集进行排序但无法使用索引",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、移植性差**\n\n**2、难以调试维护**\n\n**3、服务器不能负载均衡**\n\n- USING FILESORT表名数据库对结果集进行排序但无法使用索引"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-b981564f4e-01",
+      "note_id": "sql-b981564f4e",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「分组取极值」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、窗口函数＋子查询：ROW_NUMBER() OVER (PARTITION BY 分组列 ORDER BY 排序列) as rn**\n\nROW_NUMBER():生成1、2、3的行号\nPARTITION BY 列：按这个列分区，就是分组，每个区里独立编号\nORDER BY 列：区内按这个列排序，决定谁编号在前\nrn:是ROW_NUMBER生成的编号列的命名，后续取极值的时候用\n\nSELECT device_id,university,gpa\nFROM (SELECT device_id,university,gpa,ROW_NUMVER() OVER (PARTITION BY university ORDER BY gpa ASC) as rn\nFROM user_profile) as t\nWHERE rn = 1\n**2、子查询＋连接:先找每组最低值，再到原表中匹配**\n\n子查询：把一个SELECT的结果，当作另一个查询的“数据源”或比较值\n**①SELECT...FROM(SELECT...FROM) AS 表名**\n\n**②SELECT(SELECT...FROM...) AS 列名**\n\n**③SELEC…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、窗口函数＋子查询：ROW_NUMBER() OVER (PARTITION BY 分组列 ORDER BY 排序列) as rn**\n\nROW_NUMBER():生成1、2、3的行号\nPARTITION BY 列：按这个列分区，就是分组，每个区里独立编号\nORDER BY 列：区内按这个列排序，决定谁编号在前\nrn:是ROW_NUMBER生成的编号列…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、窗口函数＋子查询：ROW_NUMBER() OVER (PARTITION BY 分组列 ORDER BY 排序列) as rn**\n\nROW_NUMBER():生成1、2、3的行号\nPARTITION BY 列：按这个列分区，就是分组，每个区里独立编号\nORDER BY 列：区内按这个列排序，决定谁编号在前\nrn:是ROW_NUMBER生成的编号列…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-2d85339f81-01",
+      "note_id": "sql-2d85339f81",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「JOIN类型：」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- FULL JOIN ：会返回两表所有行，不匹配部分用NULL填充\n- CROSS JOIN ：返回两表的笛卡尔积，无论NULL值\n\n- 查看stu表中索引的索引信息时，应使用的存储过程是：sp_helpindex",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- FULL JOIN ：会返回两表所有行，不匹配部分用NULL填充\n- CROSS JOIN ：返回两表的笛卡尔积，无论NULL值\n\n- 查看stu表中索引的索引信息时，应使用的存储过程是：sp_helpindex",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- FULL JOIN ：会返回两表所有行，不匹配部分用NULL填充\n- CROSS JOIN ：返回两表的笛卡尔积，无论NULL值\n\n- 查看stu表中索引的索引信息时，应使用的存储过程是：sp_helpindex"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-969574bcc5-01",
+      "note_id": "sql-969574bcc5",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「LEFT JOIN、RIGHT JOIN、INNER JOIN的相同点和区别：」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- 相同点：所有连接方式都是前表在左，后表在右\n- LEFT JOIN 以左表为基准，去右表里找匹配的行，最终生成的行数只能是等于左表或者大于(这种情况是右表有重复条件)，如果说右表行数小于左表行数，那么剩下的右表就用NULL补齐\n- RIGHT JOIN是以右表为基准，去左表里找匹配的行，其他都一样\n- INNER JOIN是取“交集”，只保留两边都能匹配上的",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- 相同点：所有连接方式都是前表在左，后表在右\n- LEFT JOIN 以左表为基准，去右表里找匹配的行，最终生成的行数只能是等于左表或者大于(这种情况是右表有重复条件)，如果说右表行数小于左表行数，那么剩下的右表就用NULL补齐\n- RIGHT JOIN是以右表为基准，去左表里找匹配的行，其他都一样\n- INNER JOIN是取“交集”，只保留两边都能匹配…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- 相同点：所有连接方式都是前表在左，后表在右\n- LEFT JOIN 以左表为基准，去右表里找匹配的行，最终生成的行数只能是等于左表或者大于(这种情况是右表有重复条件)，如果说右表行数小于左表行数，那么剩下的右表就用NULL补齐\n- RIGHT JOIN是以右表为基准，去左表里找匹配的行，其他都一样\n- INNER JOIN是取“交集”，只保留两边都能匹配…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-51d0f59bda-01",
+      "note_id": "sql-51d0f59bda",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「SQL笔记（10月20日）」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- 在SQL的语法里，WHERE一定要放到所有的INNER JOIN后；\n\n- 遇到“没有记录返回0”的需求，一律用LEFT JOIN\n\n- 子查询想用来做连接的时候，必须把该字段SELECT出来\n\n- 想算某一列限定条件的数量，可以用SUM（IF( ，1，0)）来计算\n\n- 只要写了GROUP BY ，SELECT 后面出现的所有列，要么必须包含在GROUP BY里，要么必须被聚合函数（如COUNT、SUM、MAX）包起来\n\n- 当一次性想在FROM写清楚所有表格时，每个表格后面需要加逗号，然后再用WHERE表示限定条件，这个可以替代INNER JOIN...ON...\n\n- 在用INNER JOIN时，哪怕开头select里的数据不在第一个表中，也要按顺序去向左链接表",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- 在SQL的语法里，WHERE一定要放到所有的INNER JOIN后；\n\n- 遇到“没有记录返回0”的需求，一律用LEFT JOIN\n\n- 子查询想用来做连接的时候，必须把该字段SELECT出来\n\n- 想算某一列限定条件的数量，可以用SUM（IF( ，1，0)）来计算\n\n- 只要写了GROUP BY ，SELECT 后面出现的所有列，要么必须包含在GROU…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- 在SQL的语法里，WHERE一定要放到所有的INNER JOIN后；\n\n- 遇到“没有记录返回0”的需求，一律用LEFT JOIN\n\n- 子查询想用来做连接的时候，必须把该字段SELECT出来\n\n- 想算某一列限定条件的数量，可以用SUM（IF( ，1，0)）来计算\n\n- 只要写了GROUP BY ，SELECT 后面出现的所有列，要么必须包含在GROU…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-8e64995847-01",
+      "note_id": "sql-8e64995847",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「SQL笔记（10月27日）」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- 数据库主从复制延迟时，读操作要求强一致性应选择直连主库查询\n\n- FULL JOIN关键字只要其中某个表存在匹配，FULL JOIN关键字就会返回行",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- 数据库主从复制延迟时，读操作要求强一致性应选择直连主库查询\n\n- FULL JOIN关键字只要其中某个表存在匹配，FULL JOIN关键字就会返回行",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- 数据库主从复制延迟时，读操作要求强一致性应选择直连主库查询\n\n- FULL JOIN关键字只要其中某个表存在匹配，FULL JOIN关键字就会返回行"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-657246f955-01",
+      "note_id": "sql-657246f955",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「SQL 字符串函数练习」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "sql",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：sql",
+      "basis": {
+        "kind": "note",
+        "excerpt": "sql"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-0751be3443-01",
+      "note_id": "sql-0751be3443",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「replace函数：当前缀相同时，提取后面的字段」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "replace（字符串，'固定前缀',''）：把固定前缀替换成字符串，剩下的就是后面部分\n**示例：** eg. replace(code,'user_','')----提取user_后面的部分",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：replace（字符串，'固定前缀',''）：把固定前缀替换成字符串，剩下的就是后面部分\n**示例：** eg. replace(code,'user_','')----提取user_后面的部分",
+      "basis": {
+        "kind": "note",
+        "excerpt": "replace（字符串，'固定前缀',''）：把固定前缀替换成字符串，剩下的就是后面部分\n**示例：** eg. replace(code,'user_','')----提取user_后面的部分"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-3cca4fb41b-01",
+      "note_id": "sql-3cca4fb41b",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「substring_index函数：当提取字段前面或者后面有相同的分隔符时使用」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "substring_index(字符串，'相同分隔符'，数字)：正数代表从左往右数分隔符前面的部分，负数代表从右往左数分隔符后面的部分\n**示例：** eg. (180cm,75kg,27,male) (175cm,65kg,25,female)\nsubstring_index(substring_index(proflie,',',-2),',',1)----第一个括号提取的结果是后两个数据，第二个括号内提取的是后两个中的第一个\n\n> **注意：** 有conunt函数时，有分组一定要使用group by函数\n\n---",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：substring_index(字符串，'相同分隔符'，数字)：正数代表从左往右数分隔符前面的部分，负数代表从右往左数分隔符后面的部分\n**示例：** eg. (180cm,75kg,27,male) (175cm,65kg,25,female)\nsubstring_index(substring_index(proflie,',',-2),',',1)--…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "substring_index(字符串，'相同分隔符'，数字)：正数代表从左往右数分隔符前面的部分，负数代表从右往左数分隔符后面的部分\n**示例：** eg. (180cm,75kg,27,male) (175cm,65kg,25,female)\nsubstring_index(substring_index(proflie,',',-2),',',1)--…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-2e63fbb537-01",
+      "note_id": "sql-2e63fbb537",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「substring函数：当需要选取某一列中除了相同字段的词语时使用」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "substring（字符串，起始位置<数字>）：从第几个字符开始截止到末尾\n**示例：** eg. substring(code,6)----从第六个字符到末尾\n\n> **注意：** substring换成substr效果相同",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：substring（字符串，起始位置<数字>）：从第几个字符开始截止到末尾\n**示例：** eg. substring(code,6)----从第六个字符到末尾\n\n> **注意：** substring换成substr效果相同",
+      "basis": {
+        "kind": "note",
+        "excerpt": "substring（字符串，起始位置<数字>）：从第几个字符开始截止到末尾\n**示例：** eg. substring(code,6)----从第六个字符到末尾\n\n> **注意：** substring换成substr效果相同"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-073e7f0203-01",
+      "note_id": "sql-073e7f0203",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「正则表达：以SQL40为例」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "^：字符串开头  \n[1-9]:是一个字符类，第一位必须是1到9之间的数字  \n[0-9]{9}\\$:前面的[0-9]也是一个字符类，后面的{9}是量词，表示在前面约束条件下的字符类出现9次，就是9个数字的意思  \n<!-- 这里$之前的反斜杠只是为了防止转义 实际在SQL里不用写 -->\n| ：或者  \n^[1-9][0-9]{2}:以1到9开头，后面两个数字在0到9之间  \n-[0-9]{3}:跟一个横线，再跟3个数字  \n-[0-9]{4}\\$:跟一个横线，再跟4个数字，并结束\n\n---",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：^：字符串开头  \n[1-9]:是一个字符类，第一位必须是1到9之间的数字  \n[0-9]{9}\\$:前面的[0-9]也是一个字符类，后面的{9}是量词，表示在前面约束条件下的字符类出现9次，就是9个数字的意思  \n<!-- 这里$之前的反斜杠只是为了防止转义 实际在SQL里不用写 -->\n| ：或者  \n^[1-9][0-9]{2}:以1到9开头，后面两个…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "^：字符串开头  \n[1-9]:是一个字符类，第一位必须是1到9之间的数字  \n[0-9]{9}\\$:前面的[0-9]也是一个字符类，后面的{9}是量词，表示在前面约束条件下的字符类出现9次，就是9个数字的意思  \n<!-- 这里$之前的反斜杠只是为了防止转义 实际在SQL里不用写 -->\n| ：或者  \n^[1-9][0-9]{2}:以1到9开头，后面两个…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-18806a4f11-01",
+      "note_id": "sql-18806a4f11",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「CONV 进制转换」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- N :要转换的数字或字符串\n- from_base :原来的进制\n- to_base ：目标进制\n- COVN( )函数中，from_base和to_base的有效范围是2到36，如果超出这个范围，会返回NULL\n\n- 联合索引遵循最左前缀原则\n\n- SELECT..FOR UPDATE：锁定行，事务内生效，可以匹配WHERE过滤；\n\n- LOCK TABLES..IN EXCLUSIVE MODE：锁整张表，不依赖事务\n\n原笔记示例中的 COVN 应为 CONV。",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- N :要转换的数字或字符串\n- from_base :原来的进制\n- to_base ：目标进制\n- COVN( )函数中，from_base和to_base的有效范围是2到36，如果超出这个范围，会返回NULL\n\n- 联合索引遵循最左前缀原则\n\n- SELECT..FOR UPDATE：锁定行，事务内生效，可以匹配WHERE过滤；\n\n- LOCK TA…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- N :要转换的数字或字符串\n- from_base :原来的进制\n- to_base ：目标进制\n- COVN( )函数中，from_base和to_base的有效范围是2到36，如果超出这个范围，会返回NULL\n\n- 联合索引遵循最左前缀原则\n\n- SELECT..FOR UPDATE：锁定行，事务内生效，可以匹配WHERE过滤；\n\n- LOCK TA…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-69608e0418-01",
+      "note_id": "sql-69608e0418",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「DATE_FORMAT 日期格式化」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "DATE_FORMATE(create_time,'%Y%m')\n占位符大全\n- %Y：四位年份\n- %y：两位年份\n- %m：两位月份\n- %c：月份\n- %d：两位日期\n- %H：24小时制\n- %i：分钟\n- %s：秒\n\n- CURDATE( )/CURRENT_DATE( ):只返回当前日期(2023-10-27)\n\n- CURTIME( ):只返回当前时间(15：30：00)\n\n- NOW( )/SYSDATE( ):返回当前的日期和时间(2023-10-27 15：30：00)\n\n原笔记中的 DATE_FORMATE 应为 MySQL 的 DATE_FORMAT，参数名 format 也少一个 e。",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：DATE_FORMATE(create_time,'%Y%m')\n占位符大全\n- %Y：四位年份\n- %y：两位年份\n- %m：两位月份\n- %c：月份\n- %d：两位日期\n- %H：24小时制\n- %i：分钟\n- %s：秒\n\n- CURDATE( )/CURRENT_DATE( ):只返回当前日期(2023-10-27)\n\n- CURTIME( ):只返回…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "DATE_FORMATE(create_time,'%Y%m')\n占位符大全\n- %Y：四位年份\n- %y：两位年份\n- %m：两位月份\n- %c：月份\n- %d：两位日期\n- %H：24小时制\n- %i：分钟\n- %s：秒\n\n- CURDATE( )/CURRENT_DATE( ):只返回当前日期(2023-10-27)\n\n- CURTIME( ):只返回…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-c7b2971147-01",
+      "note_id": "sql-c7b2971147",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「TIMESTAMPDIFF(单位，开始时间，结束时间)」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- 计算的是“结束时间-开始时间”\n\n- 并发访问数据库时，各并发事务之间数据库是独立的\n\n- UNION ALL连接去重\n\n- UNION连接不去重",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- 计算的是“结束时间-开始时间”\n\n- 并发访问数据库时，各并发事务之间数据库是独立的\n\n- UNION ALL连接去重\n\n- UNION连接不去重",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- 计算的是“结束时间-开始时间”\n\n- 并发访问数据库时，各并发事务之间数据库是独立的\n\n- UNION ALL连接去重\n\n- UNION连接不去重"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-076645beee-01",
+      "note_id": "sql-076645beee",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「ALL( ):对所有数据都满足才成立 ，>= all( )等价于max，<=all( )等价于min」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- ANY( )：只要有一条数据满足条件，整个条件成立 ，和SOME( )的作用一样,>=any( )等价于 >min，<any( )等价于< max",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- ANY( )：只要有一条数据满足条件，整个条件成立 ，和SOME( )的作用一样,>=any( )等价于 >min，<any( )等价于< max",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- ANY( )：只要有一条数据满足条件，整个条件成立 ，和SOME( )的作用一样,>=any( )等价于 >min，<any( )等价于< max"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-61124d6a30-01",
+      "note_id": "sql-61124d6a30",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「SQL基础函数」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- ABS ( ) :绝对值\n\n- CEIL ( ) /CEILING ( ) :向上取整\n\n- FLOOR ( ) :向下取整\n\n- ROUND ( ,数字) :四舍五入\n\n- TRUNCATE ( ，数字) :截断函数——直接截断保留规定位数小数，不进行四舍五入\n\n---",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- ABS ( ) :绝对值\n\n- CEIL ( ) /CEILING ( ) :向上取整\n\n- FLOOR ( ) :向下取整\n\n- ROUND ( ,数字) :四舍五入\n\n- TRUNCATE ( ，数字) :截断函数——直接截断保留规定位数小数，不进行四舍五入\n\n---",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- ABS ( ) :绝对值\n\n- CEIL ( ) /CEILING ( ) :向上取整\n\n- FLOOR ( ) :向下取整\n\n- ROUND ( ,数字) :四舍五入\n\n- TRUNCATE ( ，数字) :截断函数——直接截断保留规定位数小数，不进行四舍五入\n\n---"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-44f58746c8-01",
+      "note_id": "sql-44f58746c8",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「SQL笔记（10月23日）」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- SQL中的视图(VIEW)本质上是基于SELECT查询定义的虚拟表，不储存物理数据，而是提供数据的逻辑表示。\n\n- 删除触发器操作： DROP TRIGGER #DELETE是删除所有行记录",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- SQL中的视图(VIEW)本质上是基于SELECT查询定义的虚拟表，不储存物理数据，而是提供数据的逻辑表示。\n\n- 删除触发器操作： DROP TRIGGER #DELETE是删除所有行记录",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- SQL中的视图(VIEW)本质上是基于SELECT查询定义的虚拟表，不储存物理数据，而是提供数据的逻辑表示。\n\n- 删除触发器操作： DROP TRIGGER #DELETE是删除所有行记录"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-3eb63989cb-01",
+      "note_id": "sql-3eb63989cb",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「SQL语言的四大分类」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、DDL(数据定义类型-Data Definition Language)**\n\n- 作用：定义和修改表结构、数据库结构\n- 代表命令：CREAT(建表、建库)、DROP(删表删库，连结构一起端掉)、ALERT(修改表结构，比如加一列、改字段类型)、TURNCATE(清空表结构，保留数据)、RENAME(重命名)、MODIFY(对列进行修改)\n**2、DML(数据操纵语言-Data Manipulation Language)**\n\n- 作用：对表里面的数据进行增删减\n- 代表命令：INSERT(插入数据)、UPDATE(更新数据)、DELETE(删除数据，是一行)\n**3、DCL(数据控制语言-Data Control Language)**\n\n- 作用：权限设置\n- 代表命令：GRANT(授权，比如把查询权限给某个用户)、REVOKE(收回权限)\n**4、DQL(数据查询语言-Data Query Language)**\n\n- 作用：专门用于查询\n- 代表命令：SELECT",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、DDL(数据定义类型-Data Definition Language)**\n\n- 作用：定义和修改表结构、数据库结构\n- 代表命令：CREAT(建表、建库)、DROP(删表删库，连结构一起端掉)、ALERT(修改表结构，比如加一列、改字段类型)、TURNCATE(清空表结构，保留数据)、RENAME(重命名)、MODIFY(对列进行修改)\n**2、…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、DDL(数据定义类型-Data Definition Language)**\n\n- 作用：定义和修改表结构、数据库结构\n- 代表命令：CREAT(建表、建库)、DROP(删表删库，连结构一起端掉)、ALERT(修改表结构，比如加一列、改字段类型)、TURNCATE(清空表结构，保留数据)、RENAME(重命名)、MODIFY(对列进行修改)\n**2、…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-d673b3f08d-01",
+      "note_id": "sql-d673b3f08d",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「判断奇数」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、MOD(数字，2) = 1 (取余)**\n\n**2、数字 % 2 = 1，等价于取余函数**\n\n**3、数字 & 1 = 1(按位与)**\n\n- &是运算符，将数字转成二进制后与1(二进制也是1)进行AND运算\n- 任何奇数的二进制末位一定是1；任何偶数的末位一定是0\n\n- 子查询中，父查询中一般使用IN运算符的是：单列多值嵌套查询\n\n---",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、MOD(数字，2) = 1 (取余)**\n\n**2、数字 % 2 = 1，等价于取余函数**\n\n**3、数字 & 1 = 1(按位与)**\n\n- &是运算符，将数字转成二进制后与1(二进制也是1)进行AND运算\n- 任何奇数的二进制末位一定是1；任何偶数的末位一定是0\n\n- 子查询中，父查询中一般使用IN运算符的是：单列多值嵌套查询\n\n---",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、MOD(数字，2) = 1 (取余)**\n\n**2、数字 % 2 = 1，等价于取余函数**\n\n**3、数字 & 1 = 1(按位与)**\n\n- &是运算符，将数字转成二进制后与1(二进制也是1)进行AND运算\n- 任何奇数的二进制末位一定是1；任何偶数的末位一定是0\n\n- 子查询中，父查询中一般使用IN运算符的是：单列多值嵌套查询\n\n---"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-e142199cad-01",
+      "note_id": "sql-e142199cad",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「常用函数分类（三大派）」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**① 聚合窗口函数(SUM/AVG/COUNT/MAX/MIN)**\n\n在不合并行的情况下算出聚合值\n- 累计求和：SUM (profit) OVER (ORDER BY date) (没写PARTITION BY,全表一块，按，按照日期一行行滑着叠加，最后每一行的结果都是之前的总和)———对应SQL40题\n- 分组占比：SUM (profit) OVER (PARTITION BY department)(按每个部门进行分块，每个部门的销售总额，会重复显示在部门每个员工的行上)    \n**常用形式:**  \nSUM(profit) OVER (ORDER BY date ROWS BETWEEN 1 PRECEDING AND CURRENT ROW):计算当前行加上一行的的滑动和，常用于算移动平均  \n\n**② 排序窗口函数 (ROW_NUMBER/RANK/DENSE_RANK)**\n\n给数据排名\n- ROW_NUMBER ( ) :绝对序号，数字不重复。如1、2、3\n- RANK ( ) :并列跳号，类似于比赛排名。如1、1、3\n- DENSE_RANK ( ) :并列不跳号。如1、1、2  \n典型用法：ROW_…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**① 聚合窗口函数(SUM/AVG/COUNT/MAX/MIN)**\n\n在不合并行的情况下算出聚合值\n- 累计求和：SUM (profit) OVER (ORDER BY date) (没写PARTITION BY,全表一块，按，按照日期一行行滑着叠加，最后每一行的结果都是之前的总和)———对应SQL40题\n- 分组占比：SUM (profit) OVER…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**① 聚合窗口函数(SUM/AVG/COUNT/MAX/MIN)**\n\n在不合并行的情况下算出聚合值\n- 累计求和：SUM (profit) OVER (ORDER BY date) (没写PARTITION BY,全表一块，按，按照日期一行行滑着叠加，最后每一行的结果都是之前的总和)———对应SQL40题\n- 分组占比：SUM (profit) OVER…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-36ee90b724-01",
+      "note_id": "sql-36ee90b724",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「窗口函数基本格式」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- 函数名 ( ) :想做的事  比如说SUM、ROW_NUMBER、找上一行(LAG)\n- PARTITION BY : 开窗/分块，就是把数据按照某一个指标分成几个部分，可以省略，这时候整个表就是一块\n- ORDER BY ： 在块内部按照什么顺序排。累加、排名类必须写，求平均值可以不写",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- 函数名 ( ) :想做的事  比如说SUM、ROW_NUMBER、找上一行(LAG)\n- PARTITION BY : 开窗/分块，就是把数据按照某一个指标分成几个部分，可以省略，这时候整个表就是一块\n- ORDER BY ： 在块内部按照什么顺序排。累加、排名类必须写，求平均值可以不写",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- 函数名 ( ) :想做的事  比如说SUM、ROW_NUMBER、找上一行(LAG)\n- PARTITION BY : 开窗/分块，就是把数据按照某一个指标分成几个部分，可以省略，这时候整个表就是一块\n- ORDER BY ： 在块内部按照什么顺序排。累加、排名类必须写，求平均值可以不写"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-397985c872-01",
+      "note_id": "sql-397985c872",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「ALTER TABLE MODIFY 修改字段」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、数据类型(比如把INT改成VARCHAR)**\n\n**2、长度(比如把VARCHAR(20)改成VARCHAR(100))**\n\n**3、约束条件(比如加个默认值DEFAULT、改个非空NOT NULL、加个主键)**\n\n- 主键：Primary Key 用来唯一标识表中每一行数据的那个字段（或字段组合）\n必须满足的三个条件：\n**① 唯一 (Unique) ：不能有两行数据的主键值相同**\n\n**② 非空 (Not Null) ：不可以是Null**\n\n**③ 一个表只能有一个主键**\n\n**示例：** eg：\n\nCREATE TABLE students（\nid INT PRIMARY KEY,\nname VARCHAR(20)\n）\n---\n\n原笔记中的 ALERT TABLE 应为 ALTER TABLE。",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：**1、数据类型(比如把INT改成VARCHAR)**\n\n**2、长度(比如把VARCHAR(20)改成VARCHAR(100))**\n\n**3、约束条件(比如加个默认值DEFAULT、改个非空NOT NULL、加个主键)**\n\n- 主键：Primary Key 用来唯一标识表中每一行数据的那个字段（或字段组合）\n必须满足的三个条件：\n**① 唯一 (Uni…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、数据类型(比如把INT改成VARCHAR)**\n\n**2、长度(比如把VARCHAR(20)改成VARCHAR(100))**\n\n**3、约束条件(比如加个默认值DEFAULT、改个非空NOT NULL、加个主键)**\n\n- 主键：Primary Key 用来唯一标识表中每一行数据的那个字段（或字段组合）\n必须满足的三个条件：\n**① 唯一 (Uni…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-f2173d307b-01",
+      "note_id": "sql-f2173d307b",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「删除DELETE：」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- 单表删除：DELETE FROM 表名 WHERE 条件\n- 多关联表删除：要根据另一张表（或临时表）的数据来删除本表的数据，需要写\n  - DELETE 别名 FROM 表名 别名 JOIN ----\n- 多表删除的时候，delete和from之间必须要写明想删除记录的表名\n\n- in( )括号里只能有一个字段\n\n- 使用delete语句删除表中的数据，drop语句删除数据表 eg. DROP table example.tb_ack\n\n- WITH CHECK OPTION在视图中用于强制通过视图插入或更新的数据必须满足视图定义中的WHERE条件\n\n- COUNT()属于聚合函数 WHERE后面不能跟聚合函数\n\n- 先分组再过滤：group by...having...\n\n- 执行CREAT INDEX语句会触发隐式事务提交\n\n- count(*)统计所有行数，哪怕是null也算一行；count(列名)统计这一列不含null的行数\n\n---",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- 单表删除：DELETE FROM 表名 WHERE 条件\n- 多关联表删除：要根据另一张表（或临时表）的数据来删除本表的数据，需要写\n  - DELETE 别名 FROM 表名 别名 JOIN ----\n- 多表删除的时候，delete和from之间必须要写明想删除记录的表名\n\n- in( )括号里只能有一个字段\n\n- 使用delete语句删除表中的数据…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- 单表删除：DELETE FROM 表名 WHERE 条件\n- 多关联表删除：要根据另一张表（或临时表）的数据来删除本表的数据，需要写\n  - DELETE 别名 FROM 表名 别名 JOIN ----\n- 多表删除的时候，delete和from之间必须要写明想删除记录的表名\n\n- in( )括号里只能有一个字段\n\n- 使用delete语句删除表中的数据…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-2fd5491b97-01",
+      "note_id": "sql-2fd5491b97",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「向表中添加列的标准语法」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- ALERT TABLE 表名 ADD [COLUMN] 列名 数据类型 [约束条件]（中括号里的CLOUMN）可写可不写\n- eg：\n- ALERT TABLE student ADD age INT；\n或者\n- ALERT TABLE student ADD CLOUMN age INT\n\n- 视图是虚拟的表，只能动态检索数据，不存储任何数据，并且大部分视图都不可以更新\n\n- 视图是一种数据库对象，是从数据库的表或其他视图中导出的基表\n\n---",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- ALERT TABLE 表名 ADD [COLUMN] 列名 数据类型 [约束条件]（中括号里的CLOUMN）可写可不写\n- eg：\n- ALERT TABLE student ADD age INT；\n或者\n- ALERT TABLE student ADD CLOUMN age INT\n\n- 视图是虚拟的表，只能动态检索数据，不存储任何数据，并且大部…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- ALERT TABLE 表名 ADD [COLUMN] 列名 数据类型 [约束条件]（中括号里的CLOUMN）可写可不写\n- eg：\n- ALERT TABLE student ADD age INT；\n或者\n- ALERT TABLE student ADD CLOUMN age INT\n\n- 视图是虚拟的表，只能动态检索数据，不存储任何数据，并且大部…"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-04529715ca-01",
+      "note_id": "sql-04529715ca",
+      "type": "reference",
+      "prompt": "不看笔记，回忆「基础数据插入——INSERT基础语法：INSERT INTO 表名(列名1，列名2...) VALUES (值1，值2...)」：它的核心规则是什么？请写出笔记中的关键结论或示例。",
+      "answer": {
+        "grading": "self",
+        "value": "- 注意只要前面的列名顺序和后面的值顺序一一对应即可，不需要和建表时的原始顺序一致\n\n- 在MYSQL里，字符串(varchar)必须加单引号",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "核对时重点看是否写出了笔记里的核心信息：- 注意只要前面的列名顺序和后面的值顺序一一对应即可，不需要和建表时的原始顺序一致\n\n- 在MYSQL里，字符串(varchar)必须加单引号",
+      "basis": {
+        "kind": "note",
+        "excerpt": "- 注意只要前面的列名顺序和后面的值顺序一一对应即可，不需要和建表时的原始顺序一致\n\n- 在MYSQL里，字符串(varchar)必须加单引号"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-6cb3bfbf17-02",
+      "note_id": "sql-6cb3bfbf17",
+      "type": "reference",
+      "prompt": "结合笔记中的例子，说明「WHERE 和 HAVING的区别」在实际使用时要注意什么。",
+      "answer": {
+        "grading": "self",
+        "value": "**1、WHERE在分组前工作，过滤原始数据行；HAVING在分组后工作，过滤分组后的结果，专门用来筛选GROUP BY产生的结果或聚合函数的值**\n\n**2、WHERE后不可以接聚合函数，而HAVING是专门处理这些的**",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "答案应能回到原笔记中的规则或示例：**1、WHERE在分组前工作，过滤原始数据行；HAVING在分组后工作，过滤分组后的结果，专门用来筛选GROUP BY产生的结果或聚合函数的值**\n\n**2、WHERE后不可以接聚合函数，而HAVING是专门处理这些的**",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**1、WHERE在分组前工作，过滤原始数据行；HAVING在分组后工作，过滤分组后的结果，专门用来筛选GROUP BY产生的结果或聚合函数的值**\n\n**2、WHERE后不可以接聚合函数，而HAVING是专门处理这些的**"
+      },
+      "is_extension": false
+    },
+    {
+      "id": "ex-sql-e142199cad-02",
+      "note_id": "sql-e142199cad",
+      "type": "reference",
+      "prompt": "结合笔记中的例子，说明「常用函数分类（三大派）」在实际使用时要注意什么。",
+      "answer": {
+        "grading": "self",
+        "value": "**① 聚合窗口函数(SUM/AVG/COUNT/MAX/MIN)**\n\n在不合并行的情况下算出聚合值\n- 累计求和：SUM (profit) OVER (ORDER BY date) (没写PARTITION BY,全表一块，按，按照日期一行行滑着叠加，最后每一行的结果都是之前的总和)———对应SQL40题\n- 分组占比：SUM (profit) OVER (PARTITION BY department)(按每个部门进行分块，每个部门的销售总额，会重复显示在部门每个员工的行上)    \n**常用形式:**  \nSUM(profit) OVER (ORDER BY date ROWS BETWEEN 1 PRECEDING AND CURRENT ROW):计算当前行加上一行的的滑动和，常用于算移动平均  \n\n**② 排序窗口函数 (ROW_NUMBER/RANK/DENSE_RANK)**\n\n给数据排名\n- ROW_NUMBER ( ) :绝对序号，数字不重复。如1、2、3\n- RANK ( ) :并列跳号，类似于比赛排名。如1、1、3\n- DENSE_RANK ( ) :并列不跳号。如1、1、2  \n典型用法：ROW_…",
+        "accepted": [],
+        "case_sensitive": false
+      },
+      "explanation": "答案应能回到原笔记中的规则或示例：**① 聚合窗口函数(SUM/AVG/COUNT/MAX/MIN)**\n\n在不合并行的情况下算出聚合值\n- 累计求和：SUM (profit) OVER (ORDER BY date) (没写PARTITION BY,全表一块，按，按照日期一行行滑着叠加，最后每一行的结果都是之前的总和)———对应SQL40题\n- 分组占比：SUM (profit) OVER…",
+      "basis": {
+        "kind": "note",
+        "excerpt": "**① 聚合窗口函数(SUM/AVG/COUNT/MAX/MIN)**\n\n在不合并行的情况下算出聚合值\n- 累计求和：SUM (profit) OVER (ORDER BY date) (没写PARTITION BY,全表一块，按，按照日期一行行滑着叠加，最后每一行的结果都是之前的总和)———对应SQL40题\n- 分组占比：SUM (profit) OVER…"
+      },
+      "is_extension": false
+    }
+  ]
+}

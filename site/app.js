@@ -10,11 +10,24 @@ const elements = {
   notesList: document.querySelector("#notes-list"),
   moduleFilters: document.querySelector("#module-filters"),
   categoryFilters: document.querySelector("#category-filters"),
+  resultsMeta: document.querySelector(".results-meta"),
   resultCount: document.querySelector("#result-count"),
   activeQuery: document.querySelector("#active-query"),
   emptyState: document.querySelector("#empty-state"),
   libraryTitle: document.querySelector("#library-title"),
 };
+
+const categoryPracticeButton = createElement("button", "category-practice-button", "本分类综合练习");
+categoryPracticeButton.type = "button";
+categoryPracticeButton.hidden = true;
+categoryPracticeButton.addEventListener("click", () => {
+  const noteIds = state.notes
+    .filter((note) => (state.module === "全部" || note.module === state.module) && note.category === state.category)
+    .map((note) => note.id);
+  const label = state.module === "全部" ? state.category : `${state.module} · ${state.category}`;
+  window.exercisePractice.startForCategory(noteIds, label, categoryPracticeButton);
+});
+elements.resultsMeta.append(categoryPracticeButton);
 
 function searchableText(note) {
   return [
@@ -253,6 +266,12 @@ function renderNote(note) {
   if (note.note) detail.append(createElement("p", "editor-note", `整理提示：${note.note}`));
 
   const links = createElement("div", "practice-links");
+  const exerciseButton = createElement("button", "practice-link exercise-start", "开始练习");
+  exerciseButton.type = "button";
+  exerciseButton.addEventListener("click", () => {
+    window.exercisePractice.startForNote(note.id, exerciseButton);
+  });
+  links.append(exerciseButton);
   const destinations = [
     ["去牛客搜题 ↗", note.practice.nowcoder],
     ["去力扣搜题 ↗", note.practice.leetcode],
@@ -276,6 +295,7 @@ function render() {
   elements.notesList.replaceChildren(...notes.map(renderNote));
   elements.resultCount.textContent = `${notes.length} 个结果`;
   elements.activeQuery.textContent = state.query ? `搜索：“${state.query}”` : "";
+  categoryPracticeButton.hidden = state.category === "全部";
   elements.emptyState.hidden = notes.length !== 0;
   elements.libraryTitle.textContent = state.module === "全部" ? "全部知识点" : `${state.module} 知识点`;
 }
@@ -298,6 +318,7 @@ async function start() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     state.notes = data.notes;
+    window.exercisePractice.init(state.notes);
     document.querySelector("#total-count").textContent = `${data.stats.total} 个知识点`;
     document.querySelector("#sql-count").textContent = `${data.stats.modules.SQL || 0} 个知识点`;
     document.querySelector("#python-count").textContent = `${data.stats.modules.Python || 0} 个知识点`;
